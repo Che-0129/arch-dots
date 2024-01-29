@@ -11,6 +11,7 @@ Wi-Fi接続
 
 `gdisk /dev/sda`
 
-フォーマット
+フォーマット（例）
 
-`mkfs.fat -F32 /dev/sda1`
+`mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda2`
