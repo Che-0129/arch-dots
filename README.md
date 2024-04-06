@@ -8,7 +8,7 @@ loadkeys jp106
 Wi-Fi接続
 
 ```
-iwctl station wlan0 connect TP-Link_079E
+iwctl station wlan0 connect {SSID}
 ```
 
 パーティション切り(boot, root, homeを作成)
