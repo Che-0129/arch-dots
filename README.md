@@ -34,7 +34,7 @@ mount --mkdir /dev/sda1 /mnt/boot
 ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware intel-ucode neovim dosfstools networkmanager
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode neovim dosfstools networkmanager fish
 ```
 
 fstab生成（swapファイルを作りたい場合はこれを実行する前に作ってswaponしておくこと）
@@ -95,10 +95,10 @@ bootctl install
 /boot/loader/entries/zen.confに以下を追記
 
 ```
-title Arch Linux (linux-zen)
-linux /vmlinuz-linux-zen
+title Arch Linux (linux)
+linux /vmlinuz-linux
 initrd /intel-ucode.img
-initrd /initramfs-linux-zen.img
+initrd /initramfs-linux.img
 options root=/dev/sda2 rw
 ```
 
