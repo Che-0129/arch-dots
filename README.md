@@ -134,4 +134,10 @@ EDITOR=nvim visudo
 
 上記２つをアンコメント
 
+`# Defaults env_keep += "EDITOR"`
+
+`# Defaults env_keep += "VISUAL"`
+
+上記２つを追加
+
 `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
