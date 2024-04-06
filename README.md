@@ -11,7 +11,7 @@ Wi-Fi接続
 iwctl station wlan0 connect TP-Link_079E
 ```
 
-パーティション切り（お好みで）
+パーティション切り(boot, root, homeを作成)
 
 ```
 gdisk /dev/sda
@@ -22,6 +22,7 @@ gdisk /dev/sda
 ```
 mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/sda3
 ```
 
 マウント（例）
@@ -29,6 +30,7 @@ mkfs.ext4 /dev/sda2
 ```
 mount /dev/sda2 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
+mount --mkdir /dev/sda3 /mnt/home
 ```
 
 ベースシステムインストール（カーネルはお好みのものを）
@@ -37,7 +39,14 @@ mount --mkdir /dev/sda1 /mnt/boot
 pacstrap /mnt base base-devel linux linux-firmware intel-ucode neovim dosfstools networkmanager fish
 ```
 
-fstab生成（swapファイルを作りたい場合はこれを実行する前に作ってswaponしておくこと）
+スワップファイル作成(1GiB)
+```
+dd if=/dev/zero of=/mnt/swapfile bs=1M count=1k status=progress
+mkswap -U clear /mnt/swapfile
+swapon /mnt/swapfile
+```
+
+fstab生成
 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -78,7 +87,7 @@ hwclock --systohc --utc
 ホストネーム設定
 
 ```
-echo ArchLinux > /etc/hostname
+echo {hostname} > /etc/hostname
 ```
 
 NetworkManager有効化
@@ -106,6 +115,20 @@ rootユーザーのパスワードを変更
 
 ```
 passwd
+```
+
+非rootユーザー作成
+```
+useradd -m -G wheel -s $(which fish) {username}
+passwd {username}
+```
+
+visudoの設定
+`# Defaults env_keep += "HOME"`
+`# %wheel ALL=(ALL:ALL) NOPASSWD: ALL`
+上記２つをアンコメント
+```
+EDITOR=nvim visudo
 ```
 
 `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
