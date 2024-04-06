@@ -124,14 +124,14 @@ passwd {username}
 ```
 
 visudoの設定
+```
+EDITOR=nvim visudo
+```
 
 `# Defaults env_keep += "HOME"`
 
 `# %wheel ALL=(ALL:ALL) NOPASSWD: ALL`
 
 上記２つをアンコメント
-```
-EDITOR=nvim visudo
-```
 
 `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
