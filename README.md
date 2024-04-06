@@ -124,8 +124,11 @@ passwd {username}
 ```
 
 visudoの設定
+
 `# Defaults env_keep += "HOME"`
+
 `# %wheel ALL=(ALL:ALL) NOPASSWD: ALL`
+
 上記２つをアンコメント
 ```
 EDITOR=nvim visudo
