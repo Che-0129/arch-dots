@@ -1,0 +1,18 @@
+virtual_modifiers:
+  - F13
+
+modmap:
+  - remap:
+      KEY_MUHENKAN:
+        held: KEY_F13
+        alone: KEY_MUHENKAN
+        alone_timeout_millis: 200
+
+keymap:
+  - remap:
+      F13-h: Left
+      F13-j: Down
+      F13-k: Up
+      F13-l: Right
+      F13-o: Backspace
+      F13-Space: Enter
