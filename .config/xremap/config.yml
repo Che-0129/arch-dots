@@ -6,7 +6,7 @@ modmap:
       KEY_MUHENKAN:
         held: KEY_F13
         alone: KEY_MUHENKAN
-        alone_timeout_millis: 150
+        alone_timeout_millis: 250
 
 keymap:
   - remap:
