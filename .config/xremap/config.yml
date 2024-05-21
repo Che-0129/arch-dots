@@ -16,3 +16,5 @@ keymap:
       F13-l: Right
       F13-o: Backspace
       F13-Space: Enter
+      F13-a: Home
+      F13-e: End
