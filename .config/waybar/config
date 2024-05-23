@@ -5,10 +5,19 @@
 "margin-bottom":0,
 "margin-top":0,
 
-"modules-left": ["custom/arch","cpu","memory"],
+"modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
 "modules-right": ["hyprland/window","tray","pulseaudio"],
 
+"battery": {
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "BATTERY | {capacity}%",
+    "max-length": 25
+},
 "hyprland/window": {
     "format": "{}",
     "rewrite": {
