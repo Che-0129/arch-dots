@@ -42,6 +42,7 @@ pacstrap /mnt base base-devel linux linux-firmware intel-ucode neovim dosfstools
 スワップファイル作成(1GiB)
 ```
 dd if=/dev/zero of=/mnt/swapfile bs=1M count=1k status=progress
+chmod 600 /mnt/swapfile
 mkswap -U clear /mnt/swapfile
 swapon /mnt/swapfile
 ```
