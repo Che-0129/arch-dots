@@ -15,6 +15,15 @@
     margin-left: 4px;
 }
 
+#battery {
+    border-radius: 16px;
+    background: #404552;
+    border: 2px solid #26D9E6;
+    margin-left: 16px;
+    margin-top: 4px;
+    padding: 0 10px;
+}
+
 window#waybar {
     background: transparent;
 }
