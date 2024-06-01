@@ -21,8 +21,8 @@ gdisk /dev/sda
 
 ```
 mkfs.fat -F32 /dev/sda1
-mkfs.ext4 /dev/sda2
-mkfs.ext4 /dev/sda3
+mkfs.btrfs -f /dev/sda2
+mkfs.btrfs -f /dev/sda3
 ```
 
 マウント（例）
@@ -36,15 +36,15 @@ mount --mkdir /dev/sda3 /mnt/home
 ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode neovim dosfstools networkmanager fish
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode btrfs-progs neovim dosfstools networkmanager fish
 ```
 
 スワップファイル作成(1GiB)
 ```
-dd if=/dev/zero of=/mnt/swapfile bs=1M count=1k status=progress
-chmod 600 /mnt/swapfile
-mkswap -U clear /mnt/swapfile
-swapon /mnt/swapfile
+btrfs subvolume create /swap
+btrfs filesystem mkswapfile --size 4g --uuid clear /mnt/swap/swapfile
+chmod 600 /mnt/swap/swapfile
+swapon /mnt/swap/swapfile
 ```
 
 fstab生成
