@@ -41,8 +41,8 @@ pacstrap /mnt base base-devel linux linux-firmware intel-ucode btrfs-progs neovi
 
 スワップファイル作成(1GiB)
 ```
-btrfs subvolume create /swap
-btrfs filesystem mkswapfile --size 4g --uuid clear /mnt/swap/swapfile
+btrfs subvolume create /mnt/swap
+btrfs filesystem mkswapfile --size 1g --uuid clear /mnt/swap/swapfile
 chmod 600 /mnt/swap/swapfile
 swapon /mnt/swap/swapfile
 ```
