@@ -43,6 +43,7 @@ Wi-Fi接続
 ```
 # btrfs subvolume create /mnt/swap
 # btrfs filesystem mkswapfile --size 1g --uuid clear /mnt/swap/swapfile
+# chmod 600 /mnt/swap/swapfile
 # swapon /mnt/swap/swapfile
 ```
 
