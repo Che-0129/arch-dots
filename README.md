@@ -134,9 +134,9 @@ visudoの設定
 
 上記２つをアンコメント
 
-`# Defaults env_keep += "EDITOR"`
+`Defaults env_keep += "EDITOR"`
 
-`# Defaults env_keep += "VISUAL"`
+`Defaults env_keep += "VISUAL"`
 
 上記２つを追加
 
