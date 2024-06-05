@@ -28,9 +28,9 @@ Wi-Fi接続
 マウント（例）
 
 ```
-# mount compress=zstd:1 /dev/nvme0n1p2 /mnt
+# mount -o compress=zstd:1 /dev/nvme0n1p2 /mnt
 # mount --mkdir /dev/nvme0n1p1 /mnt/boot
-# mount compress=zstd:1 --mkdir /dev/nvme0n1p3 /mnt/home
+# mount -o compress=zstd:1 --mkdir /dev/nvme0n1p3 /mnt/home
 ```
 
 ベースシステムインストール（カーネルはお好みのものを）
