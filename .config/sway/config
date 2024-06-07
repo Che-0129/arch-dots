@@ -1,0 +1,78 @@
+#スタートアップアプリ
+exec fcitx5 -d
+exec mako
+exec waybar
+exec /usr/bin/lxpolkit
+
+#キーボードとマウスの設定
+input type:keyboard {
+    xkb_layout "jp"
+    xkb_model "jp106"
+    repeat_rate = 30
+    repeat_delay = 300
+}
+
+input "1133:16518:Logitech_G703_LS" {
+    accel_profile "flat"
+    pointer_accel -0.115
+}
+
+#カーソルを重ねてウィンドウをアクティブにしないようにする
+focus_follows_mouse no
+
+#ウィンドウ設定
+default_border pixel 2
+gaps outer 6
+gaps inner 6
+
+floating_modifier $mod normal
+
+#キーコンフィグ
+set $mod Mod4
+set $term foot
+set $left h
+set $down j
+set $up k
+set $right l
+set $menu wofi --show drun
+
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+t exec GDK_BACKEND=x11 pcmanfm
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+a layout tabbed
+bindsym $mod+s layout toggle split
+bindsym $mod+f fullscreen
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+mode "resize" {
+    bindsym $left resize shrink width 5px
+    bindsym $down resize grow height 5px
+    bindsym $up resize shrink height 5px
+    bindsym $right resize grow width 5px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#壁紙
+output * bg /usr/share/backgrounds/archlinux/conference.png fill
