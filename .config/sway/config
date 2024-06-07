@@ -64,6 +64,7 @@ bindsym $mod+v splitv
 bindsym $mod+a layout tabbed
 bindsym $mod+s layout toggle split
 bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
