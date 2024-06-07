@@ -22,8 +22,13 @@ focus_follows_mouse no
 
 #ウィンドウ設定
 default_border pixel 2
-gaps outer 6
-gaps inner 6
+gaps outer 4
+gaps inner 8
+
+client.focused #26d9e6 #26d9e6 #26d9e6 #26d9e6 #26d9e6
+client.focused_inactive #595959 #595959 #595959 #595959 #595959
+client.unfocused #595959 #595959 #595959 #595959 #595959
+client.urgent #26d9e6 #26d9e6 #26d9e6 #26d9e6 #26d9e6
 
 floating_modifier $mod normal
 
