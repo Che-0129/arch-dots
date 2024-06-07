@@ -17,6 +17,10 @@ input "1133:16518:Logitech_G703_LS" {
     pointer_accel -0.115
 }
 
+input type:touchpad {
+      natural_scroll enable
+}
+
 #カーソルを重ねてウィンドウをアクティブにしないようにする
 focus_follows_mouse no
 
@@ -26,10 +30,9 @@ gaps outer 4
 gaps inner 8
 corner_radius 8
 
-client.focused #26d9e6 #26d9e6 #26d9e6 #26d9e6 #26d9e6
+client.focused #26d9e6 #26d9e6 #ffffff #26d9e6 #26d9e6
 client.focused_inactive #595959 #595959 #595959 #595959 #595959
 client.unfocused #595959 #595959 #595959 #595959 #595959
-client.urgent #26d9e6 #26d9e6 #26d9e6 #26d9e6 #26d9e6
 
 #キーコンフィグ
 set $mod Mod4
