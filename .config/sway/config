@@ -8,8 +8,8 @@ exec /usr/bin/lxpolkit
 input type:keyboard {
     xkb_layout "jp"
     xkb_model "jp106"
-    repeat_rate = 30
-    repeat_delay = 300
+    repeat_rate 30
+    repeat_delay 300
 }
 
 input "1133:16518:Logitech_G703_LS" {
