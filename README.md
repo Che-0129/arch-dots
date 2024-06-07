@@ -162,7 +162,7 @@ $ makepkg -si
 色々インストール
 ```
 $ yay -S ttf-hackgen
-$ sudo pacman -S hyprland hyprpaper archlinux-wallpaper xdg-desktop-portal-hyprland pulseaudio pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
+$ yay -S swayfx swaybg archlinux-wallpaper xdg-desktop-portal-wlr pulseaudio pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
 ```
 
 デスクトップマネージャ有効化
