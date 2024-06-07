@@ -24,6 +24,7 @@ focus_follows_mouse no
 default_border pixel 2
 gaps outer 4
 gaps inner 8
+corner_radius 8
 
 client.focused #26d9e6 #26d9e6 #26d9e6 #26d9e6 #26d9e6
 client.focused_inactive #595959 #595959 #595959 #595959 #595959
