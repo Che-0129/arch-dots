@@ -35,6 +35,8 @@ client.focused #26d9e6 #26d9e6 #ffffff #26d9e6 #26d9e6
 client.focused_inactive #595959 #595959 #595959 #595959 #595959
 client.unfocused #595959 #595959 #595959 #595959 #595959
 
+floating_modifier Mod4
+
 #キーコンフィグ
 set $mod Mod4
 set $term foot
