@@ -26,6 +26,7 @@ focus_follows_mouse no
 
 #ウィンドウ設定
 default_border pixel 2
+default_floating_border pixel 2
 gaps outer 4
 gaps inner 8
 corner_radius 8
