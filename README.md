@@ -36,7 +36,7 @@ Wi-Fi接続
 ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap /mnt base base-devel linux-zen linux-headers linux-firmware amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 スワップファイル作成(1GiB)
@@ -162,7 +162,7 @@ $ makepkg -si
 色々インストール
 ```
 $ yay -S ttf-hackgen
-$ yay -S swayfx swaybg archlinux-wallpaper xdg-desktop-portal-wlr pulseaudio pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
+$ yay -S swayfx swaybg archlinux-wallpaper xdg-desktop-portal-wlr pipewire pipewire-pulse pipewire-jack pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
 ```
 
 デスクトップマネージャ有効化
