@@ -7,7 +7,7 @@
 
 "modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
-"modules-right": ["sway/window","tray","pulseaudio"],
+"modules-right": ["hyprland/window","tray","pulseaudio"],
 
 "battery": {
     "interval": 60,
@@ -18,7 +18,7 @@
     "format": "BATTERY | {capacity}%",
     "max-length": 25
 },
-"sway/window": {
+"hyprland/window": {
     "format": "{}",
     "rewrite": {
         "(.*) — Mozilla Firefox": "$1",
