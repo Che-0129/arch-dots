@@ -154,17 +154,17 @@ $ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 yayをインストール
 ```
 $ sudo pacman -S git
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay
+$ git clone https://aur.archlinux.org/paru.git
+$ cd paru
 $ makepkg -si
 ```
 
 色々インストール
 ```
-$ yay -S --asdeps {hyprutils,hyprlang,hyprcursor,hyprwayland-scanner}-git
-$ yay -S hyprland-git
-$ yay -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hypr pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
-$ yay -S ttf-hackgen xremap-wlroots-bin nvim-packer-git
+$ paru -S --asdeps hyprutils-git hyprlang-git hyprcursor-git hyprwayland-scanner-git
+$ paru -S hyprland-git
+$ sudo pacman -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hypr pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
+$ paru -S ttf-hackgen xremap-wlroots-bin nvim-packer-git
 ```
 
 ディスプレイマネージャー有効化
