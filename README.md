@@ -161,7 +161,9 @@ $ makepkg -si
 
 色々インストール
 ```
-$ yay -S hyprland-git hyprpaper archlinux-wallpaper xdg-desktop-portal-hypr pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
+$ yay -S --asdep hyprutils-git hyprlang-git hyprcursor-git hyprwayland-scanner-git
+$ yay -S hyprland-git
+$ yay -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hypr pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
 $ yay -S ttf-hackgen xremap-wlroots-bin nvim-packer-git
 ```
 
