@@ -151,7 +151,7 @@ $ sudo pacman -S xdg-user-dirs
 $ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 ```
 
-yayをインストール
+paruをインストール
 ```
 $ sudo pacman -S git
 $ git clone https://aur.archlinux.org/paru.git
