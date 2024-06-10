@@ -161,11 +161,11 @@ $ makepkg -si
 
 色々インストール
 ```
-$ yay -S ttf-hackgen
-$ yay -S swayfx swaybg xorg-xwayland archlinux-wallpaper xdg-desktop-portal-wlr pipewire pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
+$ yay -S hyprland-git hyprpaper archlinux-wallpaper xdg-desktop-portal-hypr pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
+$ yay -S ttf-hackgen xremap-wlroots-bin nvim-packer-git
 ```
 
-デスクトップマネージャ有効化
+ディスプレイマネージャー有効化
 ```
 $ sudo systemctl enable ly.service
 ```
