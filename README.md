@@ -151,11 +151,11 @@ $ sudo pacman -S xdg-user-dirs
 $ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 ```
 
-paruをインストール
+yayをインストール
 ```
 $ sudo pacman -S git
-$ git clone https://aur.archlinux.org/paru.git
-$ cd paru
+$ git clone https://aur.archlinux.org/yay.git
+$ cd yay
 $ makepkg -si
 ```
 
