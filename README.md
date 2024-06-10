@@ -154,8 +154,8 @@ $ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 yayをインストール
 ```
 $ sudo pacman -S git
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay
+$ git clone https://aur.archlinux.org/yay-bin.git
+$ cd yay-bin
 $ makepkg -si
 ```
 
