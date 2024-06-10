@@ -36,7 +36,7 @@ Wi-Fi接続
 ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 スワップファイル作成(1GiB)
@@ -161,7 +161,7 @@ $ makepkg -si
 
 色々インストール
 ```
-$ yay -S --asdep hyprutils-git hyprlang-git hyprcursor-git hyprwayland-scanner-git
+$ yay -S --asdep {hyprutils,hyprlang,hyprcursor,hyprwayland-scanner}-git
 $ yay -S hyprland-git
 $ yay -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hypr pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
 $ yay -S ttf-hackgen xremap-wlroots-bin nvim-packer-git
