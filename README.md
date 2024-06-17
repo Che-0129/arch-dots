@@ -11,7 +11,7 @@ Wi-Fi接続
 # iwctl station wlan0 connect {SSID}
 ```
 
-パーティション切り(boot, root, homeを作成)
+パーティション切り(boot, rootを作成)
 
 ```
 # gdisk /dev/nvme0n1
@@ -22,7 +22,6 @@ Wi-Fi接続
 ```
 # mkfs.vfat -F32 /dev/nvme0n1p1
 # mkfs.btrfs -f /dev/nvme0n1p2
-# mkfs.btrfs -f /dev/nvme0n1p3
 ```
 
 マウント（例）
@@ -30,7 +29,6 @@ Wi-Fi接続
 ```
 # mount -o compress=zstd:1 /dev/nvme0n1p2 /mnt
 # mount --mkdir /dev/nvme0n1p1 /mnt/boot
-# mount -o compress=zstd:1 --mkdir /dev/nvme0n1p3 /mnt/home
 ```
 
 ベースシステムインストール（カーネルはお好みのものを）
