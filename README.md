@@ -178,4 +178,5 @@ $ systemctl --user enable xremap
 $ sudo systemctl enable ly.service
 ```
 
+このリポジトリのドットファイル達を.config/にぶち込む。
 /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
