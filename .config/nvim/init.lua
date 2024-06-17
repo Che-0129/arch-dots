@@ -34,7 +34,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -49,8 +49,6 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim",
     "Norcalli/nvim-colorizer.lua"
 })
-
-vim.g.indentLine_char = '┊'
 
 require('onenord').setup()
 require('nvim-autopairs').setup()
