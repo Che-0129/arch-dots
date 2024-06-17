@@ -165,6 +165,8 @@ $ yay -S hyprland-git
 $ sudo pacman -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hyprland pipewire pipewire-pulse wireplumber pavucontrol lxsession-gtk3 mako waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly lsd
 ```
 
+このリポジトリのドットファイル達を.config/にぶち込む。
+
 xremapを使えるように
 ```
 $ sudo gpasswd -a {username} input
@@ -178,5 +180,4 @@ $ systemctl --user enable xremap
 $ sudo systemctl enable ly.service
 ```
 
-このリポジトリのドットファイル達を.config/にぶち込む。
 /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
