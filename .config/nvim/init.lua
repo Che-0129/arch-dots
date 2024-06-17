@@ -22,7 +22,33 @@ vim.opt.syntax = 'on'
 vim.opt.mouse = ''
 vim.opt.hlsearch = false
 
-require('plugins')
+if vim.fn.executable('fcitx5') then
+    vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
+    vim.cmd([[autocmd CmdlineLeave * :silent !fcitx5-remote -c]])
+end
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+    "nvim-lualine/lualine.nvim",
+    "rmehri01/onenord.nvim",
+    "neoclide/coc.nvim",
+    "windwp/nvim-autopairs",
+    "mcauley-penney/tidy.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    "Norcalli/nvim-colorizer.lua"
+})
 
 vim.g.indentLine_char = '┊'
 
@@ -36,8 +62,3 @@ require('lualine').setup {
         theme = 'onenord'
     }
 }
-
-if vim.fn.executable('fcitx5') then
-    vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
-    vim.cmd([[autocmd CmdlineLeave * :silent !fcitx5-remote -c]])
-end
