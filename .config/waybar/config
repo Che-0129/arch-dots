@@ -8,38 +8,10 @@
 "modules-center": ["clock"],
 "modules-right": ["hyprland/window","tray","wireplumber"],
 
-"battery": {
-    "interval": 60,
-    "states": {
-        "warning": 30,
-        "critical": 15
-    },
-    "format": "{icon} {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "],
-    "max-length": 25
-},
-"hyprland/window": {
-    "format": "{}",
-    "rewrite": {
-        "(.*) — Mozilla Firefox": "$1",
-        "(.*) - foot": "> [$1]"
-    },
-    "separate-outputs": true,
-    "max-length": 50
-},
 "custom/arch": {
     "format": " 󰣇 ",
     "tooltip": false,
     "on-click": "wofi --show drun"
-},
-"tray": {
-    "icon-size": 16,
-    "spacing": 6
-},
-"clock": {
-    "locale": "C",
-    "format": "{:%Y-%m-%d / %H:%M:%S}",
-    "interval": 1
 },
 "cpu": {
     "format": " &#8239;{usage}%",
@@ -53,9 +25,37 @@
     "warning": 70,
     "critical": 90
 },
+"battery": {
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "max-length": 25
+},
+"clock": {
+    "locale": "C",
+    "format": "{:%Y-%m-%d / %H:%M:%S}",
+    "interval": 1
+},
+"hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+        "(.*) — Mozilla Firefox": "$1",
+        "(.*) - foot": "> [$1]"
+    },
+    "separate-outputs": true,
+    "max-length": 50
+},
+"tray": {
+    "icon-size": 16,
+    "spacing": 6
+},
 "wireplumber": {
-    "format": "{icons} {volume}%",
-    "format-icons": ["", "", ""],
-    "format-muted": "󰖁"
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁",
+    "format-icons": ["", "", ""]
 }
 }
