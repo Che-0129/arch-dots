@@ -21,9 +21,7 @@
     "interval": 30,
     "format": " {percentage}%",
     "max-length": 10,
-    "tooltip": false,
-    "warning": 70,
-    "critical": 90
+    "tooltip": false
 },
 "battery": {
     "interval": 60,
