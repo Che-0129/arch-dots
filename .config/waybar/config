@@ -15,7 +15,7 @@
         "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [" ", " ", " ", " ", " "],
     "max-length": 25
 },
 "hyprland/window": {
@@ -42,7 +42,7 @@
     "interval": 1
 },
 "cpu": {
-    "format": " &#8239;{usage}%",
+    "format": " &#8239;{usage}%",
     "tooltip": false
 },
 "memory": {
