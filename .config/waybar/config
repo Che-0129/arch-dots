@@ -56,7 +56,7 @@
 },
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
-  "format": "VOL | {volume}%",
-  "format-muted": "muted",
+  "format": " | {volume}%",
+  "format-muted": "󰖁",
 }
 }
