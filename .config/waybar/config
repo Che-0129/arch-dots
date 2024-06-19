@@ -4,7 +4,6 @@
 "height": 10,
 "margin-bottom":0,
 "margin-top":0,
-
 "modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
 "modules-right": ["hyprland/window","tray","pulseaudio"],
@@ -15,7 +14,8 @@
         "warning": 30,
         "critical": 15
     },
-    "format": "BATTERY | {capacity}%",
+    "format": "{icon} | {capacity}%",
+    "format-icons": ["", "", "", "", ""],
     "max-length": 25
 },
 "hyprland/window": {
@@ -25,7 +25,7 @@
         "(.*) - foot": "> [$1]"
     },
     "separate-outputs": true,
-    "max-length": 50,
+    "max-length": 50
 },
 "custom/arch": {
     "format": " 󰣇 ",
@@ -39,16 +39,15 @@
 "clock": {
     "locale": "C",
     "format": "{:%Y-%m-%d / %H:%M:%S}",
-    "interval": 1,
+    "interval": 1
 },
 "cpu": {
-    "format": "CPU | &#8239;{usage}%",
-    "tooltip": false,
-    "on-click": "foot -e 'htop'"
+    "format": " | &#8239;{usage}%",
+    "tooltip": false
 },
 "memory": {
     "interval": 30,
-    "format": "RAM | {percentage}%",
+    "format": " | {percentage}%",
     "max-length": 10,
     "tooltip": false,
     "warning": 70,
@@ -56,7 +55,7 @@
 },
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
-  "format": " | {volume}%",
-  "format-muted": "󰖁",
+  "format": "  | {volume}%",
+  "format-muted": "󰖁"
 }
 }
