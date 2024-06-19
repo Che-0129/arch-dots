@@ -6,7 +6,7 @@
 "margin-top":0,
 "modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
-"modules-right": ["hyprland/window","tray","pulseaudio"],
+"modules-right": ["hyprland/window","tray","wireplumber"],
 
 "battery": {
     "interval": 60,
@@ -53,9 +53,9 @@
     "warning": 70,
     "critical": 90
 },
-"pulseaudio": {
-  // "scroll-step": 1, // %, can be a float
-  "format": " {volume}%",
-  "format-muted": "󰖁"
+"wireplumber": {
+    "format": "{icons} {volume}%",
+    "format-icons": ["", "", ""]
+    "format-muted": "󰖁"
 }
 }
