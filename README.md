@@ -165,6 +165,11 @@ $ yay -S hyprland-git
 $ sudo pacman -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hyprland pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs foot noto-fonts-{cjk,emoji,extra} ly exa bat
 ```
 
+WirePlumber有効化
+```
+$ systemctl --user enable wireplumber
+```
+
 このリポジトリのドットファイル達を.config/にぶち込む。
 
 xremapを使えるように
