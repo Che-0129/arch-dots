@@ -32,8 +32,6 @@ window#waybar {
 #memory {
     padding: 0 10px;
     background: #404552;
-    border-radius: 0 16px 16px 0;
-    border-right: 2px solid #26D9E6;
     border-bottom: 2px solid #26D9E6;
     border-top: 2px solid #26D9E6;
     margin-top: 4px;
@@ -42,8 +40,10 @@ window#waybar {
 #battery {
     border-radius: 16px;
     background: #404552;
-    border: 2px solid #26D9E6;
-    margin-left: 16px;
+    border-radius: 0 16px 16px 0;
+    border-top: 2px solid #26D9E6;
+    border-bottom: 2px solid #26D9E6;
+    border-right: 2px solid #26D9E6;
     margin-top: 4px;
     padding: 0 10px;
 }
