@@ -14,7 +14,7 @@
         "warning": 30,
         "critical": 15
     },
-    "format": "{icon} | {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25
 },
@@ -42,12 +42,12 @@
     "interval": 1
 },
 "cpu": {
-    "format": " | &#8239;{usage}%",
+    "format": " &#8239;{usage}%",
     "tooltip": false
 },
 "memory": {
     "interval": 30,
-    "format": " | {percentage}%",
+    "format": " {percentage}%",
     "max-length": 10,
     "tooltip": false,
     "warning": 70,
@@ -55,7 +55,7 @@
 },
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
-  "format": "  | {volume}%",
+  "format": " {volume}%",
   "format-muted": "󰖁"
 }
 }
