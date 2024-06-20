@@ -33,7 +33,7 @@
 },
 "clock": {
     "locale": "C",
-    "format": "{:%Y-%m-%d / %H:%M:%S}",
+    "format": " {:%Y-%m-%d / %H:%M:%S}",
     "interval": 1
 },
 "hyprland/window": {
