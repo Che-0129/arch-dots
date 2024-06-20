@@ -3,7 +3,7 @@
 "position": "top",
 "height": 10,
 "margin-bottom":0,
-"margin-top": "4px",
+"margin-top":0,
 "modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
 "modules-right": ["hyprland/window","tray","wireplumber"],
