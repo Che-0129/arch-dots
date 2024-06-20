@@ -18,9 +18,7 @@
     "tooltip": false
 },
 "memory": {
-    "interval": 30,
     "format": " {percentage}%",
-    "max-length": 10,
     "tooltip": false
 },
 "battery": {
