@@ -21,9 +21,10 @@ vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.syntax = 'on'
-vim.opt.mouse = ''
+vim.opt.mouse = 'a'
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
 if vim.fn.executable('fcitx5') then
     vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
