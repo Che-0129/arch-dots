@@ -51,13 +51,14 @@ require("lazy").setup({
     "norcalli/nvim-colorizer.lua"
 })
 
-require('onenord').setup()
-require('nvim-autopairs').setup()
-require('tidy').setup()
-require('ibl').setup()
-require('colorizer').setup()
 require('lualine').setup {
     option = {
         theme = 'onenord'
     }
 }
+require('onenord').setup()
+require('nvim-autopairs').setup()
+require('tidy').setup()
+require('ibl').setup()
+require('colorizer').setup()
+require('modes').setup()
