@@ -45,29 +45,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    {"nvim-lualine/lualine.nvim", event = "VeryLazy"},
-    {"rmehri01/onenord.nvim", event = "VeryLazy"},
-    {"windwp/nvim-autopairs", event = "InsertEnter"},
-    {"mcauley-penney/tidy.nvim", event = "InsertEnter"},
-    {"lukas-reineke/indent-blankline.nvim", event = "BufNewFile", "BufRead"},
-    {"norcalli/nvim-colorizer.lua", event = "BufNewFile", "BufRead"},
-    {"mvllow/modes.nvim", event = "ModeChanged"},
-    {"neovim/nvim-lspconfig", event = "LspAttach"},
-    {"hrsh7th/nvim-cmp", event = "InsertEnter"},
-    {"hrsh7th/cmp-nvim-lsp", event = "InsertEnter"},
-    {"saadparwaiz1/cmp_luasnip", event = "InsertEnter"},
-    {"L3MON4D3/LuaSnip", event = "InsertEnter"},
-    {"williamboman/mason.nvim",
-        cmd = {
-            "Mason",
-            "MasonInstall",
-            "MasonUninstall",
-            "MasonUninstallAll",
-            "MasonLog",
-            "MasonUpdate",
-        }
-    },
-    {"williamboman/mason-lspconfig.nvim", event = "LspAttach"},
+    "nvim-lualine/lualine.nvim",
+    "rmehri01/onenord.nvim",
+    "windwp/nvim-autopairs",
+    "mcauley-penney/tidy.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    "norcalli/nvim-colorizer.lua",
+    "mvllow/modes.nvim",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "saadparwaiz1/cmp_luasnip",
+    "L3MON4D3/LuaSnip",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim"
 })
 
 require('lualine').setup {
