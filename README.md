@@ -162,7 +162,7 @@ $ makepkg -si
 $ yay -S ttf-hackgen xremap-wlroots-bin
 $ yay -S --asdeps hyprutils-git hyprlang-git hyprcursor-git hyprwayland-scanner-git
 $ yay -S hyprland-git
-$ sudo pacman -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hyprland pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat
+$ sudo pacman -S hyprpaper archlinux-wallpaper xdg-desktop-portal-hyprland pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
 ```
 
 WirePlumber有効化
