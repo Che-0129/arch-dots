@@ -45,13 +45,29 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "nvim-lualine/lualine.nvim",
-    "rmehri01/onenord.nvim",
-    "neoclide/coc.nvim",
-    "windwp/nvim-autopairs",
-    "mcauley-penney/tidy.nvim",
-    "lukas-reineke/indent-blankline.nvim",
-    "norcalli/nvim-colorizer.lua"
+    {"nvim-lualine/lualine.nvim", event = "VeryLazy"},
+    {"rmehri01/onenord.nvim", event = "VeryLazy"},
+    {"windwp/nvim-autopairs", event = "InsertEnter"},
+    {"mcauley-penney/tidy.nvim", event = "InsertEnter"},
+    {"lukas-reineke/indent-blankline.nvim", event = "BufNewFile", "BufRead"},
+    {"norcalli/nvim-colorizer.lua", event = "BufNewFile", "BufRead"},
+    {"mvllow/modes.nvim", event = "ModeChanged"},
+    {"neovim/nvim-lspconfig", event = "LspAttach"},
+    {"hrsh7th/nvim-cmp", event = "InsertEnter"},
+    {"hrsh7th/cmp-nvim-lsp", event = "InsertEnter"},
+    {"saadparwaiz1/cmp_luasnip", event = "InsertEnter"},
+    {"L3MON4D3/LuaSnip", event = "InsertEnter"},
+    {"williamboman/mason.nvim",
+        cmd = {
+            "Mason",
+            "MasonInstall",
+            "MasonUninstall",
+            "MasonUninstallAll",
+            "MasonLog",
+            "MasonUpdate",
+        }
+    },
+    {"williamboman/mason-lspconfig.nvim", event = "LspAttach"},
 })
 
 require('lualine').setup {
@@ -65,3 +81,57 @@ require('tidy').setup()
 require('ibl').setup()
 require('colorizer').setup()
 require('modes').setup()
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = {"clangd", "html", "cssls", "pyright"},
+}
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require('lspconfig')
+
+local servers = { 'clangd', 'html', 'pyright', 'cssls' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities,
+  }
+end
+
+local luasnip = require 'luasnip'
+
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
+}
