@@ -47,7 +47,7 @@ require("lazy").setup({
     "windwp/nvim-autopairs",
     "mcauley-penney/tidy.nvim",
     "lukas-reineke/indent-blankline.nvim",
-    "Norcalli/nvim-colorizer.lua"
+    "norcalli/nvim-colorizer.lua"
 })
 
 require('onenord').setup()
