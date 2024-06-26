@@ -60,7 +60,9 @@ require("lazy").setup({
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim"
+    "williamboman/mason-lspconfig.nvim",
+    "j-hui/fidget.nvim",
+    "onsails/lspkind.nvim"
 })
 
 require('lualine').setup {
@@ -133,4 +135,25 @@ cmp.setup {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
+}
+
+require('fidget').setup {
+    text = {
+        spinner = 'meter',
+    },
+}
+
+local lspkind = require('lspkind')
+cmp.setup {
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            show_labelDetails = true,
+            before = function (entry, vim_item)
+                return vim_item
+            end
+        })
+    }
 }
