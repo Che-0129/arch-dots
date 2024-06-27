@@ -164,9 +164,7 @@ $ makepkg -si
 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin
-$ yay -S --asdeps hyprutils-git hyprlang-git hyprcursor-git hyprwayland-scanner-git
-$ yay -S hyprland-git hyprpaper-git xdg-desktop-portal-hyprland-git
-$ sudo pacman -S archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
+$ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
 ```
 
 このリポジトリのドットファイル達を.config/にぶち込む。
