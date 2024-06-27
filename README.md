@@ -167,12 +167,10 @@ $ sudo pacman -S archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako li
 
 このリポジトリのドットファイル達を.config/にぶち込む。
 
-xremapを使えるように
+xremapのセットアップ（このリポジトリのシェルスクリプト）
 ```
-$ sudo gpasswd -a {username} input
-# echo uinput > /etc/modules-load.d/uinput.conf
-$ echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules
-$ systemctl --user enable xremap
+$ chmod +x ./arch-dots/xremap-setup.sh
+$ ./arch-dots/xremap-setup.sh
 ```
 
 WirePlumber有効化
