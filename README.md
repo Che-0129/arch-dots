@@ -165,11 +165,6 @@ $ yay -S hyprland-git hyprpaper-git xdg-desktop-portal-hyprland-git
 $ sudo pacman -S archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
 ```
 
-WirePlumber有効化
-```
-$ systemctl --user enable wireplumber
-```
-
 このリポジトリのドットファイル達を.config/にぶち込む。
 
 xremapを使えるように
@@ -178,6 +173,11 @@ $ sudo gpasswd -a {username} input
 # echo uinput > /etc/modules-load.d/uinput.conf
 $ echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules
 $ systemctl --user enable xremap
+```
+
+WirePlumber有効化
+```
+$ systemctl --user enable wireplumber
 ```
 
 ディスプレイマネージャー有効化
