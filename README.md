@@ -28,7 +28,7 @@ Wi-Fi接続
 
 ```
 # mount -o compress=zstd:1 /dev/nvme0n1p2 /mnt
-# mount --mkdir /dev/nvme0n1p1 /mnt/boot
+# mount -o fmask=0137,dmask=0027 --mkdir /dev/nvme0n1p1 /mnt/boot
 ```
 
 ベースシステムインストール（カーネルはお好みのものを）
