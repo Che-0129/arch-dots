@@ -165,7 +165,7 @@ $ makepkg -si
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin
 $ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
-$ sudo pacman -S npm zip unzip arc-{gtk,icon}-theme nwg-loook
+$ sudo pacman -S npm zip unzip arc-{gtk,icon}-theme nwg-look
 ```
 
 このリポジトリのドットファイル達を.config/にぶち込む。
