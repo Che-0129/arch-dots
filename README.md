@@ -168,7 +168,7 @@ $ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpa
 $ sudo pacman -S npm zip unzip arc-{gtk,icon}-theme nwg-look
 ```
 
-このリポジトリのドットファイル達を.config/にぶち込む。
+このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
 
 xremapのセットアップ（このリポジトリのシェルスクリプト）
 ```
