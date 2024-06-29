@@ -30,7 +30,7 @@ Wi-Fi接続
 
 ```
 # mount -o compress=zstd:1 /dev/nvme0n1p2 /mnt
-# mount -o fmask=0137,dmask=0027 --mkdir /dev/nvme0n1p1 /mnt/boot
+# mount --mkdir /dev/nvme0n1p1 /mnt/boot
 # mount -o compress=zstd:1 --mkdir /dev/nvme0n1p3 /mnt/var
 # mount -o compress=zstd:1 --mkdir /dev/nvme0n1p4 /mnt/home
 ```
@@ -164,7 +164,9 @@ $ makepkg -si
 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin
-$ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs xarchiver vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
+$ yay -S --asdeps hyprutils-git hyprlang-git hyprcursor-git
+$ yay -S hyprland-git hyprpaper-git xdg-desktop-portal-hyprland-git
+$ sudo pacman -S archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs xarchiver vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
 $ sudo pacman -S npm zip unzip arc-{gtk,icon}-theme nwg-look
 ```
 
