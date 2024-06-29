@@ -195,9 +195,9 @@ $ sudo pacman -S fcitx5-im
 $ yay -S fcitx5-mozc-ut fcitx5-skin-arc
 ```
 
-Fcitx5の環境変数を設定（/etc/environment）
-`
+Fcitx5の環境変数を設定（/etc/environmentに追記）
+```
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS="@im=fcitx"
-`
+```
