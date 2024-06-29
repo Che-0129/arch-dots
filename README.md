@@ -164,7 +164,7 @@ $ makepkg -si
 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin
-$ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
+$ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs xarchiver vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
 $ sudo pacman -S npm zip unzip arc-{gtk,icon}-theme nwg-look
 ```
 
@@ -187,3 +187,17 @@ $ sudo systemctl enable ly.service
 ```
 
 /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
+
+更に色々インスコ
+```
+$ sudo pacman -S firefox firefox-i18n-ja thunderbird thunderbird-i18n-ja
+$ sudo pacman -S fcitx5-im
+$ yay -S fcitx5-mozc-ut fcitx5-skin-arc
+```
+
+Fcitx5の環境変数を設定（/etc/environment）
+`
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS="@im=fcitx"
+`
