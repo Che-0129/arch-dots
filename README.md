@@ -38,7 +38,7 @@ Wi-Fi接続
 ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -K /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 スワップファイル作成(1GiB)
