@@ -178,11 +178,6 @@ $ chmod +x ./arch-dots/xremap-setup.sh
 $ ./arch-dots/xremap-setup.sh
 ```
 
-WirePlumber有効化
-```
-$ systemctl --user enable wireplumber
-```
-
 ディスプレイマネージャー有効化
 ```
 $ sudo systemctl enable ly.service
