@@ -164,8 +164,10 @@ $ makepkg -si
 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin
-$ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper pipewire wireplumber lxsession-gtk3 mako libnotify waybar wofi pcmanfm-gtk3 gvfs xarchiver vimiv foot noto-fonts-{cjk,emoji,extra} ly exa bat wl-clipboard
-$ sudo pacman -S npm zip unzip arc-{gtk,icon}-theme nwg-look
+$ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
+$ sudo pacman -S pipewire pipewire-pulse wireplumber
+$ sudo pacman -S pcmanfm-gtk3 gvfs xarchiver vimiv zip unzip
+$ sudo pacman -S npm libnotify exa bat wl-clipboard
 ```
 
 このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
