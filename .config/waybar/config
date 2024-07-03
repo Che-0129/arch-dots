@@ -6,7 +6,7 @@
 "margin-top": 4,
 "modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
-"modules-right": ["hyprland/window","tray","wireplumber"],
+"modules-right": ["hyprland/window","tray","wireplumber","custom/wlogout"],
 
 "custom/arch": {
     "format": " 󰣇 ",
@@ -55,5 +55,10 @@
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 Muted",
     "format-icons": ["", "", ""]
+},
+"custom/wlogout": {
+    "format": " ⏻ ",
+    "tooltip": false,
+    "on-click": "wlogout -b 2 --protocol layer-shell"
 }
 }
