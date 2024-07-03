@@ -6,7 +6,7 @@ modmap:
       KEY_MUHENKAN:
         held: KEY_F13
         alone: KEY_MUHENKAN
-        alone_timeout_millis: 250
+        alone_timeout_millis: 225
 
 keymap:
   - remap:
@@ -19,3 +19,4 @@ keymap:
       F13-Space: Enter
       F13-a: Home
       F13-e: End
+      F13-q: Esc
