@@ -98,6 +98,11 @@ NetworkManager有効化
 # systemctl enable NetworkManager
 ```
 
+mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換える)
+```
+# nvim /etc/mkinitcpio.conf
+```
+
 systemd-bootをインストール
 
 ```
@@ -167,7 +172,7 @@ $ yay -S ttf-hackgen xremap-wlroots-bin wlogout
 $ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
 $ sudo pacman -S pipewire pipewire-pulse wireplumber
 $ sudo pacman -S pcmanfm-gtk3 gvfs xarchiver vimiv zip unzip
-$ sudo pacman -S npm libnotify exa bat wl-clipboard
+$ sudo pacman -S npm libnotify exa bat
 ```
 
 このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
