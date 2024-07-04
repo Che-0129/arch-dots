@@ -9,7 +9,7 @@ window {
 }
 
 button {
-    border-radius: 8px;
+	border-radius: 8px;
 	border-color: #595959;
 	text-decoration-color: #FFFFFF;
 	color: #FFFFFF;
@@ -29,15 +29,15 @@ button:active, button:hover {
 }
 
 #shutdown {
-    background-image: image(url("./icons/shutdown.svg"), url("./icons/shutdown.svg"));
-    margin-top: 192px;
-    margin-bottom: 192px;
-    margin-left: 256px;
+	background-image: image(url("./icons/shutdown.svg"), url("./icons/shutdown.svg"));
+	margin-top: 192px;
+	margin-bottom: 192px;
+	margin-left: 256px;
 }
 
 #reboot {
-    background-image: image(url("./icons/reboot.svg"), url("./icons/reboot.svg"));
-    margin-top: 192px;
-    margin-bottom: 192px;
-    margin-right: 256px;
+	background-image: image(url("./icons/reboot.svg"), url("./icons/reboot.svg"));
+	margin-top: 192px;
+	margin-bottom: 192px;
+	margin-right: 256px;
 }
