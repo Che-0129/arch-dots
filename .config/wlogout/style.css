@@ -35,6 +35,12 @@ button:active, button:hover {
 	margin-left: 256px;
 }
 
+#suspend {
+    background-image: image(url("./icons/suspend.svg"), url("./icons/suspend.svg"));
+    margin-top: 192px;
+    margin-bottom: 192px;
+}
+
 #reboot {
 	background-image: image(url("./icons/reboot.svg"), url("./icons/reboot.svg"));
 	margin-top: 192px;
