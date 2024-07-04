@@ -24,12 +24,24 @@ vim.opt.syntax = 'on'
 vim.opt.mouse = ''
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
 
 if vim.fn.executable('fcitx5') then
     vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
     vim.cmd([[autocmd CmdlineLeave * :silent !fcitx5-remote -c]])
 end
+
+local line_number_toggle = true
+function ToggleLineNumbers()
+    if line_number_toggle == false then
+        vim.cmd('set nu')
+        line_number_toggle = true
+    else
+        vim.cmd('set invnu')
+        line_number_toggle = false
+    end
+end
+vim.api.nvim_set_keymap('n', '<C-n>', ':lua ToggleLineNumbers()<CR>', { noremap = true, silent = true })    
+    
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
