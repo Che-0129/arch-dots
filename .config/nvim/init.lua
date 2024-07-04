@@ -41,7 +41,6 @@ function ToggleLineNumbers()
     end
 end
 vim.api.nvim_set_keymap('n', '<C-n>', ':lua ToggleLineNumbers()<CR>', { noremap = true, silent = true })    
-    
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
