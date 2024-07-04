@@ -36,9 +36,9 @@ button:active, button:hover {
 }
 
 #suspend {
-    background-image: image(url("./icons/suspend.svg"), url("./icons/suspend.svg"));
-    margin-top: 192px;
-    margin-bottom: 192px;
+	background-image: image(url("./icons/suspend.svg"), url("./icons/suspend.svg"));
+	margin-top: 192px;
+	margin-bottom: 192px;
 }
 
 #reboot {
