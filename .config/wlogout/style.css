@@ -1,7 +1,7 @@
 * {
-	  background-image: none;
-	  box-shadow: none;
-    font-size: 16pt;
+	background-image: none;
+	box-shadow: none;
+	font-size: 16pt;
 }
 
 window {
@@ -9,22 +9,23 @@ window {
 }
 
 button {
-    border-radius: 4px;
-    border-color: black;
-    text-decoration-color: #FFFFFF;
-    color: #FFFFFF;
-	  background-color: #404552;
-	  border-style: solid;
-	  border-width: 1px;
-  	background-repeat: no-repeat;
-  	background-position: center;
-  	background-size: 15%;
-    margin: 8px;
+    border-radius: 8px;
+	border-color: #595959;
+	text-decoration-color: #FFFFFF;
+	color: #FFFFFF;
+	background-color: #404552;
+	border-style: solid;
+	border-width: 2px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 15%;
+	margin: 8px;
 }
 
 button:active, button:hover {
-	  background-color: #5294e2;
-	  outline-style: none;
+	background-color: #5294e2;
+	outline-style: none;
+	border-color: #26D9E6;
 }
 
 #shutdown {
