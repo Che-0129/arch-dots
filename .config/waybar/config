@@ -59,6 +59,6 @@
 "custom/wlogout": {
     "format": " ⏻ ",
     "tooltip": false,
-    "on-click": "wlogout -b 2 --protocol layer-shell"
+    "on-click": "wlogout -b 3 --protocol layer-shell"
 }
 }
