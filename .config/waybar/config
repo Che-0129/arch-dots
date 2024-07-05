@@ -31,7 +31,8 @@
     "format-plugged": " {capacity}%",
     "format-charging": " {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "],
-    "max-length": 25
+    "max-length": 25,
+    "tooltip": false
 },
 "clock": {
     "locale": "C",
