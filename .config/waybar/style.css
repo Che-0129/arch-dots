@@ -13,9 +13,8 @@ window#waybar {
     border-radius: 16px;
     background: #404552;
     border: 2px solid #26D9E6;
-    margin-right: 4px;
     padding-right: 2px;
-    margin-left: 4px;
+    margin-right: 8px;
 }
 
 #cpu {
@@ -25,7 +24,6 @@ window#waybar {
     border-left: 2px solid #26D9E6;
     border-bottom: 2px solid #26D9E6;
     border-top: 2px solid #26D9E6;
-    margin-left: 4px;
 }
 
 #memory {
@@ -75,14 +73,12 @@ window#waybar {
     border-right: 2px solid #26D9E6;
     border-bottom: 2px solid #26D9E6;
     border-top: 2px solid #26D9E6;
-    margin-right: 4px;
 }
 
 #custom-wlogout {
     border-radius: 16px;
     background: #404552;
     border: 2px solid #26D9E6;
-    margin-right: 4px;
     padding-right: 2px;
-    margin-left: 4px;
+    margin-left: 8px;
 }
