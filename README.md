@@ -172,7 +172,7 @@ $ yay -S ttf-hackgen xremap-wlroots-bin wlogout
 $ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
 $ sudo pacman -S pipewire pipewire-pulse wireplumber
 $ sudo pacman -S pcmanfm-gtk3 gvfs xarchiver vimiv zip unzip
-$ sudo pacman -S npm libnotify exa bat
+$ sudo pacman -S npm libnotify eza bat
 ```
 
 このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
