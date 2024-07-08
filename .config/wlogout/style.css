@@ -1,7 +1,7 @@
 * {
 	background-image: none;
 	box-shadow: none;
-	font-size: 16pt;
+    font-size: 16pt;
 }
 
 window {
@@ -9,41 +9,41 @@ window {
 }
 
 button {
-	border-radius: 8px;
-	border-color: #595959;
+    border-radius: 8px;
+    border-color: #595959;
 	text-decoration-color: #FFFFFF;
-	color: #FFFFFF;
+    color: #FFFFFF;
 	background-color: #404552;
 	border-style: solid;
 	border-width: 2px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 15%;
-	margin: 8px;
+    margin: 8px;
 }
 
 button:active, button:hover {
 	background-color: #5294e2;
 	outline-style: none;
-	border-color: #26D9E6;
+    border-color: #26D9E6;
 }
 
 #shutdown {
-	background-image: image(url("./icons/shutdown.svg"), url("./icons/shutdown.svg"));
-	margin-top: 192px;
-	margin-bottom: 192px;
-	margin-left: 256px;
+    background-image: image(url("./icons/shutdown.svg"), url("./icons/shutdown.svg"));
+    margin-top: 192px;
+    margin-bottom: 192px;
+    margin-left: 256px;
 }
 
 #suspend {
-	background-image: image(url("./icons/suspend.svg"), url("./icons/suspend.svg"));
-	margin-top: 192px;
-	margin-bottom: 192px;
+    background-image: image(url("./icons/suspend.svg"), url("./icons/suspend.svg"));
+    margin-top: 192px;
+    margin-bottom: 192px;
 }
 
 #reboot {
-	background-image: image(url("./icons/reboot.svg"), url("./icons/reboot.svg"));
-	margin-top: 192px;
-	margin-bottom: 192px;
-	margin-right: 256px;
+    background-image: image(url("./icons/reboot.svg"), url("./icons/reboot.svg"));
+    margin-top: 192px;
+    margin-bottom: 192px;
+    margin-right: 256px;
 }
