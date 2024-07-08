@@ -9,17 +9,17 @@ window {
 }
 
 button {
-    border-radius: 8px;
-    border-color: #595959;
+	border-radius: 8px;
+	border-color: #595959;
 	text-decoration-color: #FFFFFF;
-    color: #FFFFFF;
+	color: #FFFFFF;
 	background-color: #404552;
 	border-style: solid;
 	border-width: 2px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 15%;
-    margin: 8px;
+	margin: 8px;
 }
 
 button:active, button:hover {
