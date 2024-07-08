@@ -89,13 +89,13 @@ require('colorizer').setup()
 require('modes').setup()
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = {"clangd", "html", "cssls", "pyright"},
+    ensure_installed = {"clangd", "html", "cssls", "pyright", "gopls"},
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
-local servers = { 'clangd', 'html', 'pyright', 'cssls' }
+local servers = {'clangd', 'html', 'pyright', 'cssls', 'gopls'}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
