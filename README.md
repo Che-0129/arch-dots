@@ -11,7 +11,7 @@ Wi-Fi接続
 # iwctl station wlan0 connect {SSID}
 ```
 
-パーティション切り(boot 512MiB, root 32GiB, var 8GiB, home 残り全部)
+パーティション切り(boot 512MiB, サブボリューム用 残り全部)
 
 ```
 # gdisk /dev/nvme0n1
@@ -22,17 +22,24 @@ Wi-Fi接続
 ```
 # mkfs.vfat -F32 /dev/nvme0n1p1
 # mkfs.btrfs -f /dev/nvme0n1p2
-# mkfs.btrfs -f /dev/nvme0n1p3
-# mkfs.btrfs -f /dev/nvme0n1p4
+```
+
+サブボリューム作成
+```
+# mount /dev/nvme0n1p2 /mnt
+# btrfs subvolume create /mnt/{@root,@var,@home,@snapshots}
+# umount /mnt
 ```
 
 マウント（例）
 
 ```
-# mount -o compress=zstd:1 /dev/nvme0n1p2 /mnt
-# mount --mkdir /dev/nvme0n1p1 /mnt/boot
-# mount -o compress=zstd:1 --mkdir /dev/nvme0n1p3 /mnt/var
-# mount -o compress=zstd:1 --mkdir /dev/nvme0n1p4 /mnt/home
+# mount -o noatime,compress=zstd:1,space_cache,subvol=@root /dev/sda2 /mnt
+# mkdir /mnt/{boot,var,home,.snapshots}
+# mount /dev/nvme0n1p1 /mnt/boot
+# mount -o noatime,compress=zstd:1,space_cache,subvol=@var /dev/sda2 /mnt/var
+# mount -o noatime,compress=zstd:1,space_cache,subvol=@home /dev/sda2 /mnt/home
+# mount -o noatime,compress=zstd:1,space_cache,subvol=@snapshots /dev/sda2 /mnt/.snapshots
 ```
 
 ベースシステムインストール（カーネルはお好みのものを）
