@@ -54,6 +54,7 @@
     "spacing": 6
 },
 "backlight": {
+    "device": "amdgpu_bl1",
     "format": "󰃠 {percent}%",
     "interval": 1
 },
