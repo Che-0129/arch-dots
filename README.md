@@ -123,7 +123,7 @@ title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
 initrd /amd-ucode.img
 initrd /initramfs-linux-zen.img
-options root=/dev/nvme0n1p2 rw sysrq_always_enabled=1
+options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
 
 rootユーザーのパスワードを変更
