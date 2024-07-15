@@ -11,7 +11,7 @@ Wi-Fi接続
 # iwctl station wlan0 connect {SSID}
 ```
 
-パーティション切り(boot 512MiB, root 32GiB, var 16GiB, home 残り全部)
+パーティション切り(boot 512MiB, root 32GiB, var 8GiB, home 残り全部)
 
 ```
 # gdisk /dev/nvme0n1
