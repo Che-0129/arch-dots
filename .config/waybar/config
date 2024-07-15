@@ -7,7 +7,7 @@
 "margin-left": 4,
 "modules-left": ["custom/arch","cpu","memory","battery"],
 "modules-center": ["clock"],
-"modules-right": ["hyprland/window","tray","wireplumber","custom/wlogout"],
+"modules-right": ["hyprland/window","tray","backlight","wireplumber","custom/wlogout"],
 
 "custom/arch": {
     "format": " 󰣇 ",
@@ -52,6 +52,10 @@
 "tray": {
     "icon-size": 16,
     "spacing": 6
+},
+"backlight": {
+    "format": "󰃠 {percent}%",
+    "interval": 1
 },
 "wireplumber": {
     "format": "{icon} {volume}%",
