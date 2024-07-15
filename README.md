@@ -105,7 +105,7 @@ NetworkManager有効化
 # systemctl enable NetworkManager
 ```
 
-mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換える)
+mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換え、`fsck`を削除)
 ```
 # nvim /etc/mkinitcpio.conf
 ```
