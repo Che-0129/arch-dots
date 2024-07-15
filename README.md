@@ -27,7 +27,7 @@ Wi-Fi接続
 サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs subvolume create /mnt/{@root,@var,@home,@snapshots}
+# btrfs subvolume create /mnt/@{root,var,home,snapshots}
 # umount /mnt
 ```
 
