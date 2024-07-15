@@ -66,6 +66,13 @@ window#waybar {
     border-top: 2px solid #26D9E6;
 }
 
+#backlight {
+    padding: 0 10px;
+    background: #404552;
+    border-bottom: 2px solid #26D9E6;
+    border-top: 2px solid #26D9E6;
+}
+
 #wireplumber {
     padding: 0 10px;
     background: #404552;
