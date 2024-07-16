@@ -155,24 +155,6 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 
 上記２つを追加
 
-## Snapper色々
-```
-# snapper -c root create-config /
-# snapper -c home create-config /home
-# snapper -c var create-config /var
-# systemctl enable snapper-{boot,cleanup,timeline}.timer
-```
-
-`/etc/snapper/configs/`配下のファイルを編集
-```
-TIMELINE_MIN_AGE="1800"
-TIMELINE_LIMIT_HOURLY="4"
-TIMELINE_LIMIT_DAILY="8"
-TIMELINE_LIMIT_WEEKLY="1"
-TIMELINE_LIMIT_MONTHLY="0"
-TIMELINE_LIMIT_YEARLY="0"
-```
-
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
 ## 再起動後ログインし、`nmtui`でネットに接続
@@ -189,6 +171,24 @@ $ sudo pacman -S git
 $ git clone https://aur.archlinux.org/yay-bin.git
 $ cd yay-bin
 $ makepkg -si
+```
+
+## Snapper色々
+```
+# snapper -c root create-config /
+# snapper -c home create-config /home
+# snapper -c var create-config /var
+# systemctl enable snapper-{boot,cleanup,timeline}.timer
+```
+
+`/etc/snapper/configs/`配下のファイルを編集
+```
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="4"
+TIMELINE_LIMIT_DAILY="8"
+TIMELINE_LIMIT_WEEKLY="1"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_YEARLY="0"
 ```
 
 ## 色々インストール
