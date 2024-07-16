@@ -173,24 +173,6 @@ $ cd yay-bin
 $ makepkg -si
 ```
 
-## Snapper色々
-```
-# snapper -c root create-config /
-# snapper -c home create-config /home
-# snapper -c var create-config /var
-# systemctl enable snapper-{boot,cleanup,timeline}.timer
-```
-
-`/etc/snapper/configs/`配下のファイルを編集
-```
-TIMELINE_MIN_AGE="1800"
-TIMELINE_LIMIT_HOURLY="4"
-TIMELINE_LIMIT_DAILY="8"
-TIMELINE_LIMIT_WEEKLY="1"
-TIMELINE_LIMIT_MONTHLY="0"
-TIMELINE_LIMIT_YEARLY="0"
-```
-
 ## 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
@@ -214,6 +196,24 @@ $ sudo systemctl enable ly.service
 ```
 
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
+
+## Snapper色々
+```
+# snapper -c root create-config / (こ↑こ↓はなんか上手くいかなかったから調べてアドリブでやれ)
+# snapper -c home create-config /home
+# snapper -c var create-config /var
+# systemctl enable snapper-{boot,cleanup,timeline}.timer
+```
+
+`/etc/snapper/configs/`配下のファイルを編集
+```
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="4"
+TIMELINE_LIMIT_DAILY="8"
+TIMELINE_LIMIT_WEEKLY="1"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+```
 
 ## 更に色々インスコ
 ```
