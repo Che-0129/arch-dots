@@ -34,12 +34,12 @@ Wi-Fi接続
 マウント（例）
 
 ```
-# mount -o noatime,compress=zstd:1,space_cache,subvol=@root /dev/sda2 /mnt
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@root /dev/sda2 /mnt
 # mkdir /mnt/{boot,var,home,.snapshots}
 # mount /dev/nvme0n1p1 /mnt/boot
-# mount -o noatime,compress=zstd:1,space_cache,subvol=@var /dev/sda2 /mnt/var
-# mount -o noatime,compress=zstd:1,space_cache,subvol=@home /dev/sda2 /mnt/home
-# mount -o noatime,compress=zstd:1,space_cache,subvol=@snapshots /dev/sda2 /mnt/.snapshots
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var /dev/sda2 /mnt/var
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/sda2 /mnt/home
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@snapshots /dev/sda2 /mnt/.snapshots
 ```
 
 ベースシステムインストール（カーネルはお好みのものを）
@@ -50,7 +50,7 @@ Wi-Fi接続
 
 スワップファイル作成(1GiB)
 ```
-# btrfs subvolume create /mnt/swap
+# btrfs subvolume create /mnt/@swap
 # btrfs filesystem mkswapfile --size 1g --uuid clear /mnt/swap/swapfile
 # chmod 600 /mnt/swap/swapfile
 # swapon /mnt/swap/swapfile
