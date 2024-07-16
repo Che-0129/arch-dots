@@ -1,37 +1,37 @@
 # Arch Linux 最小インストール
-日本語キーボード読み込み
+## 日本語キーボード読み込み
 
 ```
 # loadkeys jp106
 ```
 
-Wi-Fi接続
+## Wi-Fi接続
 
 ```
 # iwctl station wlan0 connect {SSID}
 ```
 
-パーティション切り(boot 512MiB, サブボリューム用 残り全部)
+## パーティション切り(boot 512MiB, サブボリューム用 残り全部)
 
 ```
 # gdisk /dev/nvme0n1
 ```
 
-フォーマット（例）
+## フォーマット
 
 ```
 # mkfs.vfat -F32 /dev/nvme0n1p1
 # mkfs.btrfs -f /dev/nvme0n1p2
 ```
 
-サブボリューム作成
+## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
 # btrfs subvolume create /mnt/@{root,var,home,snapshots}
 # umount /mnt
 ```
 
-マウント（例）
+## マウント（例）
 
 ```
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@root /dev/sda2 /mnt
@@ -42,13 +42,13 @@ Wi-Fi接続
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@snapshots /dev/sda2 /mnt/.snapshots
 ```
 
-ベースシステムインストール（カーネルはお好みのものを）
+## ベースシステムインストール（カーネルはお好みのものを）
 
 ```
 # pacstrap -K /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish snapper
 ```
 
-スワップファイル作成(2GiB)
+## スワップファイル作成(2GiB)
 ```
 # btrfs subvolume create /mnt/@swap
 # btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/swap/swapfile
@@ -56,67 +56,67 @@ Wi-Fi接続
 # swapon /mnt/swap/swapfile
 ```
 
-fstab生成
+## fstab生成
 
 ```
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-pacstrapでインストールしたシステムに入る
+## pacstrapでインストールしたシステムに入る
 
 ```
 # arch-chroot /mnt /bin/fish
 ```
 
-locale.gen編集（en_US.UTF-8とja_JP.UTF-8をアンコメント）
+## locale.gen編集（en_US.UTF-8とja_JP.UTF-8をアンコメント）
 
 ```
 # nvim /etc/locale.gen
 ```
 
-ロケール生成
+## ロケール生成
 
 ```
 # locale-gen
 ```
 
-使用言語、キーボードの設定
+## 使用言語、キーボードの設定
 
 ```
 # echo LANG=en_US.UTF-8 > /etc/locale.conf
 # echo KEYMAP=jp106 > /etc/vconsole.conf
 ```
 
-タイムゾーン設定
+## タイムゾーン設定
 
 ```
 # ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 # hwclock --systohc --utc
 ```
 
-ホストネーム設定
+## ホストネーム設定
 
 ```
 # echo {hostname} > /etc/hostname
 ```
 
-NetworkManager有効化
+## NetworkManager有効化
 ```
 # systemctl enable NetworkManager
 ```
 
-mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換え、`fsck`を削除)
+## mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換え、`fsck`を削除)
 ```
 # nvim /etc/mkinitcpio.conf
 ```
 
-systemd-bootをインストール
+## systemd-bootをインストール
 
 ```
 # bootctl install
 ```
 
-/boot/loader/entries/zen.confに以下を追記
+## /boot/loader/entries/zen.confに以下を追記
 
 ```
 title Arch Linux (linux-zen)
@@ -126,19 +126,19 @@ initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
 
-rootユーザーのパスワードを変更
+## rootユーザーのパスワードを変更
 
 ```
 # passwd
 ```
 
-非rootユーザー作成
+## 非rootユーザー作成
 ```
 # useradd -m -G wheel -s $(which fish) {username}
 # passwd {username}
 ```
 
-visudoの設定
+## visudoの設定
 ```
 # EDITOR=nvim visudo
 ```
@@ -155,17 +155,35 @@ visudoの設定
 
 上記２つを追加
 
-`exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
+## Snapper色々
+```
+# snapper -c root create-config /
+# snapper -c home create-config /home
+# snapper -c var create-config /var
+# systemctl enable snapper-{boot,cleanup,timeline}.timer
+```
 
-再起動後ログインし、`nmtui`でネットに接続
+`/etc/snapper/configs/`配下のファイルを編集
+```
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="4"
+TIMELINE_LIMIT_DAILY="8"
+TIMELINE_LIMIT_WEEKLY="1"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+```
 
-ユーザーディレクトリの作成
+## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
+
+## 再起動後ログインし、`nmtui`でネットに接続
+
+## ユーザーディレクトリの作成
 ```
 $ sudo pacman -S xdg-user-dirs
 $ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 ```
 
-yayをインストール
+## yayをインストール
 ```
 $ sudo pacman -S git
 $ git clone https://aur.archlinux.org/yay-bin.git
@@ -173,7 +191,7 @@ $ cd yay-bin
 $ makepkg -si
 ```
 
-色々インストール
+## 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
 $ sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
@@ -182,22 +200,22 @@ $ sudo pacman -S ranger zip unzip atool
 $ sudo pacman -S npm libnotify eza bat wl-clipboard
 ```
 
-このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
+##このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
 
-xremapのセットアップ（このリポジトリのシェルスクリプト）
+## xremapのセットアップ（このリポジトリのシェルスクリプト）
 ```
 $ chmod +x ./arch-dots/xremap-setup.sh
 $ ./arch-dots/xremap-setup.sh
 ```
 
-ディスプレイマネージャー有効化
+## ディスプレイマネージャー有効化
 ```
 $ sudo systemctl enable ly.service
 ```
 
-/etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
+## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
 
-更に色々インスコ
+## 更に色々インスコ
 ```
 $ sudo pacman -S firefox firefox-i18n-ja thunderbird thunderbird-i18n-ja
 $ sudo pacman -S fcitx5-im
