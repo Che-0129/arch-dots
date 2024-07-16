@@ -34,18 +34,18 @@
 ## マウント（例）
 
 ```
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@root /dev/sda2 /mnt
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@root /dev/nvme0n1p2 /mnt
 # mkdir /mnt/{boot,var,home,.snapshots}
 # mount /dev/nvme0n1p1 /mnt/boot
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var /dev/sda2 /mnt/var
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/sda2 /mnt/home
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@snapshots /dev/sda2 /mnt/.snapshots
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var /dev/nvme0n1p2 /mnt/var
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@snapshots /dev/nvme0n1p2 /mnt/.snapshots
 ```
 
 ## ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap -K /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish snapper
+# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish snapper
 ```
 
 ## スワップファイル作成(2GiB)
