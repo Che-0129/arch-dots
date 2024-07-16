@@ -65,7 +65,7 @@ fstab生成
 pacstrapでインストールしたシステムに入る
 
 ```
-# arch-chroot /mnt
+# arch-chroot /mnt /bin/fish
 ```
 
 locale.gen編集（en_US.UTF-8とja_JP.UTF-8をアンコメント）
