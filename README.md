@@ -45,13 +45,13 @@ Wi-Fi接続
 ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap -K /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -K /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish snapper
 ```
 
-スワップファイル作成(1GiB)
+スワップファイル作成(2GiB)
 ```
 # btrfs subvolume create /mnt/@swap
-# btrfs filesystem mkswapfile --size 1g --uuid clear /mnt/swap/swapfile
+# btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/swap/swapfile
 # chmod 600 /mnt/swap/swapfile
 # swapon /mnt/swap/swapfile
 ```
