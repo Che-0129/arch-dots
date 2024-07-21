@@ -179,7 +179,7 @@ $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
 $ sudo pacman -S hypr{land,paper,idle,lock} xdg-desktop-portal-hyprland brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
 $ sudo pacman -S pipewire pipewire-pulse wireplumber
 $ sudo pacman -S ranger zip unzip atool
-$ sudo pacman -S npm libnotify eza bat wl-clipboard
+$ sudo pacman -S npm libnotify eza bat wl-clipboard less
 ```
 
 ##このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
@@ -202,7 +202,7 @@ $ sudo systemctl enable ly.service
 # snapper -c root create-config / (こ↑こ↓はなんか上手くいかなかったから調べてアドリブでやれ)
 # snapper -c home create-config /home
 # snapper -c var create-config /var
-# systemctl enable snapper-{boot,cleanup,timeline}.timer
+# systemctl enable snapper-{cleanup,timeline}.timer
 ```
 
 `/etc/snapper/configs/`配下のファイルを編集
