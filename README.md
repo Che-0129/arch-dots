@@ -45,7 +45,7 @@
 ## ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish snapper
+# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(2GiB)
@@ -179,10 +179,10 @@ $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
 $ sudo pacman -S hypr{land,paper,idle,lock} xdg-desktop-portal-hyprland brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
 $ sudo pacman -S pipewire pipewire-pulse wireplumber
 $ sudo pacman -S ranger zip unzip atool
-$ sudo pacman -S npm libnotify eza bat wl-clipboard less
+$ sudo pacman -S npm libnotify eza bat wl-clipboard less snapper
 ```
 
-##このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
+## このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
 
 ## xremapのセットアップ（このリポジトリのシェルスクリプト）
 ```
