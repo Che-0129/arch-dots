@@ -56,12 +56,14 @@
 "backlight": {
     "device": "amdgpu_bl1",
     "format": "󰃠 {percent}%",
-    "interval": 1
+    "interval": 1,
+    "tooltip": false
 },
 "wireplumber": {
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 Muted",
-    "format-icons": ["", "", ""]
+    "format-icons": ["", "", ""],
+    "tooltip": false
 },
 "custom/wlogout": {
     "format": " ⏻ ",
