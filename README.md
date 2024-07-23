@@ -182,12 +182,11 @@ $ sudo pacman -S ranger zip unzip atool
 $ sudo pacman -S npm libnotify eza bat wl-clipboard less snapper
 ```
 
-## このリポジトリのドットファイル達を.config/にぶち込んでNeovimを一般ユーザーで起動しプラグインをインストール
-
-## xremapのセットアップ（このリポジトリのシェルスクリプト）
+## dotfiles
 ```
-$ chmod +x ./arch-dots/xremap-setup.sh
-$ ./arch-dots/xremap-setup.sh
+$ git clone https://github.com/Quasar-0330/arch-dots
+$ chmod +x arch-dots/install.sh
+$ bash arch-dots/install.sh
 ```
 
 ## ディスプレイマネージャー有効化
