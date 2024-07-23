@@ -51,8 +51,8 @@
 ## スワップファイル作成(2GiB)
 ```
 # btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/swapfile
-# chmod 600 /mnt/swap/swapfile
-# swapon /mnt/swap/swapfile
+# chmod 600 /mnt/swapfile
+# swapon /mnt/swapfile
 ```
 
 ## fstab生成
