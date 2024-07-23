@@ -1,6 +1,9 @@
 #!/bin/bash
-mv -f ./config/* ~/.config/
+
+rm -rf ~/.config/fish
+mv ./configs/* ~/.config/
 bash ./xremap-setup.sh
+
 sudo cat << 'EOT' | sudo tee /etc/systemd/system/disable-USB-wakeup.service
 [Unit]
 Description=Disable USB wakeup triggers in /proc/acpi/wakeup
@@ -14,3 +17,5 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 EOT
+
+sudo systemctl enable disable-USB-wakeup.service
