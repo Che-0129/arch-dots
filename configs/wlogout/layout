@@ -5,7 +5,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "playerctl pause ; hyprlock & sleep 1 ; systemctl suspend",
+    "action" : "playerctl pause ; hyprlock & sleep 0.5 ; systemctl suspend",
     "text" : "Suspend"
 }
 {
