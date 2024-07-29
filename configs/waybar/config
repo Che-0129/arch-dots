@@ -5,14 +5,23 @@
 "margin-top": 4,
 "margin-right": 4,
 "margin-left": 4,
-"modules-left": ["custom/arch","cpu","memory","battery"],
+"modules-left": ["hyprland/workspaces","cpu","memory","battery"],
 "modules-center": ["clock"],
 "modules-right": ["hyprland/window","tray","backlight","wireplumber","custom/wlogout"],
 
-"custom/arch": {
-    "format": " 󰣇 ",
-    "tooltip": false,
-    "on-click": "wofi --show drun"
+"hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "sort-by-number": true,
+    "disable-scroll": true,
+    "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+    }
 },
 "cpu": {
     "format": " &#8239;{usage}%",
