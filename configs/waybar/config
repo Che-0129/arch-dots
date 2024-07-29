@@ -47,7 +47,8 @@
 "clock": {
     "locale": "C",
     "format": "{:%Y-%m-%d / %H:%M:%S}",
-    "interval": 1
+    "interval": 1,
+    "tooltip": false
 },
 "hyprland/window": {
     "format": "{}",
