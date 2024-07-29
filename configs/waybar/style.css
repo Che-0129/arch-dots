@@ -25,6 +25,10 @@ window#waybar {
     border-radius: 16px;
 }
 
+#workspaces button.empty {
+    border-radius: 16px;
+}
+
 #cpu {
     padding: 0 10px;
     background: #404552;
