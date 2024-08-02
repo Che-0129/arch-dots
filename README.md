@@ -174,7 +174,7 @@ $ makepkg -si
 
 ## 色々インストール
 ```
-$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
+$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp hyprshot
 $ sudo pacman -S hypr{land,paper,idle,lock} xdg-desktop-portal-hyprland brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
 $ sudo pacman -S pipewire pipewire-pulse wireplumber
 $ sudo pacman -S ranger zip unzip atool
