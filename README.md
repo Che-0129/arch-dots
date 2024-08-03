@@ -174,11 +174,11 @@ $ makepkg -si
 
 ## 色々インストール
 ```
-$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp hyprshot
+$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp hyprshot clipse
 $ sudo pacman -S hypr{land,paper,idle,lock} xdg-desktop-portal-hyprland brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
 $ sudo pacman -S pipewire pipewire-pulse wireplumber
 $ sudo pacman -S ranger zip unzip atool
-$ sudo pacman -S npm libnotify eza bat wl-clipboard less snapper cliphist
+$ sudo pacman -S npm libnotify eza bat wl-clipboard less snapper
 ```
 
 ## dotfiles
