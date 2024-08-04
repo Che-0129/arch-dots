@@ -202,9 +202,11 @@ $ sudo systemctl enable ly.service
 $ sudo nvim /etc/conf.d/snapper
 ```
 
-`/etc/snapper/configs/`配下のファイルを編集
+`/etc/snapper/configs/`配下の全てのファイルを編集
 ```
 SUBVOLUME="{ANYPATH}"
+
+~~~~~~~~~~~~~~~~~~~~~
 
 TIMELINE_MIN_AGE="1800"
 TIMELINE_LIMIT_HOURLY="4"
