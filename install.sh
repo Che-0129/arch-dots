@@ -1,8 +1,8 @@
 #!/bin/bash
 
 rm -rf ~/.config/fish
-mv ./configs/* ~/.config/
-bash ./xremap-setup.sh
+mv $(cd $(dirname $0) && pwd)/configs/* ~/.config/
+bash $(cd $(dirname $0) && pwd)/xremap-setup.sh
 
 sudo cat << 'EOT' | sudo tee /etc/systemd/system/disable-USB-wakeup.service
 [Unit]
