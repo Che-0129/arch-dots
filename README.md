@@ -35,7 +35,7 @@
 ## マウント（例）
 
 ```
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@root /dev/nvme0n1p2 /mnt
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
 # mkdir /mnt/{boot,var,home,.snapshots}
 # mount /dev/nvme0n1p1 /mnt/boot
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var /dev/nvme0n1p2 /mnt/var
