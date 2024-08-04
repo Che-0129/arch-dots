@@ -196,11 +196,10 @@ $ sudo systemctl enable ly.service
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
 
 ## Snapper色々
+# 設定ファイル編集
+`SNAPPER_CONFIGS=""` => `SNAPPER_CONFIGS="root home var"`
 ```
-# snapper -c root create-config / (こ↑こ↓はなんか上手くいかなかったから調べてアドリブでやれ)
-# snapper -c home create-config /home
-# snapper -c var create-config /var
-# systemctl enable snapper-{cleanup,timeline}.timer
+$ sudo nvim /etc/conf.d/snapper
 ```
 
 `/etc/snapper/configs/`配下のファイルを編集
