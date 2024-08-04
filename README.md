@@ -176,8 +176,8 @@ $ makepkg -si
 ## 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp hyprshot clipse batsignal
-$ sudo pacman -S hypr{land,paper,idle,lock} xdg-desktop-portal-hyprland brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly
-$ sudo pacman -S pipewire pipewire-pulse wireplumber
+$ yay -S  hypr{land,paper,idle,lock}-git  xdg-desktop-portal-hyprland-git
+$ sudo pacman -S brightnessctl archlinux-wallpaper mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly pipewire-pulse
 $ sudo pacman -S ranger zip unzip atool
 $ sudo pacman -S npm eza bat less snapper
 ```
