@@ -45,7 +45,7 @@
 ## ベースシステムインストール（カーネルはお好みのものを）
 
 ```
-# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish snapper
 ```
 
 ## スワップファイル作成(2GiB)
