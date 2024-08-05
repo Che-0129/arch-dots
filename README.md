@@ -154,6 +154,28 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 
 上記２つを追加
 
+## Snapper色々
+### 設定ファイル作成
+```
+ # snapper -c root create-config /
+ # snapper -c home create-config /home
+```
+
+`/etc/snapper/configs/`配下の`root` `home`を編集
+```
+SUBVOLUME="{ANYPATH}"
+
+~~~~~~~~~~~~~~~~~~~~~
+
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="4"
+TIMELINE_LIMIT_DAILY="8"
+TIMELINE_LIMIT_WEEKLY="1"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_QUARTERLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+```
+
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
 ## 再起動後ログインし、`nmtui`でネットに接続
@@ -194,28 +216,6 @@ $ sudo systemctl enable ly.service
 ```
 
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
-
-## Snapper色々
-### 設定ファイル作成
-```
- $ snapper -c root create-config /
- $ snapper -c home create-config /home
-```
-
-`/etc/snapper/configs/`配下の`root` `home`を編集
-```
-SUBVOLUME="{ANYPATH}"
-
-~~~~~~~~~~~~~~~~~~~~~
-
-TIMELINE_MIN_AGE="1800"
-TIMELINE_LIMIT_HOURLY="4"
-TIMELINE_LIMIT_DAILY="8"
-TIMELINE_LIMIT_WEEKLY="1"
-TIMELINE_LIMIT_MONTHLY="0"
-TIMELINE_LIMIT_QUARTERLY="0"
-TIMELINE_LIMIT_YEARLY="0"
-```
 
 ## 更に色々インスコ
 ```
