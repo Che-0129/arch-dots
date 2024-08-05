@@ -196,15 +196,10 @@ $ sudo systemctl enable ly.service
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
 
 ## Snapper色々
-### 設定ファイル編集
-`SNAPPER_CONFIGS=""` => `SNAPPER_CONFIGS="root home"`
-```
-$ sudo nvim /etc/conf.d/snapper
-```
-
 ### 設定ファイル作成
 ```
-$ sudo cp /usr/share/snapper/config-templates/default /etc/snapper/configs/{root,home}
+ $ snapper -c root create-config /
+ $ snapper -c home create-config /home
 ```
 
 `/etc/snapper/configs/`配下の`root` `home`を編集
