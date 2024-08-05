@@ -27,7 +27,7 @@
 ## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs subvolume create /mnt/@{,var,home,snapshots}
+# btrfs subvolume create /mnt/@{,var_log,var_pkg,home}
 # umount /mnt
 ```
 
@@ -35,11 +35,11 @@
 
 ```
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
-# mkdir /mnt/{boot,var,home,.snapshots}
+# mkdir -p /mnt/{boot,var/log,var/cache/pacman/pkg,home}
 # mount /dev/nvme0n1p1 /mnt/boot
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var /dev/nvme0n1p2 /mnt/var
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var_log /dev/nvme0n1p2 /mnt/var/log
+# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var_pkg /dev/nvme0n1p2 /mnt/var/cache/pacman/pkg
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@snapshots /dev/nvme0n1p2 /mnt/.snapshots
 ```
 
 ## ベースシステムインストール（カーネルはお好みのものを）
@@ -197,17 +197,17 @@ $ sudo systemctl enable ly.service
 
 ## Snapper色々
 ### 設定ファイル編集
-`SNAPPER_CONFIGS=""` => `SNAPPER_CONFIGS="root home var"`
+`SNAPPER_CONFIGS=""` => `SNAPPER_CONFIGS="root home"`
 ```
 $ sudo nvim /etc/conf.d/snapper
 ```
 
 ### 設定ファイル作成
 ```
-$ sudo cp /usr/share/snapper/config-templates/default /etc/snapper/configs/{root,home,var}
+$ sudo cp /usr/share/snapper/config-templates/default /etc/snapper/configs/{root,home}
 ```
 
-`/etc/snapper/configs/`配下の`root` `home` `var`を編集
+`/etc/snapper/configs/`配下の`root` `home`を編集
 ```
 SUBVOLUME="{ANYPATH}"
 
