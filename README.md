@@ -50,9 +50,10 @@
 
 ## スワップファイル作成(2GiB)
 ```
-# btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/swapfile
-# chmod 600 /mnt/swapfile
-# swapon /mnt/swapfile
+# btrfs subvolume create /mnt/@swap
+# btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/@swap/swapfile
+# chmod 600 /mnt/@swap/swapfile
+# swapon /mnt/@swap/swapfile
 ```
 
 ## fstab生成
@@ -104,7 +105,7 @@
 # systemctl enable NetworkManager
 ```
 
-## mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換え、`fsck`を削除)
+## mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換え、`consolefont` `fsck`を削除)
 ```
 # nvim /etc/mkinitcpio.conf
 ```
@@ -203,10 +204,6 @@ $ sudo systemctl enable ly.service
 
 `/etc/snapper/configs/`配下の`root` `home`を編集
 ```
-SUBVOLUME="{ANYPATH}"
-
-~~~~~~~~~~~~~~~~~~~~~
-
 TIMELINE_MIN_AGE="1800"
 TIMELINE_LIMIT_HOURLY="4"
 TIMELINE_LIMIT_DAILY="8"
