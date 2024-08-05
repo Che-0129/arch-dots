@@ -198,8 +198,8 @@ $ sudo systemctl enable ly.service
 ## Snapper色々
 ### 設定ファイル作成
 ```
- # snapper -c root create-config /
- # snapper -c home create-config /home
+ $ sudo snapper -c root create-config /
+ $ sudo snapper -c home create-config /home
 ```
 
 `/etc/snapper/configs/`配下の`root` `home`を編集
@@ -215,7 +215,7 @@ TIMELINE_LIMIT_YEARLY="0"
 
 ### タイマー有効化
 ```
-$ sudo systemctl enable snapper-{timeline,cleanup}.timer
+$ sudo systemctl enable snapper-cleanup.timer
 ```
 
 ## 更に色々インスコ
