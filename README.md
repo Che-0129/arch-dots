@@ -218,9 +218,7 @@ TIMELINE_LIMIT_YEARLY="0"
 $ sudo systemctl enable snapper-cleanup.timer
 ```
 
-## 更に色々インスコ
+## 入力メソッドインスコ
 ```
-$ sudo pacman -S firefox firefox-i18n-ja thunderbird thunderbird-i18n-ja
-$ sudo pacman -S fcitx5-im
-$ yay -S fcitx5-mozc-ut fcitx5-skin-arc
+$ yay -S fcitx5-im fcitx5-mozc-ut fcitx5-skin-arc
 ```
