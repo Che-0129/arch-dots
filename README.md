@@ -42,7 +42,19 @@
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
-## ベースシステムインストール(`pacman.conf` `mirrorlist`の設定を済ませておく)
+## pacmanの設定
+`Color`をアンコメントし`ILoveCandy`を追加
+extraリポジトリの部分もアンコメント
+```
+# nvim /etc/pacman.conf
+```
+
+## reflector
+```
+# reflector --country 'Japan' --age 24 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+## ベースシステムインストール
 
 ```
 # pacstrap -K -P -i /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
