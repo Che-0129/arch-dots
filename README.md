@@ -42,7 +42,7 @@
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
-## ベースシステムインストール
+## ベースシステムインストール(`pacman.conf` `mirrorlist`の設定を済ませておく)
 
 ```
 # pacstrap -K -P -i /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
