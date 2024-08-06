@@ -31,7 +31,7 @@
 # umount /mnt
 ```
 
-## マウント（例）
+## マウント
 
 ```
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
@@ -42,10 +42,10 @@
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
-## ベースシステムインストール（カーネルはお好みのものを）
+## ベースシステムインストール
 
 ```
-# pacstrap /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -K -P -i /mnt base base-devel linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(2GiB)
