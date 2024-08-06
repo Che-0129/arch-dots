@@ -123,6 +123,11 @@ extraリポジトリの部分もアンコメント
 # nvim /etc/mkinitcpio.conf
 ```
 
+## mkinicpio 再生成
+```
+# mkinitcpio -P
+```
+
 ## systemd-bootをインストール
 
 ```
