@@ -237,5 +237,12 @@ $ sudo systemctl enable snapper-cleanup.timer
 
 ## 入力メソッドインスコ
 ```
-$ yay -S fcitx5-im fcitx5-mozc-ut fcitx5-skin-arc
+$ yay -S fcitx5-{im,mozc-ut,skin-arc}
+```
+
+## その他アプリケーション
+```
+$ sudo pacman -S {firefox,thunderbird}{,-18n-ja}
+$ sudo pacman -S steam
+$ yay -S discord_arch_electron proton-ge-custom-bin
 ```
