@@ -27,7 +27,7 @@
 ## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs subvolume create /mnt/@{,var_log,var_pkg,home}
+# btrfs su cr /mnt/@{,var_log,var_pkg,home}
 # umount /mnt
 ```
 
