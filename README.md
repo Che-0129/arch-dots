@@ -118,7 +118,7 @@ extraリポジトリの部分もアンコメント
 # systemctl enable NetworkManager
 ```
 
-## mkinitcpioの設定を編集(HOOKS=(...)の中の`base udev`を`systemd`に置き換え、`consolefont` `fsck`を削除)
+## mkinitcpioの設定を編集(HOOKS=(...)の中の`udev`を`systemd`に置き換え、`consolefont`を削除)
 ```
 # nvim /etc/mkinitcpio.conf
 ```
