@@ -63,7 +63,7 @@ extraリポジトリの部分もアンコメント
 
 ## スワップファイル作成(2GiB)
 ```
-# btrfs subvolume create /mnt/@swap
+# btrfs su cr /mnt/@swap
 # btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/@swap/swapfile
 # chmod 600 /mnt/@swap/swapfile
 # swapon /mnt/@swap/swapfile
