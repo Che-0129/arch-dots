@@ -27,7 +27,7 @@
 ## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs su cr /mnt/@{,var_log,var_pkg,home}
+# btrfs su c /mnt/@{,var_log,var_pkg,home}
 # umount /mnt
 ```
 
@@ -63,8 +63,8 @@ extraリポジトリの部分もアンコメント
 
 ## スワップファイル作成(2GiB)
 ```
-# btrfs su cr /mnt/@swap
-# btrfs filesystem mkswapfile --size 2g --uuid clear /mnt/@swap/swapfile
+# btrfs su c /mnt/@swap
+# btrfs fi m -s 2g -U clear /mnt/@swap/swapfile
 # chmod 600 /mnt/@swap/swapfile
 # swapon /mnt/@swap/swapfile
 ```
