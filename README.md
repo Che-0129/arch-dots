@@ -52,7 +52,7 @@ extraリポジトリの部分もアンコメント
 
 ## reflector
 ```
-# reflector --country 'Japan' --age 24 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector -c Japan -a 24 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 ## ベースシステムインストール
