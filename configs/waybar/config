@@ -10,7 +10,7 @@
 "modules-right": ["hyprland/window","tray","backlight","wireplumber","custom/wlogout"],
 
 "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
