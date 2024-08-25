@@ -9,6 +9,10 @@ window#waybar {
     background: transparent;
 }
 
+#workspaces * {
+    font-size: 13px;
+}
+
 #workspaces {
     background: #404552;
     border-radius: 16px;
@@ -19,16 +23,6 @@ window#waybar {
 #workspaces button {
     border-radius: 16px;
     padding: 1px 8px;
-}
-
-#workspaces button:nth-child(1) {
-    padding-right: 8px;
-    padding-left: 6px;
-}
-
-#workspaces button:nth-child(2) {
-    padding-right: 8px;
-    padding-left: 6px;
 }
 
 #workspaces button.active {
