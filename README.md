@@ -193,7 +193,8 @@ $ makepkg -si
 ## 色々インストール
 ```
 $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp clipse batsignal
-$ yay -S  hypr{land,paper,idle,lock,shot}-git  xdg-desktop-portal-hyprland-git
+$ yay -S --asdeps hypr{cursor,lang,utils,wayland-scanner}-git aquamarine-git
+$ yay -S hypr{land,lock,idle,shot,paper}-git xdg-desktop-portal-hyprland-git
 $ sudo pacman -S mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly pipewire-pulse
 $ sudo pacman -S ranger {,un}zip atool npm eza bat less snapper brightnessctl archlinux-wallpaper
 ```
