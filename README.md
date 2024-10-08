@@ -27,7 +27,7 @@
 ## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs su c /mnt/@{,var_log,var_pkg,home}
+# btrfs su c /mnt/@{,home}
 # umount /mnt
 ```
 
@@ -35,10 +35,8 @@
 
 ```
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
-# mkdir -p /mnt/{boot,var/log,var/cache/pacman/pkg,home}
+# mkdir /mnt/{boot,home}
 # mount /dev/nvme0n1p1 /mnt/boot
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var_log /dev/nvme0n1p2 /mnt/var/log
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@var_pkg /dev/nvme0n1p2 /mnt/var/cache/pacman/pkg
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
