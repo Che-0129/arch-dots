@@ -196,7 +196,7 @@ $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp clipse batsignal
 $ yay -S --asdeps hypr{cursor,lang,utils,wayland-scanner}-git aquamarine-git
 $ yay -S hypr{land,lock,idle,shot,paper}-git xdg-desktop-portal-hyprland-git
 $ sudo pacman -S mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-look ly pipewire-pulse
-$ sudo pacman -S ranger {,un}zip atool npm eza bat less snapper brightnessctl archlinux-wallpaper
+$ sudo pacman -S ranger {,un}zip atool npm eza bat less brightnessctl archlinux-wallpaper
 ```
 
 ## dotfiles
@@ -212,29 +212,6 @@ $ sudo systemctl enable ly.service
 ```
 
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
-
-## Snapper色々
-### 設定ファイル作成
-```
- $ sudo snapper -c root create-config /
- $ sudo snapper -c home create-config /home
-```
-
-`/etc/snapper/configs/`配下の`root` `home`を編集
-```
-TIMELINE_MIN_AGE="1800"
-TIMELINE_LIMIT_HOURLY="4"
-TIMELINE_LIMIT_DAILY="8"
-TIMELINE_LIMIT_WEEKLY="1"
-TIMELINE_LIMIT_MONTHLY="0"
-TIMELINE_LIMIT_QUARTERLY="0"
-TIMELINE_LIMIT_YEARLY="0"
-```
-
-### タイマー有効化
-```
-$ sudo systemctl enable snapper-cleanup.timer
-```
 
 ## 入力メソッドインスコ
 ```
