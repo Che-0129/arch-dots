@@ -116,16 +116,6 @@ extraリポジトリの部分もアンコメント
 # systemctl enable NetworkManager
 ```
 
-## mkinitcpioの設定を編集(HOOKS=(...)の中の`udev`を`systemd`に置き換え、`consolefont`を削除)
-```
-# nvim /etc/mkinitcpio.conf
-```
-
-## mkinicpio 再生成
-```
-# mkinitcpio -P
-```
-
 ## systemd-bootをインストール
 
 ```
