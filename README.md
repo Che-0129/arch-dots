@@ -203,7 +203,8 @@ $ sudo systemctl enable ly.service
 ## 入力メソッドインスコ
 ```
 $ sudo pacman -S fcitx5-im
-$ yay -S fcitx5-{mozc-ut,skin-arc}
+$ yay -S fcitx5-mozc-ut
+$ yay -S fcitx5-skin-arc
 ```
 
 ## その他アプリケーション
