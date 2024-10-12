@@ -56,7 +56,7 @@ extraリポジトリの部分もアンコメント
 ## ベースシステムインストール
 
 ```
-# pacstrap -K -P -i /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -KPi /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(2GiB)
