@@ -42,7 +42,7 @@
 
 ## pacmanの設定
 ```
-# nvim /etc/pacman.conf
+# vim /etc/pacman.conf
 ```
 `Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加
 
