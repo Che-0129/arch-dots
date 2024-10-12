@@ -79,10 +79,11 @@ extraリポジトリの部分もアンコメント
 # arch-chroot /mnt /bin/fish
 ```
 
-## locale.gen編集（en_US.UTF-8とja_JP.UTF-8をアンコメント）
+## locale.genのやつ
 
 ```
-# nvim /etc/locale.gen
+# echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+# echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen
 ```
 
 ## ロケール生成
