@@ -11,7 +11,7 @@
 # iwctl station wlan0 connect {SSID} --passphrase {password}
 ```
 
-## パーティション切り(boot 512MiB, サブボリューム用 残り全部)
+## パーティション切り(boot 1GiB, サブボリューム用 残り全部)
 
 ```
 # gdisk /dev/nvme0n1
@@ -59,10 +59,10 @@ extraリポジトリの部分もアンコメント
 # pacstrap -KPi /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
-## スワップファイル作成(2GiB)
+## スワップファイル作成(4GiB)
 ```
 # btrfs su c /mnt/@swap
-# btrfs fi m -s 2g -U clear /mnt/@swap/swapfile
+# btrfs fi m -s 4g -U clear /mnt/@swap/swapfile
 # chmod 600 /mnt/@swap/swapfile
 # swapon /mnt/@swap/swapfile
 ```
@@ -103,7 +103,7 @@ extraリポジトリの部分もアンコメント
 
 ```
 # ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-# hwclock --systohc --utc
+# hwclock --systohc
 ```
 
 ## ホストネーム設定
