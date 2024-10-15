@@ -103,7 +103,7 @@ extraリポジトリの部分もアンコメント
 
 ```
 # ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-# hwclock --systohc
+# hwclock -w
 ```
 
 ## ホストネーム設定
