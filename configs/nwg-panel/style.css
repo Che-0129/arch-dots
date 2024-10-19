@@ -1,0 +1,98 @@
+/***** SUGGESTED TO CHANGE CAREFULLY *****/
+* {
+    border-radius: 16px;
+}
+
+/* Recommended if panel "height" unset or smaller then your theme default button height */
+button {
+}
+
+/* SwayTaskBar and SwayWorkspaces use custom widgets, that need this and the next name
+   to highlight currently focused task / workspace. */
+#task-box {
+    padding-left: 4px;
+    padding-right: 4px
+}
+
+#task-box-focused {
+    background-color: rgba (255, 255, 255, 0.12);
+    padding-left: 4px;
+    padding-right: 4px
+}
+
+
+/***** MODIFY TO YOUR TASTE *****/
+
+/* Sample button in sample config w/ no background nor border */
+#button-exit {
+    background: #404552;
+    border: 2px solid #26D9E6;
+    margin-right: 4px;
+    margin-left: 8px;
+}
+
+/* Top panel in sample config uses this name */
+#panel-top {
+    background: transparent;
+    color: #eeeeee
+}
+
+/* Executors usually behave better in monospace fonts */
+#executor-label {
+    font-family: NotoSansCJKjp
+}
+
+#root-cpuav {
+    background: #404552;
+    border-radius: 0;
+    border-bottom: 2px solid #26D9E6;
+    border-top: 2px solid #26D9E6;
+}
+
+#cpuav {
+    padding-right: 16px;
+}
+
+#root-memory {
+    background: #404552;
+    border-radius: 0 16px 16px 0;
+    border-top: 2px solid #26D9E6;
+    border-bottom: 2px solid #26D9E6;
+    border-right: 2px solid #26D9E6;
+}
+
+#memory {
+    padding-right: 8px;
+}
+
+/* and so does the Clock */
+#clock {
+    font-family: NotoSansCJKjp;
+    font-size: 16px;
+    background: #404552;
+    border: 2px solid #26D9E6;
+    padding: 0 8px;
+}
+
+#hyprland-workspaces {
+    background: #404552;
+    border-radius: 16px 0 0 16px;
+    border-left: 2px solid #26D9E6;
+    border-top: 2px solid #26D9E6;
+    border-bottom: 2px solid #26D9E6;
+    margin-left: 4px;
+    padding-right: 24px;
+}
+
+#hyprland-workspaces-item {
+    padding: 0 8px;
+}
+
+#tray {
+    background: #404552;
+    border: 2px solid #26D9E6;
+}
+
+#inner-tray {
+    padding: 0 8px;
+}
