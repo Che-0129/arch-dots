@@ -1,14 +1,10 @@
-/***** SUGGESTED TO CHANGE CAREFULLY *****/
 * {
     border-radius: 16px;
 }
 
-/* Recommended if panel "height" unset or smaller then your theme default button height */
 button {
 }
 
-/* SwayTaskBar and SwayWorkspaces use custom widgets, that need this and the next name
-   to highlight currently focused task / workspace. */
 #task-box {
     padding-left: 4px;
     padding-right: 4px
@@ -20,24 +16,17 @@ button {
     padding-right: 4px
 }
 
-
-/***** MODIFY TO YOUR TASTE *****/
-
-/* Sample button in sample config w/ no background nor border */
 #button-exit {
     background: #404552;
     border: 2px solid #26D9E6;
-    margin-right: 4px;
     margin-left: 8px;
 }
 
-/* Top panel in sample config uses this name */
 #panel-top {
     background: transparent;
     color: #eeeeee
 }
 
-/* Executors usually behave better in monospace fonts */
 #executor-label {
     font-family: NotoSansCJKjp
 }
@@ -65,7 +54,6 @@ button {
     padding-right: 8px;
 }
 
-/* and so does the Clock */
 #clock {
     font-family: NotoSansCJKjp;
     font-size: 16px;
@@ -80,8 +68,8 @@ button {
     border-left: 2px solid #26D9E6;
     border-top: 2px solid #26D9E6;
     border-bottom: 2px solid #26D9E6;
-    margin-left: 4px;
     padding-right: 24px;
+    margin-left: 8px;
 }
 
 #hyprland-workspaces-item {
@@ -95,4 +83,20 @@ button {
 
 #inner-tray {
     padding: 0 8px;
+}
+
+#controls-overview {
+    font-size: 16px;
+    background: #404552;
+    border: 2px solid #26D9E6;
+    padding: 0 8px;
+    margin-left: 8px;
+}
+
+#controls-window {
+    color: #eeeeee;
+    font-size: 16px;
+    background: #404552;
+    border: 2px solid #26D9E6;
+    margin-top: 8px;
 }
