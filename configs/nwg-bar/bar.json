@@ -1,0 +1,17 @@
+[
+    {
+        "label": "Shutdown",
+        "exec": "systemctl poweroff",
+        "icon": "/usr/share/nwg-bar/images/system-shutdown.svg"
+    },
+    {
+        "label": "Suspend",
+        "exec": "playerctl pause ; hyprlock & sleep 0.5 ; systemctl suspend",
+        "icon": "/usr/share/nwg-bar/images/system-suspend.svg"
+    },
+    {
+        "label": "Reboot",
+        "exec": "systemctl reboot",
+        "icon": "/usr/share/nwg-bar/images/system-reboot.svg"
+    }
+]
