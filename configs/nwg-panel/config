@@ -4,11 +4,11 @@
     "output": "",
     "layer": "top",
     "position": "top",
-    "controls": "off",
+    "controls": "left",
     "width": "auto",
     "height": 28,
     "homogeneous": true,
-    "margin-top": 4,
+    "margin-top": 0,
     "margin-bottom": 0,
     "padding-horizontal": 0,
     "padding-vertical": 0,
@@ -42,37 +42,30 @@
       "icon-size": 16,
       "hover-opens": false,
       "leave-closes": true,
-      "click-closes": false,
+      "click-closes": true,
       "css-name": "controls-window",
-      "custom-items": [
-        {
-          "name": "Panel settings",
-          "icon": "nwg-panel",
-          "cmd": "nwg-panel-config"
-        }
-      ],
+      "custom-items": [],
       "menu": {
-        "name": "Exit",
-        "icon": "system-shutdown-symbolic",
-        "items": [
-          {
-            "name": "Lock",
-            "cmd": "swaylock -f -c 000000"
-          },
-          {
-            "name": "Logout",
-            "cmd": "swaymsg exit"
-          },
-          {
-            "name": "Reboot",
-            "cmd": "systemctl reboot"
-          },
-          {
-            "name": "Shutdown",
-            "cmd": "systemctl -i poweroff"
-          }
-        ]
-      }
+        "name": "",
+        "icon": "",
+        "items": []
+      },
+      "show-brightness": true,
+      "show-volume": true,
+      "show-battery": true,
+      "output-switcher": false,
+      "per-app-volume": false,
+      "backlight-controller": "brightnessctl",
+      "backlight-device": "",
+      "window-width": 0,
+      "window-margin-horizontal": 0,
+      "window-margin-vertical": 0,
+      "root-css-name": "controls-overview",
+      "battery-low-level": 20,
+      "battery-low-interval": 5,
+      "processes-label": "\u30d7\u30ed\u30bb\u30b9",
+      "readme-label": "README",
+      "angle": 0.0
     },
     "tray": {
       "root-css-name": "tray",
