@@ -165,12 +165,6 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 
 ## 再起動後ログインし、`nmtui`でネットに接続
 
-## ユーザーディレクトリの作成
-```
-$ sudo pacman -S xdg-user-dirs
-$ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
-```
-
 ## yayをインストール
 ```
 $ sudo pacman -S git
@@ -181,10 +175,15 @@ $ makepkg -si
 
 ## 色々インストール
 ```
-$ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland
-$ sudo pacman -S mako wofi noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse
-$ sudo pacman -S ranger {,un}zip atool aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly foot lxsession-gtk3
+$ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland mako wofi foot lxsession-gtk3
+$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse xdg-user-dirs
+$ sudo pacman -S ranger zip unzip atool aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly
 $ yay -S ttf-hackgen xremap-wlroots-bin ueberzugpp clipse-bin hyprshot
+```
+
+## ユーザーディレクトリの作成
+```
+$ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 ```
 
 ## dotfiles
