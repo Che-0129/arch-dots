@@ -183,8 +183,8 @@ $ makepkg -si
 ```
 $ yay -S hypr{land,lock,idle,shot,paper} xdg-desktop-portal-hyprland
 $ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
-$ sudo pacman -S mako waybar wofi lxsession-gtk3 foot noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,clipman,panel} ly pipewire-pulse
-$ sudo pacman -S ranger {,un}zip atool npm eza bat less brightnessctl archlinux-wallpaper udisks2
+$ sudo pacman -S mako waybar wofi noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,clipman,panel} pipewire-pulse
+$ sudo pacman -S ranger {,un}zip atool npm eza less brightnessctl archlinux-wallpaper udisks2 ly foot lxsession-gtk3
 ```
 
 ## dotfiles
