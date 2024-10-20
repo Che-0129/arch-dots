@@ -181,10 +181,10 @@ $ makepkg -si
 
 ## 色々インストール
 ```
-$ yay -S hypr{land,lock,idle,shot,paper} xdg-desktop-portal-hyprland
-$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp
-$ sudo pacman -S mako waybar wofi noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,clipman,panel} pipewire-pulse
+$ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland
+$ sudo pacman -S mako waybar wofi noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse
 $ sudo pacman -S ranger {,un}zip atool aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly foot lxsession-gtk3
+$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp clipse-bin hyprshot
 ```
 
 ## dotfiles
