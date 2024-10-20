@@ -6,7 +6,7 @@
     },
     {
         "label": "Suspend",
-        "exec": "playerctl pause ; hyprlock & sleep 0.5 ; systemctl suspend",
+        "exec": "systemctl suspend",
         "icon": "/usr/share/nwg-bar/images/system-suspend.svg"
     },
     {
