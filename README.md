@@ -184,7 +184,7 @@ $ makepkg -si
 $ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland
 $ sudo pacman -S mako waybar wofi noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse
 $ sudo pacman -S ranger {,un}zip atool aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly foot lxsession-gtk3
-$ yay -S ttf-hackgen xremap-wlroots-bin wlogout ueberzugpp clipse-bin hyprshot
+$ yay -S ttf-hackgen xremap-wlroots-bin ueberzugpp clipse-bin hyprshot
 ```
 
 ## dotfiles
