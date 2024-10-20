@@ -2,9 +2,6 @@
     border-radius: 16px;
 }
 
-button {
-}
-
 #task-box {
     padding-left: 4px;
     padding-right: 4px
@@ -17,14 +14,15 @@ button {
 }
 
 #button-exit {
-    background: #404552;
-    border: 2px solid #26D9E6;
     margin-left: 8px;
+    background: transparent;
+    border: none;
 }
 
 #panel-top {
-    background: transparent;
-    color: #eeeeee
+    background: #404552;
+    color: #eeeeee;
+    border: 2px solid #26D9E6;
 }
 
 #executor-label {
@@ -32,10 +30,7 @@ button {
 }
 
 #root-cpuav {
-    background: #404552;
-    border-radius: 0;
-    border-bottom: 2px solid #26D9E6;
-    border-top: 2px solid #26D9E6;
+    background: transparent;
 }
 
 #cpuav {
@@ -43,31 +38,20 @@ button {
 }
 
 #root-memory {
-    background: #404552;
-    border-radius: 0 16px 16px 0;
-    border-top: 2px solid #26D9E6;
-    border-bottom: 2px solid #26D9E6;
-    border-right: 2px solid #26D9E6;
+    background: transparent;
 }
 
 #memory {
-    padding-right: 8px;
+    padding-right: 16px;
 }
 
 #clock {
     font-family: NotoSansCJKjp;
     font-size: 16px;
-    background: #404552;
-    border: 2px solid #26D9E6;
     padding: 0 8px;
 }
 
 #hyprland-workspaces {
-    background: #404552;
-    border-radius: 16px 0 0 16px;
-    border-left: 2px solid #26D9E6;
-    border-top: 2px solid #26D9E6;
-    border-bottom: 2px solid #26D9E6;
     padding-right: 24px;
     margin-left: 8px;
 }
@@ -76,27 +60,12 @@ button {
     padding: 0 8px;
 }
 
-#tray {
-    background: #404552;
-    border: 2px solid #26D9E6;
-}
-
-#inner-tray {
-    padding: 0 8px;
-}
-
 #controls-overview {
     font-size: 16px;
-    background: #404552;
-    border: 2px solid #26D9E6;
     padding: 0 8px;
-    margin-left: 8px;
 }
 
 #controls-window {
     color: #eeeeee;
     font-size: 16px;
-    background: #404552;
-    border: 2px solid #26D9E6;
-    margin-top: 8px;
 }
