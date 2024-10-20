@@ -14,9 +14,12 @@
 }
 
 #button-exit {
-    margin-left: 8px;
     background: transparent;
     border: none;
+}
+
+#button-exit:hover {
+    background: rgba(255, 255, 255, .1);
 }
 
 #panel-top {
@@ -33,27 +36,13 @@
     background: transparent;
 }
 
-#cpuav {
-    padding-right: 16px;
-}
-
 #root-memory {
     background: transparent;
-}
-
-#memory {
-    padding-right: 16px;
 }
 
 #clock {
     font-family: NotoSansCJKjp;
     font-size: 16px;
-    padding: 0 8px;
-}
-
-#hyprland-workspaces {
-    padding-right: 24px;
-    margin-left: 8px;
 }
 
 #hyprland-workspaces-item {
@@ -62,7 +51,6 @@
 
 #controls-overview {
     font-size: 16px;
-    padding: 0 8px;
 }
 
 #controls-window {
