@@ -1,66 +1,30 @@
-window {
-    background-color: #26D9E6;
-    border-radius: 128px;
-}
-
-#outer-box {
-    margin: -2px
-}
-
-#inner-box {
-    background-color: #404552;
-    border-radius: 128px;
-    border-style: none;
-    border-width: 1px;
-    border-color: rgba (156, 142, 122, 0.7);
-    padding: 5px;
-    margin: 5px
-}
-
-button, image {
-    background: none;
-    border: none;
-    box-shadow: none
-}
-
-button {
-    padding-left: 32px;
-    padding-right: 32px;
-    margin: 0 32px;
-}
-
-button:hover {
-    background-color: rgba (255, 255, 255, 0.1);
-    border-radius: 128px;
-}
-yuto@ArchLinux ~> cat .config/nwg-panel/config
 [
   {
     "name": "panel-top",
     "output": "",
     "layer": "bottom",
     "position": "top",
-    "controls": "left",
+    "controls": "off",
     "width": "auto",
-    "height": 28,
+    "height": 30,
     "homogeneous": true,
     "margin-top": 4,
     "margin-bottom": 0,
     "padding-horizontal": 0,
     "padding-vertical": 0,
-    "spacing": 24,
+    "spacing": 32,
     "items-padding": 0,
     "icons": "light",
     "css-name": "panel-top",
     "modules-left": [
-      "hyprland-workspaces"
+      "hyprland-workspaces",
+      "executor-cpuav",
+      "executor-memory"
     ],
     "modules-center": [
       "clock"
     ],
     "modules-right": [
-      "executor-cpuav",
-      "executor-memory",
       "tray",
       "button-exit"
     ],
@@ -78,36 +42,41 @@ yuto@ArchLinux ~> cat .config/nwg-panel/config
       "icon-size": 16,
       "hover-opens": false,
       "leave-closes": true,
-      "click-closes": true,
+      "click-closes": false,
       "css-name": "controls-window",
-      "custom-items": [],
+      "custom-items": [
+        {
+          "name": "Panel settings",
+          "icon": "nwg-panel",
+          "cmd": "nwg-panel-config"
+        }
+      ],
       "menu": {
-        "name": "",
-        "icon": "",
-        "items": []
-      },
-      "show-brightness": true,
-      "show-volume": true,
-      "show-battery": true,
-      "output-switcher": false,
-      "per-app-volume": false,
-      "backlight-controller": "brightnessctl",
-      "backlight-device": "",
-      "window-width": 0,
-      "window-margin-horizontal": 8,
-      "window-margin-vertical": 8,
-      "root-css-name": "controls-overview",
-      "battery-low-level": 20,
-      "battery-low-interval": 5,
-      "processes-label": "\u30d7\u30ed\u30bb\u30b9",
-      "readme-label": "README",
-      "angle": 0.0
+        "name": "Exit",
+        "icon": "system-shutdown-symbolic",
+        "items": [
+          {
+            "name": "Lock",
+            "cmd": "swaylock -f -c 000000"
+          },
+          {
+            "name": "Logout",
+            "cmd": "swaymsg exit"
+          },
+          {
+            "name": "Reboot",
+            "cmd": "systemctl reboot"
+          },
+          {
+            "name": "Shutdown",
+            "cmd": "systemctl -i poweroff"
+          }
+        ]
+      }
     },
     "tray": {
       "root-css-name": "tray",
-      "inner-css-name": "inner-tray",
-      "icon-size": 16,
-      "smooth-scrolling-threshold": 0
+      "inner-css-name": "inner-tray"
     },
     "sway-taskbar": {
       "workspace-menu": [
@@ -143,7 +112,18 @@ yuto@ArchLinux ~> cat .config/nwg-panel/config
         "6",
         "7",
         "8"
-      ]
+      ],
+      "custom-labels": [],
+      "focused-labels": [],
+      "show-icon": true,
+      "image-size": 16,
+      "show-name": true,
+      "name-length": 40,
+      "mark-autotiling": true,
+      "mark-content": true,
+      "hide-empty": false,
+      "show-layout": true,
+      "angle": 0.0
     },
     "clock": {
       "format": "%Y-%m-%d (%a) / %H:%M:%S",
@@ -190,12 +170,12 @@ yuto@ArchLinux ~> cat .config/nwg-panel/config
       "icon-size": 16,
       "workspaces-spacing": 0,
       "client-padding": 0,
-      "show-app-icon": false,
+      "show-app-icon": true,
       "show-app-name": true,
       "show-app-name-special": false,
-      "show-layout": false,
+      "show-layout": true,
       "all-outputs": false,
-      "mark-xwayland": false,
+      "mark-xwayland": true,
       "angle": 0.0,
       "image-size": 16,
       "task-padding": 0
@@ -216,15 +196,6 @@ yuto@ArchLinux ~> cat .config/nwg-panel/config
     "monitor": "",
     "start-hidden": false,
     "keyboard-layout": {},
-    "button-exit": {
-      "command": "nwg-bar -i 128",
-      "icon": "/home/yuto/.config/nwg-panel/icons_light/system-shutdown-symbolic.svg",
-      "label": "",
-      "label-position": "right",
-      "tooltip": "",
-      "css-name": "button-exit",
-      "icon-size": 20
-    },
     "executor-cpuav": {
       "script": "gopsuinfo -i a",
       "interval": 2,
@@ -234,10 +205,10 @@ yuto@ArchLinux ~> cat .config/nwg-panel/config
       "on-right-click": "",
       "on-scroll-up": "",
       "on-scroll-down": "",
-      "css-name": "cpuav",
-      "icon-size": 16,
+      "css-name": "",
+      "icon-size": 20,
       "icon-placement": "left",
-      "root-css-name": "root-cpuav",
+      "root-css-name": "",
       "angle": 0.0,
       "sigrt": 34,
       "use-sigrt": false
@@ -251,13 +222,22 @@ yuto@ArchLinux ~> cat .config/nwg-panel/config
       "on-right-click": "",
       "on-scroll-up": "",
       "on-scroll-down": "",
-      "css-name": "memory",
-      "icon-size": 16,
+      "css-name": "",
+      "icon-size": 20,
       "icon-placement": "left",
-      "root-css-name": "root-memory",
+      "root-css-name": "",
       "angle": 0.0,
       "sigrt": 34,
       "use-sigrt": false
+    },
+    "button-exit": {
+      "command": "nwg-bar -i 128",
+      "icon": "/home/yuto/.config/nwg-panel/icons_light/system-shutdown-symbolic.svg",
+      "label": "",
+      "label-position": "right",
+      "tooltip": "",
+      "css-name": "button-exit",
+      "icon-size": 20
     }
   }
 ]
