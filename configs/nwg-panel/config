@@ -4,7 +4,7 @@
     "output": "",
     "layer": "bottom",
     "position": "top",
-    "controls": "off",
+    "controls": "left",
     "width": "auto",
     "height": 30,
     "homogeneous": true,
@@ -17,14 +17,14 @@
     "icons": "light",
     "css-name": "panel-top",
     "modules-left": [
-      "hyprland-workspaces",
-      "executor-cpuav",
-      "executor-memory"
+      "hyprland-workspaces"
     ],
     "modules-center": [
       "clock"
     ],
     "modules-right": [
+      "executor-cpuav",
+      "executor-memory",
       "tray",
       "button-exit"
     ],
@@ -39,10 +39,10 @@
       },
       "show-values": false,
       "interval": 1,
-      "icon-size": 16,
+      "icon-size": 20,
       "hover-opens": false,
       "leave-closes": true,
-      "click-closes": false,
+      "click-closes": true,
       "css-name": "controls-window",
       "custom-items": [
         {
@@ -52,27 +52,26 @@
         }
       ],
       "menu": {
-        "name": "Exit",
-        "icon": "system-shutdown-symbolic",
-        "items": [
-          {
-            "name": "Lock",
-            "cmd": "swaylock -f -c 000000"
-          },
-          {
-            "name": "Logout",
-            "cmd": "swaymsg exit"
-          },
-          {
-            "name": "Reboot",
-            "cmd": "systemctl reboot"
-          },
-          {
-            "name": "Shutdown",
-            "cmd": "systemctl -i poweroff"
-          }
-        ]
-      }
+        "name": "",
+        "icon": "tem-shutdown-symbolic",
+        "items": []
+      },
+      "show-brightness": true,
+      "show-volume": true,
+      "show-battery": true,
+      "output-switcher": true,
+      "per-app-volume": false,
+      "backlight-controller": "brightnessctl",
+      "backlight-device": "",
+      "window-width": 512,
+      "window-margin-horizontal": 8,
+      "window-margin-vertical": 8,
+      "root-css-name": "controls-overview",
+      "battery-low-level": 20,
+      "battery-low-interval": 5,
+      "processes-label": "\u30d7\u30ed\u30bb\u30b9",
+      "readme-label": "README",
+      "angle": 0.0
     },
     "tray": {
       "root-css-name": "tray",
