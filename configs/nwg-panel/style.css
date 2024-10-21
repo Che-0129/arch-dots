@@ -2,15 +2,8 @@
     border-radius: 16px;
 }
 
-#task-box {
-    padding-left: 4px;
-    padding-right: 4px
-}
-
-#task-box-focused {
-    background-color: rgba (255, 255, 255, 0.12);
-    padding-left: 4px;
-    padding-right: 4px
+button {
+    margin: 2px
 }
 
 #button-exit {
@@ -24,7 +17,7 @@
 
 #panel-top {
     background: #404552;
-    color: #eeeeee;
+    color: #FFF;
     border: 2px solid #26D9E6;
 }
 
@@ -32,28 +25,11 @@
     font-family: NotoSansCJKjp
 }
 
-#root-cpuav {
-    background: transparent;
-}
-
-#root-memory {
-    background: transparent;
-}
-
 #clock {
     font-family: NotoSansCJKjp;
-    font-size: 16px;
+    font-size: 16px
 }
 
 #hyprland-workspaces-item {
     padding: 0 8px;
-}
-
-#controls-overview {
-    font-size: 16px;
-}
-
-#controls-window {
-    color: #eeeeee;
-    font-size: 16px;
 }
