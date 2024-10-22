@@ -175,9 +175,9 @@ $ makepkg -si
 
 ## 色々インストール
 ```
-$ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland mako wofi foot lxsession-gtk3
+$ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland mako wofi foot {lxsession,pcmanfm}-gtk3
 $ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse xdg-user-dirs
-$ sudo pacman -S ranger zip unzip atool aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly
+$ sudo pacman -S zip unzip aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly gvfs
 $ yay -S ttf-hackgen xremap-wlroots-bin ueberzugpp clipse-bin hyprshot
 ```
 
