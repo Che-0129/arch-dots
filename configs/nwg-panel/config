@@ -5,7 +5,7 @@
     "layer": "bottom",
     "position": "top",
     "controls": "left",
-    "width": "auto",
+    "width": "1912",
     "height": 30,
     "homogeneous": true,
     "margin-top": 4,
