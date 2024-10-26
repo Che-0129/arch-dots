@@ -8,7 +8,7 @@
 ## Wi-Fi接続
 
 ```
-# iwctl station wlan0 connect {SSID} --passphrase {password}
+# iwctl station wlan0 connect {SSID} -P {password}
 ```
 
 ## パーティション切り(boot 1GiB, サブボリューム用 残り全部)
