@@ -49,12 +49,12 @@
 ```
 # vim /etc/pacman.conf
 ```
-`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加
+`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
 
 ## ベースシステムインストール
 
 ```
-# pacstrap -Ki /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -KPi /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(4GiB)
@@ -169,13 +169,10 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 
 ## 再起動後ログインし、`nmtui`でネットに接続
 
-## pacmanの設定
+## pacman.confの権限変更
 ```
-$ nvim #一旦非rootユーザーで起動
-$ sudo nvim /etc/pacman.conf
+$ sudo chmod 644 /etc/pacman.conf
 ```
-`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加
-extraリポジトリの部分もアンコメント
 
 ## yayをインストール
 ```
