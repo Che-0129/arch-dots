@@ -189,7 +189,7 @@ $ makepkg -si
 ```
 $ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland mako wofi foot pcmanfm-gtk3 xarchiver
 $ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse xdg-user-dirs
-$ sudo pacman -S zip unzip aria2 npm eza less brightnessctl archlinux-wallpaper udisks2 ly gvfs imv btop wqy-zenhei
+$ sudo pacman -S zip unzip aria2 npm eza less archlinux-wallpaper udisks2 ly gvfs imv btop wqy-zenhei
 $ yay -S ttf-hackgen xremap-hypr-bin clipse-bin hyprshot hyprpolkitagent-git
 ```
 
