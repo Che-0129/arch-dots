@@ -40,14 +40,6 @@
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
-## pacmanの設定
-```
-# vim /etc/pacman.conf
-```
-`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加
-
-extraリポジトリの部分もアンコメント
-
 ## reflector
 ```
 # reflector -c Japan -a 24 --sort rate --save /etc/pacman.d/mirrorlist
@@ -56,7 +48,7 @@ extraリポジトリの部分もアンコメント
 ## ベースシステムインストール
 
 ```
-# pacstrap -KPi /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -Ki /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(4GiB)
@@ -160,6 +152,13 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 `Defaults env_keep += "VISUAL"`
 
 上記２つを追加
+
+## pacmanの設定
+```
+# nvim /etc/pacman.conf
+```
+`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加
+extraリポジトリの部分もアンコメント
 
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
