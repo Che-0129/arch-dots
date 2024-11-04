@@ -49,12 +49,12 @@
 ```
 # vim /etc/pacman.conf
 ```
-`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
+`ParallelDownloads = 5`をアンコメント
 
 ## ベースシステムインストール
 
 ```
-# pacstrap -KPi /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -Ki /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(4GiB)
@@ -164,6 +164,12 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 # nvim /etc/makepkg.conf
 ```
 `OPTIONS=(strip ... debug lto)`の`debug`を`!debug`に変更
+
+## pacmanの設定
+```
+# nvim /etc/pacman.conf
+```
+`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
 
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
