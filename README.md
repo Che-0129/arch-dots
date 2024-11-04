@@ -175,11 +175,6 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 
 ## 再起動後ログインし、`nmtui`でネットに接続
 
-## pacman.confの権限変更
-```
-$ sudo chmod 644 /etc/pacman.conf
-```
-
 ## yayをインストール
 ```
 $ sudo pacman -S git
