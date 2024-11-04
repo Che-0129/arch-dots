@@ -131,6 +131,11 @@ initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 
+## /boot/loader/loader.confの`#timeout 3`をコメントアウト
+```
+# nvim /boot/loader/loader.conf
+```
+
 ## rootユーザーのパスワードを変更
 ```
 # passwd
