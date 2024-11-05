@@ -40,16 +40,16 @@
 # mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
-## reflector
-```
-# reflector -c Japan -a 24 --sort rate --save /etc/pacman.d/mirrorlist
-```
-
 ## pacmanの設定
 ```
 # vim /etc/pacman.conf
 ```
 `Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
+
+## reflector
+```
+# reflector -c Japan -a 24 --sort rate --save /etc/pacman.d/mirrorlist
+```
 
 ## ベースシステムインストール
 
