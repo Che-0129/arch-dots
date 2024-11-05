@@ -49,12 +49,12 @@
 ```
 # vim /etc/pacman.conf
 ```
-`ParallelDownloads = 5`をアンコメント
+`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
 
 ## ベースシステムインストール
 
 ```
-# pacstrap -Ki /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -KPi /mnt base{,-devel} linux-{zen,zen-headers,firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
 ```
 
 ## スワップファイル作成(4GiB)
@@ -170,15 +170,15 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 `OPTIONS=(strip ... debug lto)`の`debug`を`!debug`に変更
 
-## pacmanの設定
-```
-# nvim /etc/pacman.conf
-```
-`Color`と`ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
-
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
 ## 再起動後ログインし、`nmtui`でネットに接続
+
+## ユーザーディレクトリの作成
+```
+$ sudo pacman -S xdg-user-dirs
+$ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
+```
 
 ## yayをインストール
 ```
@@ -191,14 +191,9 @@ $ makepkg -si
 ## 色々インストール
 ```
 $ sudo pacman -S hypr{land,lock,idle,paper} xdg-desktop-portal-hyprland mako wofi foot pcmanfm-gtk3 xarchiver
-$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse xdg-user-dirs
+$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel} pipewire-pulse
 $ sudo pacman -S zip unzip aria2 npm eza less archlinux-wallpaper udisks2 ly gvfs imv btop wqy-zenhei gopsuinfo
 $ yay -S ttf-hackgen xremap-hypr-bin clipse-bin hyprshot hyprpolkitagent-git
-```
-
-## ユーザーディレクトリの作成
-```
-$ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
 ```
 
 ## dotfiles
