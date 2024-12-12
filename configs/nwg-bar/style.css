@@ -5,7 +5,8 @@ window {
 }
 
 #outer-box {
-    margin: 0px;
+    margin: 0;
+    padding: 4px 0;
     border: 2px solid #26D9E6;
     border-radius: 128px;
 }
