@@ -23,7 +23,6 @@
       "clock"
     ],
     "modules-right": [
-      "random-wallpaper",
       "executor-cpuav",
       "executor-memory",
       "tray",
