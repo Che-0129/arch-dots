@@ -1,7 +1,7 @@
 [
   {
     "name": "panel-top",
-    "output": "",
+    "output": "All",
     "layer": "bottom",
     "position": "top",
     "controls": "left",
@@ -23,6 +23,7 @@
       "clock"
     ],
     "modules-right": [
+      "random-wallpaper",
       "executor-cpuav",
       "executor-memory",
       "tray",
@@ -231,6 +232,21 @@
       "tooltip": "",
       "css-name": "button-exit",
       "icon-size": 20
+    },
+    "width-as-percentage": false,
+    "random-wallpaper": {
+      "source": "local",
+      "tags": [
+        "nature"
+      ],
+      "ratios": "16x9,16x10",
+      "atleast": "1920x1080",
+      "apikey": "",
+      "save-path": "/home/yuto",
+      "local-path": "/usr/share/backgrounds/archlinux",
+      "icon-size": 16,
+      "interval": 15,
+      "refresh-on-startup": true
     }
   }
 ]
