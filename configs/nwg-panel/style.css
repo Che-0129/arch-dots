@@ -41,6 +41,11 @@ button {
     font-size: 16px
 }
 
+#random-wallpaper-button {
+    border: none;
+    background: transparent;
+}
+
 #hyprland-workspaces-item {
     padding: 0 8px;
 }
