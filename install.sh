@@ -5,7 +5,7 @@ mv $(cd $(dirname $0) && pwd)/configs/* ~/.config/
 sudo mv $(cd $(dirname $0) && pwd)/nwg-hello/* /etc/nwg-hello/
 bash $(cd $(dirname $0) && pwd)/xremap-setup.sh
 
-sudo cat << 'EOT' | sudo tee /etc/greetd/config.tml
+sudo cat << 'EOT' | sudo tee /etc/greetd/config.toml
 [terminal]
 vt = 1
 
