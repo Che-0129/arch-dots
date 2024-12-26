@@ -197,8 +197,8 @@ $ makepkg -si
 ## 色々インストール
 ```
 $ sudo pacman -S hypr{land,lock,idle} xdg-desktop-portal-hyprland mako wofi foot dolphin ark
-$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel,clipman} pipewire-pulse swaybg qt6ct kvantum
-$ sudo pacman -S zip unzip aria2 android-tools npm eza less archlinux-wallpaper udisks2 ly gvfs imv btop wqy-zenhei gopsuinfo
+$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme nwg-{look,bar,panel,clipman,hello} pipewire-pulse swaybg qt6ct kvantum
+$ sudo pacman -S zip unzip aria2 android-tools npm eza less archlinux-wallpaper udisks2 gvfs imv btop wqy-zenhei gopsuinfo
 $ yay -S ttf-hackgen xremap-hypr-bin hyprpolkitagent hyprshot-git uwsm
 ```
 
