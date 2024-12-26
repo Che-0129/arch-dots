@@ -2,6 +2,7 @@
 
 rm -rf ~/.config/fish
 mv $(cd $(dirname $0) && pwd)/configs/* ~/.config/
+sudo mv $(cd $(dirname $0) && pwd)/nwg-hello/* /etc/nwg-hello/
 bash $(cd $(dirname $0) && pwd)/xremap-setup.sh
 
 sudo cat << 'EOT' | sudo tee /etc/systemd/system/disable-USB-wakeup.service
