@@ -211,7 +211,7 @@ $ bash arch-dots/install.sh
 
 ## ディスプレイマネージャー有効化
 ```
-$ sudo systemctl enable ly.service
+$ sudo systemctl enable greetd.service
 ```
 
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
