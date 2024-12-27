@@ -226,7 +226,7 @@
     },
     "button-exit": {
       "command": "nwg-bar -i 128",
-      "icon": "/home/yuto/.config/nwg-panel/icons_light/system-shutdown-symbolic.svg",
+      "icon": "system-shutdown-symbolic",
       "label": "",
       "label-position": "right",
       "tooltip": "",
