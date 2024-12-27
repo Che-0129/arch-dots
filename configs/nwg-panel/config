@@ -247,6 +247,7 @@
       "icon-size": 16,
       "interval": 15,
       "refresh-on-startup": true
-    }
+    },
+    "hyprland-submap": {}
   }
 ]
