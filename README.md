@@ -176,6 +176,17 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 `OPTIONS=(strip ... debug lto)`の`debug`を`!debug`に変更
 
+## mkinitcpioの設定
+```
+# nvim /etc/mkinitcpio.conf
+```
+`HOOKS=(...)`内の`base udev`を`systemd`に置き換え`fsck`を削除
+
+## mkinitcpio生成
+```
+# mkinitcpio -P
+```
+
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
 ## 再起動後ログインし、`nmtui`でネットに接続
