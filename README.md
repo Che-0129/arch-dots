@@ -128,7 +128,7 @@ title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
 initrd /amd-ucode.img
 initrd /initramfs-linux-zen.img
-options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
+options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1 nowatchdog
 ```
 
 ## /boot/loader/loader.confの`#timeout 3`をコメントアウト
