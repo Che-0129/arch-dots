@@ -17,15 +17,6 @@ button {
     padding-right: 4px
 }
 
-#button-exit {
-    background: transparent;
-    border: none;
-}
-
-#button-exit:hover {
-    background: rgba(255, 255, 255, .1);
-}
-
 #panel-top {
     background: #404552;
     color: #FFF;
@@ -48,4 +39,8 @@ button {
 
 #hyprland-workspaces-item {
     padding: 0 8px;
+}
+
+#inner-tray {
+    margin-right: 8px;
 }
