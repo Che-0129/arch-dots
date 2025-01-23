@@ -26,8 +26,7 @@
       "random-wallpaper",
       "executor-cpuav",
       "executor-memory",
-      "tray",
-      "button-exit"
+      "tray"
     ],
     "controls-settings": {
       "components": [
@@ -185,7 +184,10 @@
       "show-names": true,
       "mark-floating": false,
       "mark-xwayland": false,
-      "angle": 0.0
+      "angle": 0.0,
+      "show-inactive-workspaces": true,
+      "show-workspaces-from-all-outputs": false,
+      "show-workspaces": true
     },
     "monitor": "",
     "start-hidden": false,
@@ -224,15 +226,6 @@
       "sigrt": 34,
       "use-sigrt": false
     },
-    "button-exit": {
-      "command": "nwg-bar -i 128",
-      "icon": "system-shutdown-symbolic",
-      "label": "",
-      "label-position": "right",
-      "tooltip": "",
-      "css-name": "button-exit",
-      "icon-size": 20
-    },
     "width-as-percentage": false,
     "random-wallpaper": {
       "source": "local",
@@ -248,6 +241,27 @@
       "interval": 15,
       "refresh-on-startup": true
     },
-    "hyprland-submap": {}
+    "hyprland-submap": {},
+    "run-if-output-exist": [],
+    "run-if-output-absent": [],
+    "menu-start-settings": {
+      "cmd-lock": "swaylock -f -c 000000",
+      "cmd-logout": "swaymsg exit",
+      "cmd-restart": "systemctl reboot",
+      "cmd-shutdown": "systemctl -i poweroff",
+      "autohide": true,
+      "file-manager": "thunar",
+      "icon-size-large": 32,
+      "icon-size-small": 16,
+      "icon-size-button": 16,
+      "margin-bottom": 0,
+      "margin-left": 0,
+      "margin-right": 0,
+      "margin-top": 0,
+      "padding": 2,
+      "terminal": "foot",
+      "run-through-compositor": true,
+      "hover-opens-submenu": false
+    }
   }
 ]
