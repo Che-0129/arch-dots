@@ -1,46 +1,25 @@
 * {
-    border-radius: 16px;
-}
-
-button {
-    margin: 2px
-}
-
-#task-box {
-    padding-left: 4px;
-    padding-right: 4px
-}
-
-#task-box-focused {
-    background-color: rgba (255, 255, 255, 0.12);
-    padding-left: 4px;
-    padding-right: 4px
+    font-family: NotoSansCJKjp;
+    border-radius: 16px
 }
 
 #panel-top {
-    background: #404552;
-    color: #FFF;
-    border: 2px solid #26D9E6;
-}
-
-#executor-label {
-    font-family: NotoSansCJKjp
+    border: 2px solid #26D9E6
 }
 
 #clock {
-    font-family: NotoSansCJKjp;
     font-size: 16px
 }
 
 #random-wallpaper-button {
-    border: none;
     background: transparent;
+    border: none
 }
 
-#hyprland-workspaces-item {
-    padding: 0 8px;
+#task-box-focused {
+    background-color: rgba (255, 255, 255, 0.1)
 }
 
-#inner-tray {
-    margin-right: 8px;
+#task-box-icon {
+    padding: 0 4px
 }
