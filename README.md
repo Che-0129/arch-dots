@@ -207,7 +207,7 @@ $ makepkg -si
 
 ## 色々インストール
 ```
-$ sudo pacman -S hypr{land,lock,idle,polkitagent} xdg-desktop-portal-hyprland nwg-{look,bar,panel,clipman,hello,drawer} mako foot pcmanfm-gtk3 xarchiver
+$ sudo pacman -S hypr{land,lock,idle,polkitagent} xdg-desktop-portal-hyprland nwg-{look,panel,clipman,hello,drawer} mako foot pcmanfm-gtk3 xarchiver
 $ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme pipewire-{pulse,alsa} qt{5,6}ct kvantum{,-qt5}
 $ sudo pacman -S zip unzip npm eza less archlinux-wallpaper udisks2 gvfs imv btop wqy-zenhei gopsuinfo swaybg
 $ yay -S ttf-hackgen xremap-hypr-bin hyprshot-git uwsm rtw88-dkms-git
