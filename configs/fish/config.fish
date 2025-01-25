@@ -1,4 +1,5 @@
 fish_vi_key_bindings
+set fish_cursor_insert line blink
 alias dl='cd /home/yuto/Downloads'
 alias rb='sudo systemctl reboot'
 alias sd='sudo systemctl poweroff'
