@@ -128,7 +128,7 @@ title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
 initrd /amd-ucode.img
 initrd /initramfs-linux-zen.img
-options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1 nowatchdog
+options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 
 ## /boot/loader/loader.confの`#timeout 3`をコメントアウト
@@ -208,7 +208,7 @@ $ makepkg -si
 ## 色々インストール
 ```
 $ sudo pacman -S hypr{land,lock,idle,polkitagent} xdg-desktop-portal-hyprland nwg-{look,panel,clipman,hello,drawer} mako foot pcmanfm-gtk3 xarchiver
-$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme pipewire-{pulse,alsa} qt{5,6}ct kvantum{,-qt5}
+$ sudo pacman -S noto-fonts-{cjk,emoji,extra} arc-{gtk,icon}-theme pipewire-{pulse,alsa} qt6ct kvantum
 $ sudo pacman -S zip unzip npm eza less archlinux-wallpaper udisks2 gvfs imv btop wqy-zenhei gopsuinfo swaybg
 $ yay -S ttf-hackgen xremap-hypr-bin hyprshot-git uwsm rtw88-dkms-git
 ```
