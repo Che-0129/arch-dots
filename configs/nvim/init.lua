@@ -26,6 +26,7 @@ vim.opt.mouse = ''
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 vim.opt.clipboard:append({"unnamedplus"})
+vim.opt.guicursor = "i:ver100-blinkon500-blinkoff500"
 
 if vim.fn.executable('fcitx5') then
     vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
