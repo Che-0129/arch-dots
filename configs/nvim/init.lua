@@ -33,18 +33,6 @@ if vim.fn.executable('fcitx5') then
     vim.cmd([[autocmd CmdlineLeave * :silent !fcitx5-remote -c]])
 end
 
-local line_number_toggle = true
-function ToggleLineNumbers()
-    if line_number_toggle == false then
-        vim.cmd('set nu')
-        line_number_toggle = true
-    else
-        vim.cmd('set invnu')
-        line_number_toggle = false
-    end
-end
-vim.api.nvim_set_keymap('n', '<C-n>', ':lua ToggleLineNumbers()<CR>', { noremap = true, silent = true })
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
@@ -76,7 +64,8 @@ require("lazy").setup({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "j-hui/fidget.nvim",
-    "onsails/lspkind.nvim"
+    "onsails/lspkind.nvim",
+    "folke/which-key.nvim"
 })
 
 require('lualine').setup {
@@ -94,6 +83,20 @@ require("mason").setup()
 require("mason-lspconfig").setup {
     ensure_installed = {"clangd", "html", "cssls", "pyright"},
 }
+require("which-key").setup({
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({global = false})
+                end,
+            },
+        },
+    }
+})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
@@ -174,7 +177,7 @@ cmp.setup {
 
 vim.api.nvim_create_augroup("RetabBeforeWrite", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = "RetabBeforeWrite",
-  pattern = "*",
-  command = "retab"
+    group = "RetabBeforeWrite",
+    pattern = "*",
+    command = "retab"
 })
