@@ -3,7 +3,7 @@ Description=xremap
 
 [Service]
 KillMode=process
-ExecStart=/usr/bin/xremap /home/yuto/.config/xremap/config.yml
+ExecStart=/usr/bin/xremap --watch /home/yuto/.config/xremap/config.yml
 Restart=always
 
 [Install]
