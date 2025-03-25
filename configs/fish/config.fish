@@ -4,6 +4,7 @@ set fish_cursor_unknown line blink
 alias dl='cd /home/yuto/Downloads'
 alias rb='sudo systemctl reboot'
 alias sd='sudo systemctl poweroff'
+alias rm='rm -i'
 alias ls='eza --icons'
 alias la='eza --icons -a'
 alias ll='eza --icons -l'
