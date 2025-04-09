@@ -77,7 +77,7 @@ window-rule {
 
 binds {
     Mod+C { spawn "alacritty"; }
-    Mod+Space { spawn "bash" "-c" "/home/yuto/.config/niri/nwg-drawer.sh"; }
+    Mod+Space { spawn "fish" "/home/yuto/.config/niri/nwg-drawer.sh"; }
     Mod+D { spawn "firefox"; }
     Mod+Ctrl+D { spawn "firefox" "--private-window"; }
     Mod+G { spawn "pcmanfm"; }
