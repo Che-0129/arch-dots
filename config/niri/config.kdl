@@ -1,0 +1,110 @@
+spawn-at-startup "env" "LC_ALL=C.UTF-8" "nwg-panel"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "mako"
+spawn-at-startup "wl-paste" "-w" "cliphist" "store"
+spawn-at-startup "hypridle"
+spawn-at-startup "systemctl" "--user" "start" "hyprpolkitagent"
+
+environment {
+    DISPLAY ":0"
+}
+
+input {
+    keyboard {
+        xkb {
+            layout "jp"
+            options "caps:none"
+        }
+        repeat-delay 300
+        repeat-rate 30
+    }
+
+    touchpad {
+        dwt
+        natural-scroll
+        scroll-method "two-finger"
+        click-method "clickfinger"
+        middle-emulation
+    }
+}
+
+/-output "eDP-1" {
+    mode "1920x1080@120.030"
+    scale 1
+    transform "normal"
+    position x=1280 y=0
+}
+
+layout {
+    gaps 6
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        width 2
+        active-color "#26d9e6"
+        inactive-color "#595959"
+    }
+}
+
+screenshot-path "~/Downloads/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+window-rule {
+    match title="nwg-clipman"
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.5; }
+}
+
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+binds {
+    Mod+C { spawn "alacritty"; }
+    Mod+Space { spawn "nwg-drawer" "-ovl" "-pbpoweroff" "'systemctl poweroff'" "-pbsleep" "'systemctl suspend'" "-pbreboot" "'systemctl reboot'" "-closebtn" "right"; }
+    Mod+D { spawn "firefox"; }
+    Mod+Ctrl+D { spawn "firefox" "--private-window"; }
+    Mod+G { spawn "pcmanfm"; }
+    Mod+V { spawn "nwg-clipman" "-w"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    Mod+Up allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    Mod+Down allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    Mod+M allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    Mod+Right allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
+    Mod+Left allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+
+    Mod+Q { close-window; }
+
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+F { maximize-column; }
+    Mod+Ctrl+F { fullscreen-window; }
+    Mod+T       { toggle-window-floating; }
+
+    Mod+Print { screenshot; }
+
+hotkey-overlay {
+    skip-at-startup
+}
