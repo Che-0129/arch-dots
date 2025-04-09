@@ -205,13 +205,19 @@ $ cd yay-bin
 $ makepkg -si
 ```
 
-## 色々インストール
+## 色々インストール(Hyprland)
 ```
 $ sudo pacman -S hypr{land,lock,idle,polkitagent} xdg-desktop-portal-hyprland uwsm nwg-{look,panel,clipman,hello,drawer}
 $ sudo pacman -S noto-fonts-{cjk,emoji,extra} pipewire-pulse mako foot pcmanfm-gtk3 xarchiver
 $ sudo pacman -S zip unzip npm eza less archlinux-wallpaper udisks2 gvfs imv wqy-zenhei gopsuinfo swaybg
 $ yay -S ttf-hackgen xremap-hypr-bin hyprshot-git rtw88-dkms-git arc-{gtk,icon}-theme-git
 ```
+
+## Niriの場合
+```
+$ sudo pacman -S niri xwayland-satellite xdg-desktop-portal-gtk alacritty{,-themes} 
+```
+
 
 ## dotfiles
 ```
