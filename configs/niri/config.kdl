@@ -31,6 +31,7 @@ input {
 layout {
     gaps 6
     center-focused-column "never"
+    always-center-single-column
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
@@ -54,6 +55,11 @@ screenshot-path "~/Downloads/Screenshot from %Y-%m-%d %H-%M-%S.png"
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+
+window-rule {
+    match title="Firefox"
+    open-maximized true
 }
 
 window-rule {
