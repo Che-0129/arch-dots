@@ -28,13 +28,6 @@ input {
     }
 }
 
-/-output "eDP-1" {
-    mode "1920x1080@120.030"
-    scale 1
-    transform "normal"
-    position x=1280 y=0
-}
-
 layout {
     gaps 6
     center-focused-column "never"
@@ -64,15 +57,15 @@ window-rule {
 }
 
 window-rule {
+    match is-focused=false
+    opacity 0.75
+}
+
+window-rule {
     match title="nwg-clipman"
     open-floating true
     default-column-width { proportion 0.5; }
     default-window-height { proportion 0.5; }
-}
-
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
 }
 
 binds {
