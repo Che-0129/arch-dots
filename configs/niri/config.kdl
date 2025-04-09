@@ -102,7 +102,7 @@ binds {
     Mod+Ctrl+F { fullscreen-window; }
     Mod+T       { toggle-window-floating; }
 
-    Mod+Print { screenshot; }
+    Mod+P { screenshot; }
 }
 
 hotkey-overlay {
