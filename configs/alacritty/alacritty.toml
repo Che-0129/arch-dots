@@ -1,8 +1,0 @@
-[general]
-import = [
-    "/usr/lib/node_modules/alacritty-themes/themes/Nord.toml"
-]
-
-[font]
-normal = { family = "HackGen35", style = "Bold" }
-size = 10
