@@ -213,12 +213,6 @@ $ sudo pacman -S zip unzip npm eza less archlinux-wallpaper udisks2 gvfs imv wqy
 $ yay -S ttf-hackgen xremap-hypr-bin hyprshot-git rtw88-dkms-git arc-{gtk,icon}-theme-git
 ```
 
-## Niriの場合
-```
-$ sudo pacman -S niri xwayland-satellite xdg-desktop-portal-gtk alacritty{,-themes} 
-```
-
-
 ## dotfiles
 ```
 $ git clone https://github.com/Quasar-0330/arch-dots
