@@ -1,3 +1,0 @@
-export QT_QPA_PLATFORM="wayland;xcb"
-export XMODIFIERS="@im=fcitx"
-export HYPRSHOT_DIR=/home/yuto/Downloads/
