@@ -3,6 +3,10 @@
     border-radius: 16px
 }
 
+*:selected {
+    box-shadow: none
+}
+
 #panel-top {
     border: 2px solid #26D9E6
 }
