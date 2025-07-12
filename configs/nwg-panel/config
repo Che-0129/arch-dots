@@ -1,6 +1,6 @@
 [
   {
-    "name": "panel-top",
+    "name": "panel",
     "output": "",
     "layer": "bottom",
     "position": "top",
@@ -15,7 +15,7 @@
     "spacing": 32,
     "items-padding": 0,
     "icons": "light",
-    "css-name": "panel-top",
+    "css-name": "panel",
     "modules-left": [
       "hyprland-taskbar"
     ],
@@ -23,7 +23,6 @@
       "clock"
     ],
     "modules-right": [
-      "random-wallpaper",
       "executor-cpuav",
       "executor-memory",
       "tray"
@@ -46,8 +45,8 @@
       "css-name": "controls-window",
       "custom-items": [],
       "menu": {
-        "name": "Exit",
-        "icon": "system-shutdown-symbolic",
+        "name": "",
+        "icon": "",
         "items": []
       },
       "show-brightness": true,
@@ -69,47 +68,10 @@
     },
     "tray": {
       "root-css-name": "tray",
-      "inner-css-name": "inner-tray",
-      "icon-size": 16,
-      "smooth-scrolling-threshold": 0,
-      "new-left": false
+      "inner-css-name": "inner-tray"
     },
-    "sway-taskbar": {
-      "workspace-menu": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8"
-      ],
-      "name-max-len": 20,
-      "image-size": 16,
-      "workspaces-spacing": 0,
-      "task-padding": 0,
-      "show-app-icon": true,
-      "show-app-name": true,
-      "show-layout": true,
-      "workspace-buttons": false,
-      "all-workspaces": true,
-      "mark-autotiling": true,
-      "mark-xwayland": true,
-      "all-outputs": true
-    },
-    "sway-workspaces": {
-      "numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8"
-      ]
-    },
+    "sway-taskbar": {},
+    "sway-workspaces": {},
     "clock": {
       "format": "%Y-%m-%d (%a) / %H:%M:%S",
       "tooltip-text": "",
@@ -132,15 +94,7 @@
       "calendar-interval": 60,
       "calendar-on": false
     },
-    "playerctl": {
-      "buttons-position": "left",
-      "icon-size": 16,
-      "chars": 30,
-      "scroll": false,
-      "button-css-name": "",
-      "label-css-name": "",
-      "interval": 1
-    },
+    "playerctl": {},
     "menu-start": "off",
     "exclusive-zone": true,
     "sigrt": 64,
@@ -160,6 +114,8 @@
       "show-app-name-special": false,
       "show-layout": false,
       "all-outputs": false,
+      "all-workspaces": true,
+      "show-ws-names": true,
       "mark-xwayland": false,
       "angle": 0.0,
       "image-size": 16,
@@ -173,20 +129,9 @@
     "start-hidden": false,
     "hyprland-submap": {},
     "keyboard-layout": {},
-    "random-wallpaper": {
-      "source": "local",
-      "tags": [
-        "nature"
-      ],
-      "ratios": "16x9,16x10",
-      "atleast": "1920x1080",
-      "apikey": "",
-      "save-path": "/home/yuto",
-      "local-path": "/usr/share/backgrounds/archlinux",
-      "icon-size": 16,
-      "interval": 0,
-      "refresh-on-startup": true
-    },
+    "niri-taskbar": {},
+    "random-wallpaper": {},
+    "pinned": {},
     "executor-cpuav": {
       "script": "gopsuinfo -i a",
       "interval": 2,
