@@ -7,17 +7,12 @@
     box-shadow: none
 }
 
-#panel-top {
+#panel {
     border: 2px solid #26D9E6
 }
 
 #clock {
     font-size: 16px
-}
-
-#random-wallpaper-button {
-    background: transparent;
-    border: none
 }
 
 #task-box-focused {
