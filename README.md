@@ -54,7 +54,7 @@
 ## ベースシステムインストール
 
 ```
-# pacstrap -Ki /mnt base{,-devel} linux-{zen{,-headers},firmware} amd-ucode btrfs-progs dosfstools neovim networkmanager fish
+# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware} neovim networkmanager
 ```
 
 ## スワップファイル作成(4GiB)
@@ -207,10 +207,8 @@ $ makepkg -si
 
 ## 色々インストール(Hyprland)
 ```
-$ sudo pacman -S hypr{land,lock,idle,polkitagent,shot} xdg-desktop-portal-hyprland uwsm nwg-{look,panel,clipman,hello,drawer}
-$ sudo pacman -S noto-fonts-{cjk,emoji,extra} pipewire-pulse mako foot pcmanfm-gtk3 xarchiver
-$ sudo pacman -S zip unzip npm eza less archlinux-wallpaper udisks2 gvfs imv wqy-zenhei gopsuinfo swaybg
-$ yay -S ttf-hackgen xremap-hypr-bin rtw88-dkms-git arc-{gtk,icon}-theme-git
+$ sudo pacman -S archlinux-wallpaper eza foot gopsuinfo gvfs hypr{idle,land,lock,polkitagent,shot} imv less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} pcmanfm-gtk3 pipewire-pulse swaybg udisks2 unzip uwsm wqy-zenhei xarchiver xdg-desktop-portal-hyprland zip
+$ yay -S arc-{gtk,icon}-theme-git rtw88-dkms-git ttf-hackgen xremap-hypr-bin
 ```
 
 ## dotfiles
