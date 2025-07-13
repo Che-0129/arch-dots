@@ -1,3 +1,4 @@
-export QT_QPA_PLATFORM="wayland;xcb"
-export XMODIFIERS="@im=fcitx"
 export HYPRSHOT_DIR=/home/yuto/Downloads/
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME=qt5ct
+export XMODIFIERS="@im=fcitx"
