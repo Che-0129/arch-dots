@@ -30,3 +30,4 @@ EOT
 
 sudo systemctl enable disable-USB-wakeup.service
 systemctl --user enable {hyprpaper,hyprpolkitagent,hypridle}.service
+ya pkg add ndtoan96/ouch
