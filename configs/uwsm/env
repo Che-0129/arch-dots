@@ -1,3 +1,4 @@
+export EDITOR=nvim
 export HYPRSHOT_DIR=/home/yuto/Downloads/
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=gtk3
