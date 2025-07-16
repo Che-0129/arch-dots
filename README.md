@@ -207,7 +207,7 @@ $ makepkg -si
 
 ## 色々インストール(Hyprland)
 ```
-$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} archlinux-wallpaper btop eza fcitx5-im foot gopsuinfo hypr{idle,land,lock,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse steam trash-cli udisks2 unzip uwsm wqy-zenhei xdg-desktop-portal-hyprland yazi zip
+$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} archlinux-wallpaper bat btop eza fcitx5-im foot gopsuinfo hypr{idle,land,lock,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse steam trash-cli udisks2 unzip uwsm wqy-zenhei xdg-desktop-portal-hyprland yazi zip
 $ yay -S arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} proton-ge-custom-bin rtw88-dkms-git ttf-hackgen xremap-hypr-bin
 ```
 
