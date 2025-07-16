@@ -25,8 +25,25 @@ vim.opt.syntax = 'on'
 vim.opt.mouse = ''
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
-vim.opt.clipboard:append({"unnamedplus"})
 vim.opt.guicursor = "i:ver100-blinkon500-blinkoff500"
+vim.api.nvim_create_augroup("RetabBeforeWrite", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = "RetabBeforeWrite",
+    pattern = "*",
+    command = "retab"
+})
+vim.api.nvim_create_autocmd("VimLeave", {
+  pattern = "*",
+  command = "set guicursor=a:ver25-blinkon500-blinkoff500",
+})
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    local yank_type = vim.v.event.operator
+    if yank_type == "y" then
+      vim.fn.setreg("+", vim.fn.getreg("\""))
+    end
+  end,
+})
 
 if vim.fn.executable('fcitx5') then
     vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
@@ -174,15 +191,3 @@ cmp.setup {
         })
     }
 }
-
-vim.api.nvim_create_augroup("RetabBeforeWrite", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePre", {
-    group = "RetabBeforeWrite",
-    pattern = "*",
-    command = "retab"
-})
-
-vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = "*",
-  command = "set guicursor=a:ver25-blinkon500-blinkoff500",
-})
