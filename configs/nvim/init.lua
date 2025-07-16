@@ -26,15 +26,15 @@ vim.opt.mouse = ''
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 vim.opt.guicursor = "i:ver100-blinkon500-blinkoff500"
+vim.api.nvim_create_autocmd("VimLeave", {
+  pattern = "*",
+  command = "set guicursor=a:ver25-blinkon500-blinkoff500",
+})
 vim.api.nvim_create_augroup("RetabBeforeWrite", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = "RetabBeforeWrite",
     pattern = "*",
     command = "retab"
-})
-vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = "*",
-  command = "set guicursor=a:ver25-blinkon500-blinkoff500",
 })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
