@@ -1,6 +1,14 @@
+[mgr]
+ratio = [1, 2, 2]
+linemode = "size"
+
 [opener]
+play = [
+    { run = 'vlc "$@"', desc = "Open with VLC", orphan = true }
+]
+
 open = [
-    { run = '[[ "$@" =~ \.(gif|jpeg|jpg|png|svg|tiff|webp)$ ]] && gimp "$@" || true', desc = "Open with GIMP" }
+    { run = '[[ "$@" =~ \.(gif|jpeg|jpg|png|svg|tiff|webp)$ ]] && gimp "$@" || true', desc = "Open with GIMP", orphan = true }
 ]
 
 [plugin]
@@ -17,3 +25,6 @@ prepend_previewers = [
     { mime = "application/zstd",            run = "ouch" },
     { mime = "application/java-archive",    run = "ouch" },
 ]
+
+[input]
+cursor_blink = true
