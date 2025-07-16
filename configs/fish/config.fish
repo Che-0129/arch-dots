@@ -1,6 +1,6 @@
 alias dl='cd ~/Downloads'
-alias rb='sudo systemctl reboot'
-alias sd='sudo systemctl poweroff'
+alias rb='systemctl reboot'
+alias sd='systemctl poweroff'
 alias rm='trash-put'
 alias ls='eza --icons'
 alias la='eza --icons -a'
