@@ -1,3 +1,8 @@
+[opener]
+open = [
+    { run = '[[ "$@" =~ \.(gif|jpeg|jpg|png|svg|tiff|webp)$ ]] && gimp "$@" || true', desc = "Open with GIMP" }
+]
+
 [plugin]
 prepend_previewers = [
     { mime = "application/*zip",            run = "ouch" },
