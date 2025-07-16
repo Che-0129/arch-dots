@@ -207,8 +207,8 @@ $ makepkg -si
 
 ## 色々インストール(Hyprland)
 ```
-$ sudo pacman -S 7zip archlinux-wallpaper btop eza foot gopsuinfo hypr{idle,land,lock,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse trash-cli udisks2 unzip uwsm wqy-zenhei xdg-desktop-portal-hyprland yazi zip
-$ yay -S arc-{gtk,icon}-theme rtw88-dkms-git ttf-hackgen xremap-hypr-bin
+$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} archlinux-wallpaper btop eza fcitx5-im foot gopsuinfo hypr{idle,land,lock,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse steam trash-cli udisks2 unzip uwsm wqy-zenhei xdg-desktop-portal-hyprland yazi zip
+$ yay -S arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} proton-ge-custom-bin rtw88-dkms-git ttf-hackgen xremap-hypr-bin
 ```
 
 ## dotfiles
@@ -218,24 +218,4 @@ $ chmod +x arch-dots/install.sh
 $ bash arch-dots/install.sh
 ```
 
-## ディスプレイマネージャー有効化
-```
-$ sudo systemctl enable greetd.service
-```
-
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
-
-## 入力メソッドインスコ
-```
-$ sudo pacman -S fcitx5-im
-$ rb #いったん再起動
-$ yay -S fcitx5-mozc-ut
-$ yay -S fcitx5-skin-arc
-```
-
-## その他アプリケーション
-```
-$ sudo pacman -S {firefox,thunderbird}{,-18n-ja}
-$ sudo pacman -S steam
-$ yay -S discord_arch_electron proton-ge-custom-bin
-```
