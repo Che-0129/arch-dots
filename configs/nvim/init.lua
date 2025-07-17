@@ -27,21 +27,23 @@ vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 vim.opt.guicursor = "i:ver100-blinkon500-blinkoff500"
 vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = "*",
-  command = "set guicursor=a:ver25-blinkon500-blinkoff500",
+    pattern = "*",
+    command = "set guicursor=a:ver25-blinkon500-blinkoff500",
 })
-vim.api.nvim_create_augroup("RetabBeforeWrite", { clear = true })
+vim.api.nvim_create_augroup("RetabBeforeWrite", {
+    clear = true
+})
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = "RetabBeforeWrite",
     pattern = "*",
     command = "retab"
 })
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    local yank_type = vim.v.event.operator
-    if yank_type == "y" then
-      vim.fn.setreg("+", vim.fn.getreg("\""))
-    end
+    callback = function()
+        local yank_type = vim.v.event.operator
+        if yank_type == "y" then
+            vim.fn.setreg("+", vim.fn.getreg("\""))
+        end
   end,
 })
 
@@ -52,142 +54,93 @@ end
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out, "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+    end
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    "nvim-lualine/lualine.nvim",
-    "rmehri01/onenord.nvim",
-    "windwp/nvim-autopairs",
-    "mcauley-penney/tidy.nvim",
-    "lukas-reineke/indent-blankline.nvim",
-    "norcalli/nvim-colorizer.lua",
-    "mvllow/modes.nvim",
-    "neovim/nvim-lspconfig",
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-buffer",
-    "saadparwaiz1/cmp_luasnip",
-    {"L3MON4D3/LuaSnip", build = "make install_jsregexp"},
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "j-hui/fidget.nvim",
-    "onsails/lspkind.nvim",
-    "folke/which-key.nvim"
-})
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
-require('lualine').setup {
-    option = {
-        theme = 'onenord'
-    }
-}
-require('onenord').setup()
-require('nvim-autopairs').setup()
-require('tidy').setup()
-require('ibl').setup()
-require('colorizer').setup()
-require('modes').setup()
-require("mason").setup()
-require("mason-lspconfig").setup {
-    ensure_installed = {"clangd", "html", "cssls", "pyright"},
-}
-require("which-key").setup({
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({global = false})
-                end,
+require("lazy").setup({
+    spec = {
+        { "folke/which-key.nvim", opts = {} },
+        { "HiPhish/rainbow-delimiters.nvim", opts = {} },
+        { "j-hui/fidget.nvim",
+            opts = {
+                text = {
+                    spinner = "meter"
+                }
+            }
+        },
+        { "johnfrankmorgan/whitespace.nvim", opts = {} },
+        { "karb94/neoscroll.nvim", opts = {} },
+        { "lukas-reineke/indent-blankline.nvim",
+            main = "ibl",
+            opts = {}
+        },
+        { "mason-org/mason-lspconfig.nvim",
+            opts = {
+                ensure_installed = {
+                    "clangd",
+                    "cssls",
+                    "html",
+                    "pyright"
+                }
+            }
+        },
+        { "mason-org/mason.nvim", opts = {} },
+        { "mvllow/modes.nvim", opts = {} },
+        { "neovim/nvim-lspconfig" },
+        { "norcalli/nvim-colorizer.lua",
+            main = "colorizer",
+            opts = {
+                "*",
+                css = {
+                    rgb_fn = true
+                }
+            }
+        },
+        { "nvim-lualine/lualine.nvim", opts = {} },
+        { "rmehri01/onenord.nvim", opts = {} },
+        { "RRethy/vim-illuminate", main = "illuminate" },
+        { "Saghen/blink.cmp",
+            dependencies = {
+                "rafamadriz/friendly-snippets"
+            },
+            version = "*",
+            opts = {},
+            sources = {
+                "lsp",
+                "path",
+                "snippets",
+                "buffer"
+            },
+            fuzzy = {
+                implementation = "prefer_rust_with_warning"
             },
         },
-    }
-})
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require('lspconfig')
-
-local servers = {'clangd', 'html', 'cssls', 'pyright'}
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        capabilities = capabilities,
-    }
-end
-
-local luasnip = require 'luasnip'
-
-local cmp = require 'cmp'
-cmp.setup {
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
+        { "sphamba/smear-cursor.nvim",
+            opts = {
+                stiffness = 0.8,
+                trailing_stiffness = 0.5,
+                stiffness_insert_mode = 0.7,
+                trailing_stiffness_insert_mode = 0.7,
+                damping = 0.8,
+                damping_insert_mode = 0.8,
+                distance_stop_animating = 0.5
+            }
         },
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            else
-                fallback()
-            end
-        end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, { 'i', 's' }),
-    }),
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'buffer' },
-        { name = 'path' },
+        { "windwp/nvim-autopairs", opts = {} }
     },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
-}
-
-require('fidget').setup {
-    text = {
-        spinner = 'meter',
-    },
-}
-
-local lspkind = require('lspkind')
-cmp.setup {
-    formatting = {
-        format = lspkind.cmp_format({
-            mode = 'symbol',
-            maxwidth = 50,
-            ellipsis_char = '...',
-            show_labelDetails = true,
-            before = function (entry, vim_item)
-                return vim_item
-            end
-        })
-    }
-}
+    checker = { enabled = true },
+})
