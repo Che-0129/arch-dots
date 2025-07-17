@@ -74,7 +74,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         { "folke/which-key.nvim", opts = {} },
-        { "HiPhish/rainbow-delimiters.nvim", opts = {} },
+        { "HiPhish/rainbow-delimiters.nvim" },
         { "j-hui/fidget.nvim",
             opts = {
                 text = {
