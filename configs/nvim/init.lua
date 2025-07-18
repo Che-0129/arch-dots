@@ -77,7 +77,9 @@ require("lazy").setup({
             event = "VeryLazy",
             opts = {}
         },
-        { "HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
+        { "HiPhish/rainbow-delimiters.nvim",
+                event = "VeryLazy"
+        },
         { "j-hui/fidget.nvim",
             event = "VeryLazy",
             opts = {
@@ -126,7 +128,9 @@ require("lazy").setup({
             event = "VeryLazy",
             opts = {}
         },
-        { "neovim/nvim-lspconfig", event = "VeryLazy" },
+        { "neovim/nvim-lspconfig",
+                event = "VeryLazy"
+        },
         { "norcalli/nvim-colorizer.lua",
             event = "VeryLazy",
             main = "colorizer",
@@ -137,7 +141,9 @@ require("lazy").setup({
                 }
             }
         },
-        { "nvim-lualine/lualine.nvim", opts = {} },
+        { "nvim-lualine/lualine.nvim",
+                opts = {}
+        },
         { "rachartier/tiny-inline-diagnostic.nvim",
             event = "InsertEnter",
             opts = {},
@@ -145,8 +151,12 @@ require("lazy").setup({
                 virtual_text = false
             })
         },
-        { "rafamadriz/friendly-snippets", event = "VeryLazy" },
-        { "rmehri01/onenord.nvim", opts = {} },
+        { "rafamadriz/friendly-snippets",
+                event = "VeryLazy"
+        },
+        { "rmehri01/onenord.nvim",
+                opts = {}
+        },
         { "RRethy/vim-illuminate",
             event = "VeryLazy",
             main = "illuminate"
