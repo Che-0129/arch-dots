@@ -73,22 +73,42 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
     spec = {
-        { "folke/which-key.nvim", opts = {} },
-        { "HiPhish/rainbow-delimiters.nvim" },
+        { "folke/which-key.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
+        { "HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
         { "j-hui/fidget.nvim",
+            event = "VeryLazy",
             opts = {
                 text = {
                     spinner = "meter"
                 }
             }
         },
-        { "johnfrankmorgan/whitespace.nvim", opts = {} },
-        { "karb94/neoscroll.nvim", opts = {} },
+        { "johnfrankmorgan/whitespace.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
+        { "karb94/neoscroll.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
         { "lukas-reineke/indent-blankline.nvim",
+            event = "VeryLazy",
             main = "ibl",
             opts = {}
         },
+        { "L3MON4D3/LuaSnip",
+            event = "InsertEnter",
+            version = "v2.*",
+            build = "make install_jsregexp",
+            config = function()
+                require("luasnip.loaders.from_vscode").lazy_load()
+            end
+        },
         { "mason-org/mason-lspconfig.nvim",
+            event = "VeryLazy",
             opts = {
                 ensure_installed = {
                     "clangd",
@@ -98,10 +118,17 @@ require("lazy").setup({
                 }
             }
         },
-        { "mason-org/mason.nvim", opts = {} },
-        { "mvllow/modes.nvim", opts = {} },
-        { "neovim/nvim-lspconfig" },
+        { "mason-org/mason.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
+        { "mvllow/modes.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
+        { "neovim/nvim-lspconfig", event = "VeryLazy" },
         { "norcalli/nvim-colorizer.lua",
+            event = "VeryLazy",
             main = "colorizer",
             opts = {
                 "*",
@@ -111,25 +138,50 @@ require("lazy").setup({
             }
         },
         { "nvim-lualine/lualine.nvim", opts = {} },
-        { "rmehri01/onenord.nvim", opts = {} },
-        { "RRethy/vim-illuminate", main = "illuminate" },
-        { "Saghen/blink.cmp",
-            dependencies = {
-                "rafamadriz/friendly-snippets"
-            },
-            version = "*",
+        { "rachartier/tiny-inline-diagnostic.nvim",
+            event = "InsertEnter",
             opts = {},
-            sources = {
-                "lsp",
-                "path",
-                "snippets",
-                "buffer"
-            },
-            fuzzy = {
-                implementation = "prefer_rust_with_warning"
+            vim.diagnostic.config ({
+                virtual_text = false
+            })
+        },
+        { "rafamadriz/friendly-snippets", event = "VeryLazy" },
+        { "rmehri01/onenord.nvim", opts = {} },
+        { "RRethy/vim-illuminate",
+            event = "VeryLazy",
+            main = "illuminate"
+        },
+        { "Saghen/blink.cmp",
+            event = "InsertEnter",
+            version = "1.*",
+            opts = {
+                completion = {
+                    documentation = {
+                        auto_show = true,
+                        auto_show_delay_ms = 500,
+                        window = {
+                            border = "rounded"
+                        }
+                    },
+                    menu = {
+                        border = "rounded"
+                    }
+                },
+                fuzzy = {
+                    implementation = "prefer_rust_with_warning"
+                },
+                sources = {
+                    default = {
+                        "snippets",
+                        "lsp",
+                        "path",
+                        "buffer"
+                    }
+                }
             },
         },
         { "sphamba/smear-cursor.nvim",
+            event = "VeryLazy",
             opts = {
                 stiffness = 0.8,
                 trailing_stiffness = 0.5,
@@ -140,7 +192,10 @@ require("lazy").setup({
                 distance_stop_animating = 0.5
             }
         },
-        { "windwp/nvim-autopairs", opts = {} }
+        { "windwp/nvim-autopairs",
+            event = "InsertEnter",
+            opts = {}
+        }
     },
     checker = { enabled = true },
 })
