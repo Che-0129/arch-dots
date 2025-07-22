@@ -1,31 +1,21 @@
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-vim.scriptencoding = 'utf-8'
-vim.opt.number = true
-vim.opt.title = true
-vim.opt.laststatus = 2
-vim.opt.ruler = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.matchtime = 1
-vim.opt.showmatch = true
-vim.opt.backup = false
-vim.opt.swapfile = false
-vim.opt.showcmd = true
-vim.opt.autoread = true
-vim.opt.incsearch = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.scrolloff = 5
-vim.opt.sidescrolloff = 5
-vim.opt.backspace = 'indent,eol,start'
-vim.opt.syntax = 'on'
-vim.opt.mouse = ''
-vim.opt.hlsearch = false
-vim.opt.termguicolors = true
-vim.opt.guicursor = "i:ver100-blinkon500-blinkoff500"
+vim.loader.enable()
+vim.o.number = true
+vim.o.title = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.shiftround = true
+vim.o.expandtab = true
+vim.o.swapfile = false
+vim.o.autoread = true
+vim.o.incsearch = true
+vim.o.smartindent = true
+vim.o.scrolloff = 5
+vim.o.sidescrolloff = 5
+vim.o.mouse = ""
+vim.o.hlsearch = false
+vim.o.termguicolors = true
+vim.o.guicursor = "i:ver100-blinkon500-blinkoff500"
 vim.api.nvim_create_autocmd("VimLeave", {
     pattern = "*",
     command = "set guicursor=a:ver25-blinkon500-blinkoff500",
@@ -46,11 +36,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         end
   end,
 })
-
-if vim.fn.executable('fcitx5') then
-    vim.cmd([[autocmd InsertLeave * :silent !fcitx5-remote -c]])
-    vim.cmd([[autocmd CmdlineLeave * :silent !fcitx5-remote -c]])
-end
+vim.api.nvim_create_autocmd({ "InsertLeave", "CmdlineLeave" }, {
+    callback = function()
+        vim.fn.jobstart({ "fcitx5-remote", "-c" }, { detach = true })
+    end
+})
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -74,142 +64,21 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         {
-            "folke/which-key.nvim",
-            event = "VeryLazy",
+            "rmehri01/onenord.nvim",
+            event = "VimEnter",
             opts = {}
-        },
-
-        {
-            "HiPhish/rainbow-delimiters.nvim",
-        },
-
-        {
-            "j-hui/fidget.nvim",
-            event = "VeryLazy",
-            opts = {
-                text = { spinner = "meter" }
-            }
-        },
-
-        {
-            "johnfrankmorgan/whitespace.nvim",
-            event = "VeryLazy",
-            opts = {}
-        },
-
-        {
-            "karb94/neoscroll.nvim",
-            event = "VeryLazy",
-            opts = {}
-        },
-
-        { "lukas-reineke/indent-blankline.nvim",
-            event = "VeryLazy",
-            main = "ibl",
-            opts = {}
-        },
-
-        {
-            "L3MON4D3/LuaSnip",
-            event = "InsertEnter",
-            version = "v2.*",
-            build = "make install_jsregexp",
-            config = function()
-                require("luasnip.loaders.from_vscode").lazy_load()
-            end
-        },
-
-        {
-            "mason-org/mason-lspconfig.nvim",
-            event =  "VeryLazy",
-            opts = {}
-        },
-
-        {
-            "mason-org/mason.nvim",
-            event = "VeryLazy",
-            opts = {}
-        },
-
-        {
-            "mvllow/modes.nvim",
-            event = "VeryLazy",
-            opts = {}
-        },
-
-        {
-            "neovim/nvim-lspconfig",
-            event = "VeryLazy"
-        },
-
-        {
-            "norcalli/nvim-colorizer.lua",
-            event = "VeryLazy",
-            main = "colorizer",
-            opts = {
-                "*",
-                css = { rgb_fn = true }
-            }
         },
 
         {
             "nvim-lualine/lualine.nvim",
+            event = "VimEnter",
             opts = {}
-        },
-
-        {
-            "rachartier/tiny-inline-diagnostic.nvim",
-            event = "InsertEnter",
-            opts = {},
-            vim.diagnostic.config({ virtual_text = false })
-        },
-
-        {
-            "rafamadriz/friendly-snippets",
-            event = "VeryLazy"
-        },
-
-        {
-            "rmehri01/onenord.nvim",
-            opts = {}
-        },
-
-        {
-            "RRethy/vim-illuminate",
-            event = "VeryLazy",
-            main = "illuminate"
-        },
-
-        {
-            "Saghen/blink.cmp",
-            event = "InsertEnter",
-            version = "1.*",
-            opts = {
-                completion = {
-                    documentation = {
-                        auto_show = true,
-                        auto_show_delay_ms = 500,
-                        window = { border = "rounded" }
-                    },
-                    menu = { border = "rounded" }
-                },
-                fuzzy = { implementation = "prefer_rust_with_warning" },
-                sources = {
-                    default = {
-                        "lsp",
-                        "path",
-                        "buffer",
-                        "snippets"
-                    }
-                }
-            },
         },
 
         {
             "sphamba/smear-cursor.nvim",
             event = "VeryLazy",
             opts = {
-                stiffness = 0.8,
                 trailing_stiffness = 0.5,
                 stiffness_insert_mode = 0.7,
                 trailing_stiffness_insert_mode = 0.7,
@@ -220,10 +89,126 @@ require("lazy").setup({
         },
 
         {
-            "windwp/nvim-autopairs",
-            event = "InsertEnter",
+            "karb94/neoscroll.nvim",
+            event = "VeryLazy",
             opts = {}
+        },
+
+        {
+            "johnfrankmorgan/whitespace.nvim",
+            event = {
+                "BufReadPost",
+                "BufNewFile"
+            },
+            opts = {}
+        },
+
+        {
+            "norcalli/nvim-colorizer.lua",
+            event = {
+                "BufReadPost",
+                "BufNewFile"
+            },
+            opts = {
+                "*",
+                css = { rgb_fn = true }
+            }
+        },
+
+        {
+            "RRethy/vim-illuminate",
+            event = {
+                "BufReadPost",
+                "BufNewFile"
+            },
+            main = "illuminate"
+        },
+
+        {
+            "folke/which-key.nvim",
+            event = "VeryLazy"
+        },
+
+        {
+            "mvllow/modes.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
+
+        {
+            "Saghen/blink.cmp",
+            event = {
+                "InsertEnter",
+                "CmdlineEnter"
+            },
+            dependencies = {
+                "L3MON4D3/LuaSnip",
+                version = "v2.*",
+                build = "make install_jsregexp",
+                dependencies = { "rafamadriz/friendly-snippets" }
+            },
+            build = "cargo build --release",
+            opts = {
+                completion = {
+                    documentation = {
+                        auto_show = true,
+                        window = { border = "rounded" }
+                    },
+                    menu = { border = "rounded" }
+                },
+                keymap = {
+                    preset = "enter",
+                    ["<C-y>"] = { "accept", "fallback" }
+                },
+                sources = {
+                    default = {
+                        "lsp",
+                        "path",
+                        "snippets",
+                        "buffer"
+                    }
+                }
+            }
+        },
+
+        {
+            "Saghen/blink.pairs",
+            event = {
+                "BufReadPost",
+                "BufNewFile"
+            },
+            build = "cargo build --release",
+            opts = {}
+        },
+
+        {
+            "Saghen/blink.indent",
+            event = {
+                "BufReadPost",
+                "BufNewFile"
+            },
+            opts = {}
+        },
+
+        {
+            "mason-org/mason-lspconfig.nvim",
+            dependencies = {
+                {
+                    "mason-org/mason.nvim",
+                    opts = {}
+                },
+                "neovim/nvim-lspconfig"
+            },
+            opts = {
+                ensure_installed = {
+                    "clangd",
+                    "cssls",
+                    "html",
+                    "lua_ls",
+                    "pyright"
+                }
+            }
         }
     },
-    checker = { enabled = true },
+    checker = { enabled = true }
 })
