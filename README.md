@@ -213,7 +213,7 @@ $ yay -S arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} pr
 
 ## dotfiles
 ```
-$ git clone https://github.com/Quasar-0330/arch-dots
+$ git clone https://github.com/Che-0129/arch-dots
 $ chmod +x arch-dots/install.sh
 $ bash arch-dots/install.sh
 ```
