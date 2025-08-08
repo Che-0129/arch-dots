@@ -168,7 +168,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 # nvim /etc/pacman.conf
 ```
-`# Color`と`# ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
+`# Color`と`# VerbosePkgLists`と`# ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
 
 ## makepkgの設定
 ```
