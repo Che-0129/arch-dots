@@ -142,7 +142,7 @@ initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 
-## /boot/loader/loader.confの`#timeout 3`をコメントアウト
+## /boot/loader/loader.confの`#timeout 3`をアンコメント
 ```
 # nvim /boot/loader/loader.conf
 ```
@@ -200,7 +200,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
-## 再起動後ログインし、`nmtui`でネットに接続
+## 再起動後ログインし、`iwctl station wlan0 connect {SSID} -P {password}`でネットに接続
 
 ## ユーザーディレクトリの作成
 ```
