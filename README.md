@@ -54,7 +54,7 @@
 ## ベースシステムインストール
 
 ```
-# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware} neovim networkmanager
+# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware} neovim iwd
 ```
 
 ## スワップファイル作成(4GiB)
@@ -110,9 +110,20 @@
 # echo {hostname} > /etc/hostname
 ```
 
-## NetworkManager有効化
+## iwdなど有効化
 ```
-# systemctl enable NetworkManager
+# systemctl enable iwd
+# systemctl enable systemd-{network,resolve}d
+```
+
+## iwdの設定を追加(/etc/iwd/main.conf)
+```
+[General]
+EnableNetworkConfiguration=true
+
+[Network]
+EnableIPv6=true
+NameResolvingService=systemd
 ```
 
 ## systemd-bootをインストール
