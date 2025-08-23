@@ -4,8 +4,9 @@ virtual_modifiers:
 modmap:
   - remap:
       KEY_MUHENKAN:
-        held: KEY_F13
+        held: F13
         alone: KEY_MUHENKAN
+        free_hold: true
 
 keymap:
   - remap:
