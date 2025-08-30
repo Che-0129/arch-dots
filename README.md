@@ -106,7 +106,6 @@
 ```
 # systemctl enable iwd
 # systemctl enable systemd-{network,resolve}d
-# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 
 ## iwdの設定を追加(/etc/iwd/main.conf)
