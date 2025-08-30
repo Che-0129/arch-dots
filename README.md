@@ -34,17 +34,17 @@
 ## マウント
 
 ```
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
+# mount -o autodefrag,compress=zstd:1,discard=async,noatime,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
 # mkdir /mnt/{boot,home}
 # mount /dev/nvme0n1p1 /mnt/boot
-# mount -o noatime,compress=zstd:1,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
+# mount -o autodefrag,compress=zstd:1,discard=async,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
 ## pacmanの設定
 ```
 # vim /etc/pacman.conf
 ```
-`# ParallelDownloads = 5`をアンコメント
+`# Color`と`# VerbosePkgLists`と`# ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
 
 ## reflector
 ```
@@ -54,15 +54,7 @@
 ## ベースシステムインストール
 
 ```
-# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
-```
-
-## スワップファイル作成(4GiB)
-```
-# btrfs su c /mnt/@swap
-# btrfs fi m -s 4g -U clear /mnt/@swap/swapfile
-# chmod 600 /mnt/@swap/swapfile
-# swapon /mnt/@swap/swapfile
+# pacstrap -KPi /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
 ```
 
 ## fstab生成
@@ -175,12 +167,6 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 `Defaults env_keep += "VISUAL"`
 
 上記２つを追加
-
-## pacmanの設定
-```
-# nvim /etc/pacman.conf
-```
-`# Color`と`# VerbosePkgLists`と`# ParallelDownloads = 5`をアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
 
 ## makepkgの設定
 ```
