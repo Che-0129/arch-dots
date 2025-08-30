@@ -44,7 +44,7 @@
 ```
 # vim /etc/pacman.conf
 ```
-`# Color`と`# VerbosePkgLists`とをアンコメントし`ILoveCandy`を追加。extraリポジトリの部分もアンコメント
+`# Color`と`# VerbosePkgLists`とをアンコメントし`ILoveCandy`を追加。multilibリポジトリの部分もアンコメント
 
 ## reflector
 ```
