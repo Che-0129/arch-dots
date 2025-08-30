@@ -54,7 +54,7 @@
 ## ベースシステムインストール
 
 ```
-# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware} neovim iwd
+# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
 ```
 
 ## スワップファイル作成(4GiB)
