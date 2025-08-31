@@ -105,7 +105,7 @@
 ## iwdなど有効化
 ```
 # systemctl enable iwd
-# systemctl enable systemd-{network,resolve}d
+# systemctl enable systemd-resolved
 ```
 
 ## iwdの設定を追加(/etc/iwd/main.conf)
