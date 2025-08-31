@@ -108,16 +108,6 @@
 # systemctl enable systemd-resolved
 ```
 
-## iwdの設定を追加(/etc/iwd/main.conf)
-```
-[General]
-EnableNetworkConfiguration=true
-
-[Network]
-EnableIPv6=true
-NameResolvingService=systemd
-```
-
 ## systemd-bootをインストール
 
 ```
