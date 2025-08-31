@@ -34,10 +34,10 @@
 ## マウント
 
 ```
-# mount -o autodefrag,compress=zstd:1,noatime,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
+# mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
 # mkdir /mnt/{boot,home}
 # mount /dev/nvme0n1p1 /mnt/boot
-# mount -o autodefrag,compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
+# mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
 ## pacmanの設定
