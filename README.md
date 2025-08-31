@@ -40,12 +40,6 @@
 # mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
-## pacmanの設定
-```
-# vim /etc/pacman.conf
-```
-`# Color`と`# VerbosePkgLists`とをアンコメントし`ILoveCandy`を追加。multilibリポジトリの部分もアンコメント
-
 ## reflector
 ```
 # reflector -c Japan -a 24 --sort rate --save /etc/pacman.d/mirrorlist
@@ -156,6 +150,12 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 `Defaults env_keep += "VISUAL"`
 
 上記２つを追加
+
+## pacmanの設定
+```
+# nvim /etc/pacman.conf
+```
+`# Color`と`# VerbosePkgLists`とをアンコメントし`ILoveCandy`を追加。multilibリポジトリの部分もアンコメント
 
 ## makepkgの設定
 ```
