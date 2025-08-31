@@ -1,24 +1,20 @@
 # Arch Linux 最小インストール
 ## 日本語キーボード読み込み
-
 ```
 # loadkeys jp106
 ```
 
 ## Wi-Fi接続
-
 ```
 # iwctl station wlan0 connect {SSID} -P {password}
 ```
 
 ## パーティション切り(boot 512MiB, サブボリューム用 残り全部)
-
 ```
 # gdisk /dev/nvme0n1
 ```
 
 ## フォーマット
-
 ```
 # mkfs.vfat -F32 /dev/nvme0n1p1
 # mkfs.btrfs -f /dev/nvme0n1p2
@@ -32,7 +28,6 @@
 ```
 
 ## マウント
-
 ```
 # mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
 # mkdir /mnt/{boot,home}
@@ -46,52 +41,44 @@
 ```
 
 ## ベースシステムインストール
-
 ```
-# pacstrap -KPi /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
+# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
 ```
 
 ## fstab生成
-
 ```
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ## pacstrapでインストールしたシステムに入る
-
 ```
 # arch-chroot /mnt /bin/fish
 ```
 
 ## locale.genのやつ
-
 ```
 # echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 # echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen
 ```
 
 ## ロケール生成
-
 ```
 # locale-gen
 ```
 
 ## 使用言語、キーボードの設定
-
 ```
 # echo LANG=en_US.UTF-8 > /etc/locale.conf
 # echo KEYMAP=jp106 > /etc/vconsole.conf
 ```
 
 ## タイムゾーン設定
-
 ```
 # ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 # hwclock -w
 ```
 
 ## ホストネーム設定
-
 ```
 # echo {hostname} > /etc/hostname
 ```
@@ -103,24 +90,17 @@
 ```
 
 ## systemd-bootをインストール
-
 ```
 # bootctl install
 ```
 
-## /boot/loader/entries/zen.confに以下を追記
-
+## /boot/loader/entries/zen.confに以下を書き込む
 ```
 title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
 initrd /amd-ucode.img
 initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
-```
-
-## /boot/loader/loader.confの`#timeout 3`をアンコメント
-```
-# nvim /boot/loader/loader.conf
 ```
 
 ## rootユーザーのパスワードを変更
@@ -155,7 +135,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 # nvim /etc/pacman.conf
 ```
-`# Color`と`# VerbosePkgLists`とをアンコメントし`ILoveCandy`を追加。multilibリポジトリの部分もアンコメント
+`# Color`と`# VerbosePkgLists`をアンコメントし`ILoveCandy`を追加。multilibリポジトリの部分もアンコメント
 
 ## makepkgの設定
 ```
