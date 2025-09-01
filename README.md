@@ -89,16 +89,6 @@
 # systemctl enable systemd-resolved
 ```
 
-## iwdの設定を追加(/etc/iwd/main.conf)
-```
-[General]
-EnableNetworkConfiguration=true
-
-[Network]
-EnableIPv6=true
-NameResolvingService=systemd
-```
-
 ## systemd-bootをインストール
 ```
 # bootctl install
@@ -169,6 +159,16 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ## 再起動後ログインしたら`iwctl station wlan0 connect {SSID} -P {password}`でネットに接続し、resolv.confのシンボリックリンク作成
 ```
 $ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+```
+
+## iwdの設定を追加(/etc/iwd/main.conf)後再起動
+```
+[General]
+EnableNetworkConfiguration=true
+
+[Network]
+EnableIPv6=true
+NameResolvingService=systemd
 ```
 
 ## ユーザーディレクトリの作成
