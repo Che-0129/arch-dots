@@ -29,5 +29,4 @@ WantedBy=multi-user.target
 EOT
 
 sudo systemctl enable {disable-USB-wakeup,greetd}.service
-systemctl --user enable hypr{paper,polkitagent,idle}.service
 ya pkg add {ndtoan96/ouch,yazi-rs/plugins:full-border}
