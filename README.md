@@ -168,7 +168,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 
 ## 再起動後ログインしたら`iwctl station wlan0 connect {SSID} -P {password}`でネットに接続し、resolv.confのシンボリックリンク作成
 ```
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+$ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 
 ## ユーザーディレクトリの作成
