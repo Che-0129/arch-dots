@@ -45,6 +45,14 @@
 # pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
 ```
 
+## スワップファイル作成(4GiB)
+```
+# btrfs su c /mnt/@swap
+# btrfs fi m -s 4g -U clear /mnt/@swap/swapfile
+# chmod 600 /mnt/@swap/swapfile
+# swapon /mnt/@swap/swapfile
+```
+
 ## fstab生成
 ```
 # genfstab -U /mnt >> /mnt/etc/fstab
