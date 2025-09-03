@@ -111,12 +111,12 @@ initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 
-## rootユーザーのパスワードを変更
+## rootのパスワードを変更
 ```
 # passwd
 ```
 
-## 非rootユーザー作成
+## 一般ユーザー作成
 ```
 # useradd -m -G wheel -s $(which fish) {username}
 # passwd {username}
