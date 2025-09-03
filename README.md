@@ -102,7 +102,7 @@
 # bootctl install
 ```
 
-## /boot/loader/entries/zen.confに以下を書き込む
+## `/boot/loader/entries/zen.conf`に以下を書き込む
 ```
 title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
@@ -143,7 +143,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 # nvim /etc/pacman.conf
 ```
-`# Color`と`# VerbosePkgLists`をアンコメントし`ILoveCandy`を追加。multilibリポジトリの部分もアンコメント
+`# Color`と`# VerbosePkgLists`をアンコメントし`ILoveCandy`を追加。`[multilib]`セクションもアンコメント
 
 ## makepkgの設定
 ```
