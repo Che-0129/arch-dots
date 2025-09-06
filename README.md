@@ -169,6 +169,11 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 $ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 
+## パーミッションの問題を防ぐため一度一般ユーザーでNeovimを起動
+```
+$ nvim
+```
+
 ## iwdの設定を追加(/etc/iwd/main.conf)後再起動
 ```
 [General]
