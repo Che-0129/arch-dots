@@ -211,6 +211,11 @@ $ chmod +x arch-dots/install.sh
 $ bash arch-dots/install.sh
 ```
 
+## 一般ユーザーでNeovimを起動してプラグインをインストール
+```
+$ nvim
+```
+
 ## /etc/locale.confを`LANG=en_US.UTF-8`から`LANG=ja_JP.UTF-8`に書き換え再起動
 
 ## Hyprland (uwsm)を選択しログイン後Hyprland系のデーモンを有効化
