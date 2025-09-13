@@ -137,6 +137,8 @@ require("lazy").setup({
 
         {
             "Saghen/blink.cmp",
+            version = not vim.g.lazyvim_blink_main and "*",
+            build = vim.g.lazyvim_blink_main and "cargo build --release",
             event = {
                 "InsertEnter",
                 "CmdlineEnter"
@@ -147,7 +149,6 @@ require("lazy").setup({
                 build = "make install_jsregexp",
                 dependencies = { "rafamadriz/friendly-snippets" }
             },
-            build = "cargo build --release",
             opts = {
                 completion = {
                     documentation = {
