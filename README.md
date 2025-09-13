@@ -16,7 +16,7 @@
 
 ## フォーマット
 ```
-# mkfs.vfat -F32 /dev/nvme0n1p1
+# mkfs.vfat -F 32 /dev/nvme0n1p1
 # mkfs.btrfs -f /dev/nvme0n1p2
 ```
 
