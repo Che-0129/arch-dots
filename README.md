@@ -48,7 +48,9 @@
 ## スワップファイル作成(4GiB)
 ```
 # btrfs su c /mnt/@swap
-# {"btrfs fi m -s 4g -U clear","chmod 600",swapon} /mnt/@swap/swapfile
+# btrfs fi m -s 4g -U clear /mnt/@swap/swapfile
+# chmod 600 /mnt/@swap/swapfile
+# swapon /mnt/@swap/swapfile
 ```
 
 ## fstab生成
