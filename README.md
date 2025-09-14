@@ -1,4 +1,4 @@
-# Arch Linux 最小インストール
+# Arch Linuxインストール
 ## 日本語キーボード読み込み
 ```
 # loadkeys jp106
@@ -6,10 +6,10 @@
 
 ## Wi-Fi接続
 ```
-# iwctl station wlan0 connect {SSID} -P {password}
+# iwctl station wlan0 connect <SSID> -P <password>
 ```
 
-## パーティション切り(boot 512MiB, サブボリューム用 残り全部)
+## パーティション切り(boot 1GiB, Windows用に64GiB残してsubvol用作成)
 ```
 # gdisk /dev/nvme0n1
 ```
@@ -48,9 +48,7 @@
 ## スワップファイル作成(4GiB)
 ```
 # btrfs su c /mnt/@swap
-# btrfs fi m -s 4g -U clear /mnt/@swap/swapfile
-# chmod 600 /mnt/@swap/swapfile
-# swapon /mnt/@swap/swapfile
+# {"btrfs fi m -s 4g -U clear","chmod 600",swapon} /mnt/@swap/swapfile
 ```
 
 ## fstab生成
@@ -88,13 +86,12 @@
 
 ## ホストネーム設定
 ```
-# echo {hostname} > /etc/hostname
+# echo ArchLinux > /etc/hostname
 ```
 
 ## iwdなど有効化
 ```
-# systemctl enable iwd
-# systemctl enable systemd-resolved
+# systemctl enable {iwd,systemd-resolved}
 ```
 
 ## systemd-bootをインストール
@@ -111,15 +108,15 @@ initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@ rw sysrq_always_enabled=1
 ```
 
-## rootのパスワードを変更
+## rootのパスワードを作成
 ```
 # passwd
 ```
 
 ## 一般ユーザー作成
 ```
-# useradd -m -G wheel -s $(which fish) {username}
-# passwd {username}
+# useradd -m -G wheel -s $(which fish) <username>
+# passwd <username>
 ```
 
 ## visudoの設定
@@ -187,7 +184,7 @@ NameResolvingService=systemd
 ## ユーザーディレクトリの作成
 ```
 $ sudo pacman -S xdg-user-dirs
-$ LC_ALL=C.UTF-8 xdg-user-dirs-update --force
+$ xdg-user-dirs-update
 ```
 
 ## yayをインストール
@@ -207,8 +204,7 @@ $ yay -S arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} pa
 ## dotfiles
 ```
 $ git clone https://github.com/Che-0129/arch-dots
-$ chmod +x arch-dots/install.sh
-$ bash arch-dots/install.sh
+$ {"chmod +x",bash} arch-dots/install.sh
 ```
 
 ## 一般ユーザーでNeovimを起動してプラグインをインストール
