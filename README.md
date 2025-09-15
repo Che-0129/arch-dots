@@ -9,15 +9,15 @@
 # iwctl station wlan0 connect <SSID> -P <password>
 ```
 
-## パーティション切り(boot 512MiB, 残りはsubvol用)
+## パーティション切り(boot 512MiB パーティションタイプ: ef00, 残りはsubvol用 パーティションタイプ: デフォルト)
 ```
 # gdisk /dev/nvme0n1
 ```
 
 ## フォーマット
 ```
-# mkfs.vfat -F 32 /dev/nvme0n1p1
-# mkfs.btrfs -f /dev/nvme0n1p2
+# mkfs.fat -F 32 /dev/nvme0n1p1
+# mkfs.btrfs /dev/nvme0n1p2
 ```
 
 ## サブボリューム作成
