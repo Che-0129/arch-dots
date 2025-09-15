@@ -9,7 +9,7 @@
 # iwctl station wlan0 connect <SSID> -P <password>
 ```
 
-## パーティション切り(boot 1GiB(ef00), 残りはsubvol用(8304))
+## パーティション切り(boot 512MiB, 残りはsubvol用)
 ```
 # gdisk /dev/nvme0n1
 ```
