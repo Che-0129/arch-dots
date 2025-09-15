@@ -9,9 +9,11 @@
 # iwctl station wlan0 connect <SSID> -P <password>
 ```
 
-## パーティション切り(boot 512MiB パーティションタイプ: ef00, 残りはsubvol用 パーティションタイプ: デフォルト)
+## パーティション切り
 ```
-# gdisk /dev/nvme0n1
+# sgdisk -Z /dev/nvme0n1
+# sgdisk -n 1:0:+512M -t 1:ef00 -c 1:"EFI System" /dev/nvme0n1
+# sgdisk -n 2:0: -t 2:8300 -c 2:"Linux filesystem" /dev/nvme0n1
 ```
 
 ## フォーマット
@@ -23,13 +25,13 @@
 ## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs su c /mnt/@{,home}
+# btrfs su c /mnt/@{root,home}
 # umount /mnt
 ```
 
 ## マウント
 ```
-# mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt
+# mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@root /dev/nvme0n1p2 /mnt
 # mkdir /mnt/{boot,home}
 # mount /dev/nvme0n1p1 /mnt/boot
 # mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
