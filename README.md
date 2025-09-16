@@ -165,7 +165,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 
 ## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
 
-## 再起動後ログインしたら`iwctl station wlan0 connect {SSID} -P {password}`でネットに接続し、resolv.confのシンボリックリンク作成
+## 再起動後ログインしたら`iwctl station wlan0 connect <SSID> -P <password>`でネットに接続し、resolv.confのシンボリックリンク作成
 ```
 $ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
