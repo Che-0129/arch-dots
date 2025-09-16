@@ -12,7 +12,7 @@
 ## パーティション切り
 ```
 # sgdisk -Z /dev/nvme0n1
-# sgdisk -n 1::+512M -t 1:ef00 -c 1:"EFI System partition" /dev/nvme0n1
+# sgdisk -n 1::+512M -t 1:ef00 -c 1:"EFI system partition" /dev/nvme0n1
 # sgdisk -n 2:: -t 2:8300 -c 2:"Linux filesystem" /dev/nvme0n1
 ```
 
