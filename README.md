@@ -221,5 +221,5 @@ $ nvim
 
 ## Hyprland (uwsm)を選択しログイン後Hyprland系のデーモンを有効化
 ```
-$ systemctl --user enable --now hypr{paper,polkitagent,idle}.service
+$ systemctl --user enable --now hypr{idle,paper,polkitagent}.service
 ```
