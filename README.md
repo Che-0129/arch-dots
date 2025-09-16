@@ -25,7 +25,7 @@
 ## サブボリューム作成
 ```
 # mount /dev/nvme0n1p2 /mnt
-# btrfs su c /mnt/@{root,home}
+# btrfs su c /mnt/@{home,root}
 # umount /mnt
 ```
 
