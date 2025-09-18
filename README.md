@@ -69,10 +69,6 @@
 ```
 # echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 # echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen
-```
-
-## ロケール生成
-```
 # locale-gen
 ```
 
@@ -93,51 +89,18 @@
 # echo ArchLinux > /etc/hostname
 ```
 
-## iwdなど有効化
-```
-# systemctl enable {iwd,systemd-resolved}
-```
-
 ## systemd-bootをインストール
 ```
 # bootctl install
 ```
 
-## `/boot/loader/entries/zen.conf`に以下を書き込む
+## `/boot/loader/entries/zen.conf`を作成し以下を書き込む
 ```
 title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
 initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
-
-## rootのパスワードを作成
-```
-# passwd
-```
-
-## 一般ユーザー作成
-```
-# useradd -m -G wheel -s $(which fish) <username>
-# passwd <username>
-```
-
-## visudoの設定
-```
-# EDITOR=nvim visudo
-```
-
-`# Defaults env_keep += "HOME"`
-
-`# %wheel ALL=(ALL:ALL) NOPASSWD: ALL`
-
-上記２つをアンコメント
-
-`Defaults env_keep += "EDITOR"`
-
-`Defaults env_keep += "VISUAL"`
-
-上記２つを追加
 
 ## pacmanの設定
 ```
@@ -162,14 +125,47 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 # mkinitcpio -P
 ```
 
-## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き再度起動
-
-## 再起動後ログインしたら`iwctl station wlan0 connect <SSID> -P <password>`でネットに接続し、resolv.confのシンボリックリンク作成
+## iwdとsystemd-homed, systemd-resolvedを有効化
 ```
+# systemctl enable iwd systemd-{homed,resolved}
+```
+
+## visudoの設定
+```
+# EDITOR=nvim visudo
+```
+
+`# Defaults env_keep += "HOME"`
+
+`# %wheel ALL=(ALL:ALL) NOPASSWD: ALL`
+
+上記２つをアンコメント
+
+`Defaults env_keep += "EDITOR"`
+
+`Defaults env_keep += "VISUAL"`
+
+上記２つを追加
+
+## rootのパスワードを作成
+```
+# passwd
+```
+
+## `exit`でchrootを抜け、`poweroff`で電源を落としインストールメディアを抜き、起動したらrootでログイン
+
+## 非rootユーザー作成
+```
+# homectl -G wheel --shell=$(which fish) --storage=subvolume create <username>
+```
+
+## `exit`して、作成したユーザーにログインしたらネットに接続し、resolv.confのシンボリックリンクを作成
+```
+$ iwctl station wlan0 connect <SSID> -P <password>
 $ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 
-## パーミッションの問題を防ぐため一度一般ユーザーでNeovimを起動
+## パーミッションの問題を防ぐため一度非rootユーザーでNeovimを起動
 ```
 $ nvim
 ```
@@ -184,7 +180,7 @@ EnableIPv6=true
 NameResolvingService=systemd
 ```
 
-## ユーザーディレクトリの作成
+## XDGユーザーディレクトリの作成
 ```
 $ sudo pacman -S xdg-user-dirs
 $ xdg-user-dirs-update
