@@ -134,18 +134,17 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
 # EDITOR=nvim visudo
 ```
+以下２つをアンコメント
 
 `# Defaults env_keep += "HOME"`
 
 `# %wheel ALL=(ALL:ALL) NOPASSWD: ALL`
 
-上記２つをアンコメント
+以下２つを追加
 
 `Defaults env_keep += "EDITOR"`
 
 `Defaults env_keep += "VISUAL"`
-
-上記２つを追加
 
 ## rootのパスワードを作成
 ```
