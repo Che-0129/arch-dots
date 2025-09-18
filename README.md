@@ -107,7 +107,6 @@
 ```
 title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
-initrd /amd-ucode.img
 initrd /initramfs-linux-zen.img
 options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
@@ -156,7 +155,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
 # nvim /etc/mkinitcpio.conf
 ```
-`HOOKS=(...)`内の`base udev`を`systemd`に置き換え`fsck`を削除
+`HOOKS=(...)`を`HOOKS=(base udev autodetect microcode keymap block filesystems)`に書き換える
 
 ## mkinitcpio生成
 ```
