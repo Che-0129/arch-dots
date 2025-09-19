@@ -48,7 +48,7 @@
 
 ## スワップファイル作成(4GiB)
 ```
-# btrfs fi m -s 4g -U clear /mnt//swapfile
+# btrfs fi m -s 4g -U clear /mnt/swapfile
 # swapon /mnt/swapfile
 ```
 
@@ -124,7 +124,7 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 
 ## iwdとsystemd-homed, systemd-resolvedを有効化
 ```
-# systemctl enable iwd systemd-{homed,resolved}
+# systemctl enable iwd systemd-{hom,resolv}ed
 ```
 
 ## visudoの設定
