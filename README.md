@@ -12,7 +12,7 @@
 ## パーティション切り
 ```
 # sgdisk -Z /dev/nvme0n1
-# sgdisk -n 1::+512M -t 1:ef00 -c 1:"EFI system partition" /dev/nvme0n1
+# sgdisk -n 1::+1G -t 1:ef00 -c 1:"EFI system partition" /dev/nvme0n1
 # sgdisk -n 2:: -t 2:8300 -c 2:"Linux filesystem" /dev/nvme0n1
 ```
 
@@ -32,9 +32,8 @@
 ## マウント
 ```
 # mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@root /dev/nvme0n1p2 /mnt
-# mkdir /mnt/{boot,home}
-# mount /dev/nvme0n1p1 /mnt/boot
-# mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
+# mount -m /dev/nvme0n1p1 /mnt/boot
+# mount -m -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
 ## reflector
@@ -181,7 +180,7 @@ NameResolvingService=systemd
 
 ## XDGユーザーディレクトリの作成
 ```
-$ sudo pacman -S xdg-user-dirs
+$ sudo pacman -Syyu xdg-user-dirs
 $ xdg-user-dirs-update
 ```
 
@@ -196,7 +195,7 @@ $ makepkg -si
 ## 色々インストール(Hyprland)
 ```
 $ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} {un,}zip android-tools archlinux-wallpaper aria2 bat btop eza fcitx5-im foot gimp gopsuinfo hypr{idle,land,lock,paper,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse rustup steam telegram-desktop trash-cli udisks2 uwsm vlc{,-plugin-ffmpeg} wqy-zenhei xdg-desktop-portal-hyprland yazi
-$ yay -S arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} payload-dumper-go-bin proton-ge-custom-bin ttf-hackgen xremap-hypr-bin
+$ yay -S {payload-dumper-go,proton-ge-custom,xremap-hypr}-bin arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} ttf-hackgen
 ```
 
 ## dotfiles
