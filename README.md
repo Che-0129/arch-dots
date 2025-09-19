@@ -32,7 +32,7 @@
 ## マウント
 ```
 # mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@root /dev/nvme0n1p2 /mnt
-# mount -m /dev/nvme0n1p1 /mnt/boot
+# mount -m -o fmask=0077,dmask=0077 /dev/nvme0n1p1 /mnt/boot
 # mount -m -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
@@ -48,10 +48,8 @@
 
 ## スワップファイル作成(4GiB)
 ```
-# btrfs su c /mnt/@swap
-# btrfs fi m -s 4g -U clear /mnt/@swap/swapfile
-# chmod 600 /mnt/@swap/swapfile
-# swapon /mnt/@swap/swapfile
+# btrfs fi m -s 4g -U clear /mnt//swapfile
+# swapon /mnt/swapfile
 ```
 
 ## fstab生成
