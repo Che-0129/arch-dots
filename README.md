@@ -185,15 +185,15 @@ $ xdg-user-dirs-update
 ## yayをインストール
 ```
 $ sudo pacman -S git
-$ git clone https://aur.archlinux.org/yay-bin.git
-$ cd yay-bin
+$ git clone https://aur.archlinux.org/paru-bin.git
+$ cd paru-bin
 $ makepkg -si
 ```
 
 ## 色々インストール(Hyprland)
 ```
 $ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} {un,}zip android-tools archlinux-wallpaper aria2 bat btop eza fcitx5-im foot gimp gopsuinfo hypr{idle,land,lock,paper,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse rustup steam telegram-desktop trash-cli udisks2 uwsm vlc{,-plugin-ffmpeg} wqy-zenhei xdg-desktop-portal-hyprland yazi
-$ yay -S {payload-dumper-go,proton-ge-custom,xremap-hypr}-bin arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} ttf-hackgen
+$ paru -S {payload-dumper-go,proton-ge-custom,xremap-hypr}-bin arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} ttf-hackgen
 ```
 
 ## dotfiles
