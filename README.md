@@ -32,7 +32,7 @@
 ## マウント
 ```
 # mount -o compress=zstd:1,noatime,space_cache=v2,subvol=@root /dev/nvme0n1p2 /mnt
-# mount -m -o fmask=0077,dmask=0077 /dev/nvme0n1p1 /mnt/boot
+# mount -m -o dmask=0077,fmask=0077 /dev/nvme0n1p1 /mnt/boot
 # mount -m -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
