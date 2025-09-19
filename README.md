@@ -36,6 +36,12 @@
 # mount -m -o compress=zstd:1,noatime,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
 ```
 
+## スワップファイル作成
+```
+# btrfs fi m -s 4g -U clear /mnt/swapfile
+# swapon /mnt/swapfile
+```
+
 ## reflector
 ```
 # reflector -c Japan -a 24 --sort rate --save /etc/pacman.d/mirrorlist
@@ -46,12 +52,6 @@
 # pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
 ```
 
-## スワップファイル作成(4GiB)
-```
-# btrfs fi m -s 4g -U clear /mnt/swapfile
-# swapon /mnt/swapfile
-```
-
 ## fstab生成
 ```
 # genfstab -U /mnt >> /mnt/etc/fstab
@@ -60,6 +60,12 @@
 ## pacstrapでインストールしたシステムに入る
 ```
 # arch-chroot /mnt /bin/fish
+```
+
+## タイムゾーン設定
+```
+# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+# hwclock -w
 ```
 
 ## locale.genのやつ
@@ -75,28 +81,9 @@
 # echo KEYMAP=jp106 > /etc/vconsole.conf
 ```
 
-## タイムゾーン設定
-```
-# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-# hwclock -w
-```
-
 ## ホストネーム設定
 ```
 # echo ArchLinux > /etc/hostname
-```
-
-## systemd-bootをインストール
-```
-# bootctl install
-```
-
-## `/boot/loader/entries/zen.conf`を作成し以下を書き込む
-```
-title Arch Linux (linux-zen)
-linux /vmlinuz-linux-zen
-initrd /initramfs-linux-zen.img
-options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
 
 ## pacmanの設定
@@ -120,6 +107,19 @@ options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ## mkinitcpio生成
 ```
 # mkinitcpio -P
+```
+
+## systemd-bootをインストール
+```
+# bootctl install
+```
+
+## `/boot/loader/entries/zen.conf`を作成し以下を書き込む
+```
+title Arch Linux (linux-zen)
+linux /vmlinuz-linux-zen
+initrd /initramfs-linux-zen.img
+options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
 ```
 
 ## iwdとsystemd-homed, systemd-resolvedを有効化
