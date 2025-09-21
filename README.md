@@ -48,7 +48,7 @@
 
 ## ベースシステムインストール
 ```
-# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs dosfstools fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
+# pacstrap -Ki /mnt amd-ucode base{,-devel} btrfs-progs fish linux-{zen{,-headers},firmware-{amdgpu,realtek}} neovim iwd
 ```
 
 ## fstab生成
@@ -191,7 +191,7 @@ $ makepkg -si
 
 ## 色々インストール(Hyprland)
 ```
-$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} {un,}zip android-tools archlinux-wallpaper aria2 bat btop eza fcitx5-im foot gimp gopsuinfo hypr{idle,land,lock,paper,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse rustup steam telegram-desktop trash-cli udisks2 uwsm vlc{,-plugin-ffmpeg} wqy-zenhei xdg-desktop-portal-hyprland yazi
+$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} {un,}zip android-tools archlinux-wallpaper aria2 bat btop eza fcitx5-im foot gimp gopsuinfo hypr{idle,land,lock,paper,polkitagent,shot} less mako noto-fonts-{cjk,emoji,extra} npm nwg-{clipman,drawer,hello,look,panel} ouch pipewire-pulse rustup steam telegram-desktop trash-cli uwsm vlc{,-plugin-ffmpeg} wqy-zenhei xdg-desktop-portal-hyprland yazi
 $ paru -S {payload-dumper-go,proton-ge-custom,xremap-hypr}-bin arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} ttf-hackgen
 ```
 
