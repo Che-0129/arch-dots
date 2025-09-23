@@ -165,7 +165,7 @@ $ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 $ nvim
 ```
 
-## iwdの設定を追加(/etc/iwd/main.conf)後再起動
+## iwdの設定を追加(`/etc/iwd/main.conf`)
 ```
 [General]
 EnableNetworkConfiguration=true
@@ -173,6 +173,17 @@ EnableNetworkConfiguration=true
 [Network]
 EnableIPv6=true
 NameResolvingService=systemd
+```
+
+## systemd-resolvedのDNSサーバーを変更(`/etc/systemd/resolved.conf`)
+```
+[Resolve]
+DNS=8.8.8.8 8.8.4.4
+```
+
+## 再起動
+```
+$ sudo reboot
 ```
 
 ## XDGユーザーディレクトリの作成
