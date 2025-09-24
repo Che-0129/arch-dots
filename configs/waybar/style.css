@@ -1,0 +1,30 @@
+* {
+    font-family: NotoSansCJKjp;
+    font-size: 16px;
+    border-radius: 16px
+}
+
+window#waybar {
+    border: 2px solid #26D9E6
+}
+
+#backlight {
+    margin-left: 16px
+}
+
+#workspaces {
+    margin-left: 32px
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.1)
+}
+
+#workspaces button:hover {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1)
+}
+
+#tray {
+    margin: 0 16px 0 32px
+}
