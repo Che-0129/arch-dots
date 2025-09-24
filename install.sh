@@ -18,5 +18,5 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 EOT
 
-sudo systemctl enable disable-USB-wakeup.service
+sudo systemctl enable {disable-USB-wakeup,ly}.service
 ya pkg add {ndtoan96/ouch,yazi-rs/plugins:full-border}
