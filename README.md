@@ -118,7 +118,7 @@
 title Arch Linux (linux-zen)
 linux /vmlinuz-linux-zen
 initrd /initramfs-linux-zen.img
-options root=/dev/nvme0n1p2 rootflags=subvol=@root rw sysrq_always_enabled=1
+options root=/dev/nvme0n1p2 rootflags=subvol=@root rw loglevel=3 sysrq_always_enabled=1
 ```
 
 ## iwdとsystemd-homed, systemd-resolvedを有効化
@@ -202,8 +202,8 @@ $ makepkg -si
 
 ## 色々インストール(Hyprland)
 ```
-$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} {un,}zip android-tools archlinux-wallpaper aria2 bat eza fcitx5-im foot gimp hypr{idle,land,lock,paper,polkitagent,shot} less ly mako noto-fonts-{cjk,emoji,extra} npm nwg-look ouch rustup steam telegram-desktop trash-cli uwsm waybar wqy-zenhei xdg-desktop-portal-hyprland yazi
-$ paru -S {payload-dumper-go,proton-ge-custom,xremap-hypr}-bin arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} ttf-hackgen walker
+$ sudo pacman -S 7zip {firefox,thunderbird}{,-18n-ja} {un,}zip android-tools archlinux-wallpaper aria2 bat cliphist eza fcitx5-im foot fuzzel gimp hypr{idle,land,lock,paper,polkitagent,shot} less ly mako noto-fonts-{cjk,emoji,extra} npm nwg-look ouch rustup steam telegram-desktop trash-cli uwsm waybar wqy-zenhei xdg-desktop-portal-hyprland yazi
+$ paru -S {payload-dumper-go,proton-ge-custom,xremap-hypr}-bin arc-{gtk,icon}-theme discord_arch_electron fcitx5-{mozc-ut,skin-arc} ttf-hackgen
 ```
 
 ## dotfiles
