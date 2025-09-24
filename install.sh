@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf ~/.config/fish
+sudo rm -rf ~/.config/fish ~/.config/nvim
 mv $(cd $(dirname $0) && pwd)/configs/* ~/.config/
 bash $(cd $(dirname $0) && pwd)/xremap-setup.sh
 
